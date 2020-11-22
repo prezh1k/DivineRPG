@@ -8,7 +8,7 @@ Block.createBlock("edenOre", [
 ToolAPI.registerBlockMaterial(BlockID.edenOre, "stone");
 Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
-    return (id, 1, 0)
+    return (BlockID.edenOre, 1, 0)
   });
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -22,11 +22,11 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 
 IDRegistry.genBlockID("netheriteOre");
 Block.createBlock("netheriteOre", [
-	{name: "Незеритовая руда", texture: [["netheriteore", 0]], inCreative: true}]);
+	{name: "Незеритовая руда", texture: [["netherore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone");
 Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
-    return (id, 1, 0)
+    return (BlockID.netheriteOre, 1, 0)
   });
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -41,7 +41,7 @@ Block.createBlock("bloodgemOre", [
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone");
 Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
-  return(id, 1, 0)
+  return(BlockID.bloodgemOre, 1, 0)
 });
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -57,7 +57,7 @@ Block.createBlock("wildwoodOre", [
 ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "stone");
 Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
-    return (id, 1, 0)
+    return (BlockID.wildwoodOre, 1, 0)
   });
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -76,7 +76,7 @@ Block.createBlock("arlemiteOre", [
 ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "stone");
 Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
-  return(id, 1, 0)
+  return(BlockID.arlemiteOre, 1, 0)
 });
 Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
@@ -90,7 +90,7 @@ Block.createBlock("realmiteOre", [
 ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "stone");
 Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
-    return (id, 1, 0)
+    return (BlockID.realmiteOre, 1, 0)
   }); 
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<3; i++){
@@ -105,7 +105,7 @@ Block.createBlock("rupeeOre", [
 ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "stone");
 Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {
-    return (id, 1, 0)
+    return (BlockID.rupeeOre, 1, 0)
   }); 
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){

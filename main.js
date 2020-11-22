@@ -573,8 +573,10 @@ IDRegistry.genBlockID("edenOre");
 Block.createBlock("edenOre", [
 	{name: "Дравитовая Руда", texture: [["edenOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.edenOre, "stone");
-Block.registerDropFunction("edenOre");
-Recipes.addFurnace(BlockID.edenOre, ItemID.edemfrag);
+Block.registerDropFunction("edenOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (id, 1, 0)
+  });
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
     if(dimensionid == Aether.id){
@@ -589,8 +591,10 @@ IDRegistry.genBlockID("netheriteOre");
 Block.createBlock("netheriteOre", [
 	{name: "Незеритовая руда", texture: [["netheriteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone");
-Block.registerDropFunction("netheriteOre");
-Recipes.addFurnace(BlockID.netheriteOre, ItemID.netheriteIngot);
+Block.registerDropFunction("netheriteOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (id, 1, 0)
+  });
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 128);
@@ -602,8 +606,10 @@ IDRegistry.genBlockID("bloodgemOre");
 Block.createBlock("bloodgemOre", [
 	{name: "Каменно-кровавая руда", texture: [["bloodgemore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone");
-Block.registerDropFunction("blodgemOre");
-Recipes.addFurnace(BlockID.bloodgemOre, ItemID.bloodgem, 0);
+Block.registerDropFunction("bloodgemOre",
+function(coords, blockID, blockData, level, enchant){
+  return(id, 1, 0)
+});
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 128);
@@ -616,8 +622,10 @@ IDRegistry.genBlockID("wildwoodOre");
 Block.createBlock("wildwoodOre", [
 	{name: "Азуритовая Руда", texture: [["wildwoodOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "stone");
-Block.registerDropFunction("wildwoodOre");
-Recipes.addFurnace(BlockID.wildwoodOre, ItemID.lesfrag);
+Block.registerDropFunction("wildwoodOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (id, 1, 0)
+  });
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
     if(dimensionid == wildwood.id){
@@ -633,7 +641,10 @@ IDRegistry.genBlockID("arlemiteOre");
 Block.createBlock("arlemiteOre", [
 	{name: "Арлемитовая Руда", texture: [["arlemiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "stone");
-Block.registerDropFunction("arlemiteOre");
+Block.registerDropFunction("arlemiteOre",
+function(coords, blockID, blockData, level, enchant){
+  return(id, 1, 0)
+});
 Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 15);
@@ -644,7 +655,11 @@ IDRegistry.genBlockID("realmiteOre");
 Block.createBlock("realmiteOre", [
 	{name: "Реалмитовая ", texture: [["realmiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "stone");
-Block.registerDropFunction("realmiteOre"), Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
+Block.registerDropFunction("realmiteOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (id, 1, 0)
+  }); 
+  Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<3; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 20);
         GenerationUtils.generateOre(c.x, c.y, c.z, BlockID.realmiteOre, 0, random(0,5));
@@ -655,19 +670,27 @@ IDRegistry.genBlockID("rupeeOre");
 Block.createBlock("rupeeOre", [
 	{name: "Рупиевая Руда", texture: [["rupeeore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "stone");
-Block.registerDropFunction("rupeeOre"), Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
+Block.registerDropFunction("rupeeOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (id, 1, 0)
+  }); 
+  Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 15);
         GenerationUtils.generateOre(c.x, c.y, c.z, BlockID.rupeeOre, 0, random(1,3));
     }
 });
 
-
-var BLOCK_Type_ORE = Block.createSpecialType({
-	base: 1,
-	destroytime: 2,
-	opaque: true,
-}, "ore");
+Callback.addCallback('PostLoaded',
+function (){
+  Recipes.addFurnace(BlockID.bloodgemOre, ItemID.bloodgem);
+  Recipes.addFurnace(BlockID.edenOre, ItemID.edemfrag);
+  Recipes.addFurnace(BlockID.wildwoodOre, ItemID.lesfrag);
+  Recipes.addFurnace(BlockID.netheriteOre, ItemID.netheriteIngot);
+  Recipes.addFurnace(BlockID.rupeeOre, ItemID.ingotRup);
+  Recipes.addFurnace(BlockID.arlemiteOre, ItemID.ingotArl);
+  Recipes.addFurnace(BlockID.realmiteOre, ItemID.ingotReal);
+});
 
 
 
