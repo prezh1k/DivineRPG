@@ -457,7 +457,7 @@ var DIRT_TILES = {
 	60: true
 };
 IDRegistry.genItemID("edenSapling");
-Item.createItem("edenSapling", "Саженец божественного дерева", {name:"edenSapling",data: 1}, inCreative: false);
+Item.createItem("edenSapling", "Саженец божественного дерева", {name:"edenSapling",data: 1, isTech: false});
 IDRegistry.genBlockID("edenSapling");
 Block.createBlock("edenSapling", [
     {name: "Саженец Дерева эдема", texture:
@@ -506,7 +506,7 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 
 
 IDRegistry.genItemID("wildwoodSapling");
-Item.createItem("wildwoodSapling", "Саженец азуритового дерева", {name:"wildwoodSapling",data: 1}, inCreative: false);
+Item.createItem("wildwoodSapling", "Саженец азуритового дерева", {name:"wildwoodSapling",data: 1, isTech: false});
 IDRegistry.genBlockID("wildwoodSapling");
 Block.createBlock("wildwoodSapling", [
     {name: "Саженец Азуритового дерева", texture:
