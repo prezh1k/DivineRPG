@@ -88,7 +88,7 @@ Item.createItem("netheriteChunk", "Незеритовый кусок", {
 });
 Recipes.addShaped({
     id: ItemID.netheriteChunk, count: 1, data: 0}, [
-		" b ",
+    " b ",
 		"bbb",
 		" b "
 	], ['b', ItemID.netheriteIngot, 0]);

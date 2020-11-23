@@ -74,7 +74,7 @@ IDRegistry.genBlockID("realmiteBlock");
 Block.createBlock("realmiteBlock", [
 	{name: "Realmite Block", texture: [["realmiteblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
-ToolAPI.registerBlockMaterial(BlockID.realmiteBlock, "stone");
+ToolAPI.registerBlockMaterial(BlockID.realmiteBlock, "stone", 3);
 Block.registerDropFunction("realmiteBlock", function(coords, blockID, blockData, level){
 	if (level > 2){
 		return [[BlockID.realmiteBlock, 1, 0]]
@@ -92,6 +92,7 @@ IDRegistry.genBlockID("edenBlock");
 Block.createBlock("edenBlock", [
 	{name: "Дравитовый Блок", texture: [["edenBlock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
+ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone", 3);
 Recipes.addShaped({id: BlockID.edenBlock, count: 1, data: 0}, [
 		"bbb",
 		"bbb",
@@ -102,7 +103,7 @@ IDRegistry.genBlockID("arlemiteBlock");
 Block.createBlock("arlemiteBlock", [
 	{name: "Arlemite Block", texture: [["arlemiteblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
-ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone");
+ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone", 3);
 Block.registerDropFunction("arlemiteBlock", function(coords, blockID, blockData, level){
 	if (level > 2){
 		return [[BlockID.arlemiteBlock, 1, 0]]
@@ -114,7 +115,7 @@ IDRegistry.genBlockID("rupeeBlock");
 Block.createBlock("rupeeBlock", [
 	{name: "Rupee Block", texture: [["rupeeblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
-ToolAPI.registerBlockMaterial(BlockID.rupeeBlock, "stone");
+ToolAPI.registerBlockMaterial(BlockID.rupeeBlock, "stone", 3);
 Block.registerDropFunction("rupeeBlock", function(coords, blockID, blockData, level){
 	if (level > 1){
 		return [[BlockID.rupeeBlock, 1, 0]]
@@ -126,73 +127,73 @@ IDRegistry.genBlockID("arlemiteLamp");
 Block.createBlock("arlemiteLamp", [
 	{name: "Arlemite Lamp", texture: [["arlemitelamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.arlemiteLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.arlemiteLamp, "stone", 2);
 
 IDRegistry.genBlockID("rupeeLamp");
 Block.createBlock("rupeeLamp", [
 	{name: "Rupee Lamp", texture: [["rupeelamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.rupeeLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.rupeeLamp, "stone", 2);
 
 IDRegistry.genBlockID("goldLamp");
 Block.createBlock("goldLamp", [
 	{name: "Gold Lamp", texture: [["goldlamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.goldLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.goldLamp, "stone", 2);
 
 IDRegistry.genBlockID("lapisLamp");
 Block.createBlock("lapisLamp", [
 	{name: "Lapis Lamp", texture: [["lapislamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.lapisLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.lapisLamp, "stone", 2);
 
 IDRegistry.genBlockID("redsLamp");
 Block.createBlock("redsLamp", [
 	{name: "Redstone Lamp", texture: [["redstonelamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.redsLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.redsLamp, "stone", 2);
 
 IDRegistry.genBlockID("realLamp");
 Block.createBlock("realLamp", [
 	{name: "Realmite Lamp", texture: [["realmitelamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.realLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.realLamp, "stone", 2);
 
 IDRegistry.genBlockID("endLamp");
 Block.createBlock("endLamp", [
 	{name: "Ender Lamp", texture: [["enderLamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.endLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.endLamp, "stone", 2);
 
 IDRegistry.genBlockID("blazeLamp");
 Block.createBlock("blazeLamp", [
 	{name: "Blaze Lamp", texture: [["blazelamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.blazeLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.blazeLamp, "stone", 2);
 
 IDRegistry.genBlockID("lavaLamp");
 Block.createBlock("lavaLamp", [
 	{name: "Lava Lamp", texture: [["lavalamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.lavaLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.lavaLamp, "stone", 2);
 
 IDRegistry.genBlockID("diamondLamp");
 Block.createBlock("diamondLamp", [
 	{name: "Diamond Lamp", texture: [["diamondlamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.diamondLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.diamondLamp, "stone", 2);
 
 IDRegistry.genBlockID("krakLamp");
 Block.createBlock("krakLamp", [
 	{name: "Kraken Lamp", texture: [["krakenlamp", 0]], inCreative: true}
 ], LampType);
-ToolAPI.registerBlockMaterial(BlockID.krakenLamp, "stone");
+ToolAPI.registerBlockMaterial(BlockID.krakenLamp, "stone", 2);
 
 IDRegistry.genBlockID("ironBrick");
 Block.createBlock("ironBrick", [
 	{name: "Iron Brick", texture: [["ironBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.ironBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.ironBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.ironBrick, count: 1, data: 0}, [
 		"bb",
 		"bb "
@@ -203,7 +204,7 @@ IDRegistry.genBlockID("goldBrick");
 Block.createBlock("goldBrick", [
 	{name: "Gold Brick", texture: [["goldBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.goldBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.goldBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.goldBrick, count: 1, data: 0}, [
 		"bb",
 		"bb "
@@ -212,7 +213,7 @@ IDRegistry.genBlockID("lapisBrick");
 Block.createBlock("lapisBrick", [
 	{name: "Lapis Brick", texture: [["lapisBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.lapisBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.lapisBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lapisBrick, count: 1, data: 0}, [
 		"bb",
 		"bb "
@@ -221,26 +222,26 @@ IDRegistry.genBlockID("lavaBrick");
 Block.createBlock("lavaBrick", [
 	{name: "Lava Brick", texture: [["lavaBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.lavaBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.lavaBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', 325, 10]);
 IDRegistry.genBlockID("diamBrick");
 Block.createBlock("diamBrick", [
 	{name: "Iron Brick", texture: [["diamondBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.diamBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.diamBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', 264, 0]);
 IDRegistry.genBlockID("realBrick");
 Block.createBlock("realBrick", [
 	{name: "Realmite Brick", texture: [["realmiteBricks", 0]], inCreative: true}
 ]);
-ToolAPI.registerBlockMaterial(BlockID.realBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.realBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', ItemID.ingotReal, 0]);
 IDRegistry.genBlockID("arleBrick");
 Block.createBlock("arleBrick", [
 	{name: "Arlemite Brick", texture: [["arlemiteBricks", 0]], inCreative: true}
 ]);
 Recipes.addShaped({id: BlockID.arleBrick, count: 1, data: 0}, ["bb","bb "], ['b',ItemID.ingotArl, 0]);
-ToolAPI.registerBlockMaterial(BlockID.arleBrick, "stone");
+ToolAPI.registerBlockMaterial(BlockID.arleBrick, "stone", 2);
 
 IDRegistry.genBlockID("edenGrass");
 Block.createBlockWithRotation("edenGrass", [
@@ -258,8 +259,8 @@ IDRegistry.genBlockID("twilightStone");
 Block.createBlock("twilightStone", [
 	{name: "Сумеречный камень", texture: [["twilightStone", 0]], inCreative: true} 
 ]);
+ToolAPI.registerBlockMaterial(BlockID.twilightStone, "stone", 0);
 Block.setDestroyTime(BlockID.twilightStone,1)
-
 IDRegistry.genBlockID("divineStone");
 Block.createBlock("divineStone", [
 	{name: "Божественный камень", texture: [["divinestone", 0]], inCreative: true} 
@@ -468,7 +469,12 @@ var DIRT_TILES = {
 	60: true
 };
 IDRegistry.genItemID("edenSapling");
-Item.createItem("edenSapling", "Саженец божественного дерева", {name:"edenSapling",data: 1, isTech: false});
+Item.createItem("edenSapling", "Саженец божественного дерева", {
+    name: "edenSapling"
+}, {
+    isTech: true,
+    stack: 64
+});
 IDRegistry.genBlockID("edenSapling");
 Block.createBlock("edenSapling", [
     {name: "Саженец Дерева эдема", texture:
@@ -517,7 +523,12 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 
 
 IDRegistry.genItemID("wildwoodSapling");
-Item.createItem("wildwoodSapling", "Саженец азуритового дерева", {name:"wildwoodSapling",data: 1, isTech: false});
+Item.createItem("wildwoodSapling", "Саженец азуритового дерева", {
+    name: "wildwoodSapling"
+}, {
+    isTech: true,
+    stack: 64
+});
 IDRegistry.genBlockID("wildwoodSapling");
 Block.createBlock("wildwoodSapling", [
     {name: "Саженец Азуритового дерева", texture:
@@ -570,18 +581,17 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 IMPORT("DivineHelper");
 IMPORT("ToolLib");
 IMPORT("ENV");
- 
- ToolAPI.addBlockMaterial("ore", 3)
- 
 
 IDRegistry.genBlockID("edenOre");
 Block.createBlock("edenOre", [
 	{name: "Дравитовая Руда", texture: [["edenOre", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.edenOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.edenOre, "stone", 3);
 Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.edenOre, 1, 0)
   });
+Block.setDestroyTime(BlockID.edenOre, 4);
+Block.setDestroyLevel(BlockID.edenOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
     if(dimensionid == Aether.id){
@@ -595,11 +605,13 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 IDRegistry.genBlockID("netheriteOre");
 Block.createBlock("netheriteOre", [
 	{name: "Незеритовая руда", texture: [["netherore", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone", 3);
 Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.netheriteOre, 1, 0)
   });
+Block.setDestroyTime(BlockID.netheriteOre, 4);
+Block.setDestroyLevel(BlockID.netheriteOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 128);
@@ -610,11 +622,13 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 IDRegistry.genBlockID("bloodgemOre");
 Block.createBlock("bloodgemOre", [
 	{name: "Каменно-кровавая руда", texture: [["bloodgemore", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.bloodgemOre, "stone", 3);
 Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.bloodgemOre, 1, 0)
 });
+Block.setDestroyTime(BlockID.bloodgemOre, 4);
+Block.setDestroyLevel(BlockID.bloodgemOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 128);
@@ -626,11 +640,13 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 IDRegistry.genBlockID("wildwoodOre");
 Block.createBlock("wildwoodOre", [
 	{name: "Азуритовая Руда", texture: [["wildwoodOre", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "stone", 3);
 Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.wildwoodOre, 1, 0)
   });
+Block.setDestroyTime(BlockID.wildwoodOre, 4);
+Block.setDestroyLevel(BlockID.wildwoodOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
     if(dimensionid == wildwood.id){
@@ -645,11 +661,13 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 IDRegistry.genBlockID("arlemiteOre");
 Block.createBlock("arlemiteOre", [
 	{name: "Арлемитовая Руда", texture: [["arlemiteore", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "stone", 3);
 Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.arlemiteOre, 1, 0)
 });
+Block.setDestroyTime(BlockID.arlemiteOre, 4);
+Block.setDestroyLevel(BlockID.arlemiteOre, 3);
 Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 15);
@@ -659,11 +677,13 @@ Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
 IDRegistry.genBlockID("realmiteOre");
 Block.createBlock("realmiteOre", [
 	{name: "Реалмитовая ", texture: [["realmiteore", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "stone", 3);
 Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.realmiteOre, 1, 0)
   }); 
+Block.setDestroyTime(BlockID.realmiteOre, 4);
+Block.setDestroyLevel(BlockID.realmiteOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<3; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 20);
@@ -674,11 +694,13 @@ Block.registerDropFunction("realmiteOre",
 IDRegistry.genBlockID("rupeeOre");
 Block.createBlock("rupeeOre", [
 	{name: "Рупиевая Руда", texture: [["rupeeore", 0]], inCreative: true}]);
-ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "ore");
+ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "stone", 3);
 Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.rupeeOre, 1, 0)
   }); 
+Block.setDestroyTime(BlockID.rupeeOre, 4);
+Block.setDestroyLevel(BlockID.rupeeOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
         var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 15);
@@ -2188,7 +2210,7 @@ Item.createItem("netheriteChunk", "Незеритовый кусок", {
 });
 Recipes.addShaped({
     id: ItemID.netheriteChunk, count: 1, data: 0}, [
-		" b ",
+    " b ",
 		"bbb",
 		" b "
 	], ['b', ItemID.netheriteIngot, 0]);
