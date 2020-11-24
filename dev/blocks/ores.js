@@ -10,7 +10,7 @@ Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.edenOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.edenOre, 4);
+Block.setDestroyTime(BlockID.edenOre, 6);
 Block.setDestroyLevel(BlockID.edenOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -30,7 +30,7 @@ Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.netheriteOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.netheriteOre, 4);
+Block.setDestroyTime(BlockID.netheriteOre, 6);
 Block.setDestroyLevel(BlockID.netheriteOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -47,7 +47,7 @@ Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.bloodgemOre, 1, 0)
 });
-Block.setDestroyTime(BlockID.bloodgemOre, 4);
+Block.setDestroyTime(BlockID.bloodgemOre, 6);
 Block.setDestroyLevel(BlockID.bloodgemOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -65,7 +65,7 @@ Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.wildwoodOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.wildwoodOre, 4);
+Block.setDestroyTime(BlockID.wildwoodOre, 6);
 Block.setDestroyLevel(BlockID.wildwoodOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -86,7 +86,7 @@ Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.arlemiteOre, 1, 0)
 });
-Block.setDestroyTime(BlockID.arlemiteOre, 4);
+Block.setDestroyTime(BlockID.arlemiteOre, 6);
 Block.setDestroyLevel(BlockID.arlemiteOre, 3);
 Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
@@ -102,7 +102,7 @@ Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.realmiteOre, 1, 0)
   }); 
-Block.setDestroyTime(BlockID.realmiteOre, 4);
+Block.setDestroyTime(BlockID.realmiteOre, 6);
 Block.setDestroyLevel(BlockID.realmiteOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<3; i++){
@@ -119,7 +119,7 @@ Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.rupeeOre, 1, 0)
   }); 
-Block.setDestroyTime(BlockID.rupeeOre, 4);
+Block.setDestroyTime(BlockID.rupeeOre, 6);
 Block.setDestroyLevel(BlockID.rupeeOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){

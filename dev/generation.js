@@ -10,7 +10,7 @@ if (dimensionId == Aether.id) {
  for (i = 0; i < 25; i++) {
  if (coords.y < 20) return;
 if (random.nextFloat() < .9) {
-  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.wildwoodGrass)
+  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.edenGrass)
 edentree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
     }
   }

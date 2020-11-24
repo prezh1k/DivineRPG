@@ -12,32 +12,32 @@ IDRegistry.genItemID("netherChestplate");
 IDRegistry.genItemID("netherLeggings");
 IDRegistry.genItemID("netherBoots");
 
-Item.createArmorItem("arlHelmet", "Незеритовый шлем", {
-    name: "arlemitehelmet"
+Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
+    name: "netheriteHelmet"
 }, {
     type: "helmet",
     armor: 6,
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("arlChestplate", "Незеритовая кираса", {
-    name: "arlemitebody"
+Item.createArmorItem("netherChestplate", "Незеритовая кираса", {
+    name: "netheriteChestplate"
 }, {
     type: "chestplate",
     armor: 15,
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("arlLeggings", "Незеритовые поножи", {
-    name: "arlemitelegs"
+Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
+    name: "netheriteLeggins"
 }, {
     type: "leggings",
     armor: 10,
     durability: 5000,
     texture: "armor/netherite_2.png"
 });
-Item.createArmorItem("arlBoots", "Незеритовые ботинки", {
-    name: "arlemiteboots"
+Item.createArmorItem("netherBoots", "Незеритовые ботинки", {
+    name: "netheriteBoots"
 }, {
     type: "boots",
     armor: 4,
@@ -45,7 +45,7 @@ Item.createArmorItem("arlBoots", "Незеритовые ботинки", {
     texture: "armor/netherite_1.png"
 });
 Recipes.addShaped({
-    id: ItemID.arlHelmet,
+    id: ItemID.netherHelmet,
     count: 1,
     data: 0
 }, [
@@ -55,7 +55,7 @@ Recipes.addShaped({
 ], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot,0]);
 
 Recipes.addShaped({
-    id: ItemID.arlChestplate,
+    id: ItemID.netherChestplate,
     count: 1,
     data: 0
 }, [
@@ -65,7 +65,7 @@ Recipes.addShaped({
 ], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot,0]);
 
 Recipes.addShaped({
-    id: ItemID.arlLeggings,
+    id: ItemID.netherLeggings,
     count: 1,
     data: 0
 }, [
@@ -75,7 +75,7 @@ Recipes.addShaped({
 ], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot, 0]);
 
 Recipes.addShaped({
-    id: ItemID.arlBoots,
+    id: ItemID.netherBoots,
     count: 1,
     data: 0
 }, [

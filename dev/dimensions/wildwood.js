@@ -76,17 +76,18 @@ var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- CP = GenerationUtils.findHighSurface(CP.x, CP.z);
+ CP = GenerationUtils.findSurface(CP.x, 78, CP.z);
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y+1, CP.z);
+Entity.setPosition(player, CP.x, CP.y+3, CP.z);
  if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
     portalGenerationHelper2.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
  this.remove = this.age++ > 5;
        }
      }
-   })
+   });
+   teleport = true;
   }}
 }});
 
@@ -99,14 +100,15 @@ var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- crdsP = GenerationUtils.findHighSurface(crdsP.x, crdsP.z);
+ CP = GenerationUtils.findSurface(CP.x, 70, CP.z);
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y + 1, CP.z);
+Entity.setPosition(player, CP.x, CP.y + 3, CP.z);
  this.remove = this.age++ > 5;
        }
     });
+    teleport = true;
   }}
 }});
 
