@@ -2,7 +2,7 @@
 BUILD INFO:
   dir: dev
   target: main.js
-  files: 18
+  files: 19
 */
 
 
@@ -590,7 +590,7 @@ Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.edenOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.edenOre, 4);
+Block.setDestroyTime(BlockID.edenOre, 6);
 Block.setDestroyLevel(BlockID.edenOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -610,7 +610,7 @@ Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.netheriteOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.netheriteOre, 4);
+Block.setDestroyTime(BlockID.netheriteOre, 6);
 Block.setDestroyLevel(BlockID.netheriteOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -627,7 +627,7 @@ Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.bloodgemOre, 1, 0)
 });
-Block.setDestroyTime(BlockID.bloodgemOre, 4);
+Block.setDestroyTime(BlockID.bloodgemOre, 6);
 Block.setDestroyLevel(BlockID.bloodgemOre, 3);
 Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
     for (var i=0; i<6; i++) {
@@ -645,7 +645,7 @@ Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.wildwoodOre, 1, 0)
   });
-Block.setDestroyTime(BlockID.wildwoodOre, 4);
+Block.setDestroyTime(BlockID.wildwoodOre, 6);
 Block.setDestroyLevel(BlockID.wildwoodOre, 3);
 Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
 
@@ -666,7 +666,7 @@ Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
   return(BlockID.arlemiteOre, 1, 0)
 });
-Block.setDestroyTime(BlockID.arlemiteOre, 4);
+Block.setDestroyTime(BlockID.arlemiteOre, 6);
 Block.setDestroyLevel(BlockID.arlemiteOre, 3);
 Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
@@ -682,7 +682,7 @@ Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.realmiteOre, 1, 0)
   }); 
-Block.setDestroyTime(BlockID.realmiteOre, 4);
+Block.setDestroyTime(BlockID.realmiteOre, 6);
 Block.setDestroyLevel(BlockID.realmiteOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<3; i++){
@@ -699,7 +699,7 @@ Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {
     return (BlockID.rupeeOre, 1, 0)
   }); 
-Block.setDestroyTime(BlockID.rupeeOre, 4);
+Block.setDestroyTime(BlockID.rupeeOre, 6);
 Block.setDestroyLevel(BlockID.rupeeOre, 3);
   Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
     for (var i=0; i<2; i++){
@@ -926,17 +926,18 @@ var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- CP = GenerationUtils.findHighSurface(CP.x, CP.z);
+ CP = GenerationUtils.findSurface(CP.x, 78, CP.z);
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y+1, CP.z);
+Entity.setPosition(player, CP.x, CP.y+2, CP.z);
  if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
     portalGenerationHelper2.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
  this.remove = this.age++ > 5;
        }
      }
-   })
+   });
+   teleport = true;
   }}
 }});
 
@@ -949,7 +950,7 @@ var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- crdsP = GenerationUtils.findHighSurface(crdsP.x, crdsP.z);
+ crdsP = GenerationUtils.findSurface(CP.x, 70, CP.z);
  Updatable.addUpdatable({
  age: 0,
  update: function () {
@@ -957,6 +958,7 @@ Entity.setPosition(player, CP.x, CP.y + 1, CP.z);
  this.remove = this.age++ > 5;
        }
     });
+    teleport = true;
   }}
 }});
 
@@ -1368,6 +1370,96 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', 7, 0]);
+
+
+
+
+// file: items/armors/nether.js
+
+IDRegistry.genItemID("netherIngot")
+Item.createItem("netherIngot", "Слиток адского камня", {
+    name: "netherIngot"
+});
+Recipes.addShaped({
+    id: ItemID.netherIngot, count: 1, data: 0}, [
+		"ab"
+	], ['a', ItemID.shadowingot, 0, 'b', ItemID.netheriteChunk,0]);
+	
+IDRegistry.genItemID("netherHelmet");
+IDRegistry.genItemID("netherChestplate");
+IDRegistry.genItemID("netherLeggings");
+IDRegistry.genItemID("netherBoots");
+
+Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
+    name: "netheriteHelmet"
+}, {
+    type: "helmet",
+    armor: 6,
+    durability: 5000,
+    texture: "armor/netherite_1.png"
+});
+Item.createArmorItem("netherChestplate", "Незеритовая кираса", {
+    name: "netheriteChestplate"
+}, {
+    type: "chestplate",
+    armor: 15,
+    durability: 5000,
+    texture: "armor/netherite_1.png"
+});
+Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
+    name: "netheriteLeggins"
+}, {
+    type: "leggings",
+    armor: 10,
+    durability: 5000,
+    texture: "armor/netherite_2.png"
+});
+Item.createArmorItem("netherBoots", "Незеритовые ботинки", {
+    name: "netheriteBoots"
+}, {
+    type: "boots",
+    armor: 4,
+    durability: 5000,
+    texture: "armor/netherite_1.png"
+});
+Recipes.addShaped({
+    id: ItemID.netherHelmet,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "a a",
+    "x x"
+], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot,0]);
+
+Recipes.addShaped({
+    id: ItemID.netherChestplate,
+    count: 1,
+    data: 0
+}, [
+    "xax",
+    "xax",
+    " x "
+], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot,0]);
+
+Recipes.addShaped({
+    id: ItemID.netherLeggings,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "a a",
+    "x x"
+], ['x', ItemID.netheriteChunk, 0, 'a', ItemID.shadowingot, 0]);
+
+Recipes.addShaped({
+    id: ItemID.netherBoots,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "a a"
+], ['a', ItemID.netheriteChunk, 0, 'x', ItemID.shadowingot,0]);
 
 
 
@@ -4380,7 +4472,7 @@ if (dimensionId == Aether.id) {
  for (i = 0; i < 25; i++) {
  if (coords.y < 20) return;
 if (random.nextFloat() < .9) {
-  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.wildwoodGrass)
+  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.edenGrass)
 edentree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
     }
   }
