@@ -16,6 +16,7 @@ items/tools/rupee.js
 items/tools/realmite.js
 items/tools/divine.js
 items/tools/bedrock.js
+items/tools/edem.js
 items/tools/bows/wildwoodBow.js
 items/tools/bows/uviteBow.js
 items/items.js
