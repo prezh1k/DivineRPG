@@ -3,18 +3,6 @@ IMPORT("ToolLib");
 IMPORT("ENV");
 IMPORT("PortalUtils");
 
-IDRegistry.genItemID("twilightClock");
-Item.createItem("twilightClock", "Сумеречные Часы", {
-    name: "twilightClock"
-}, {
-    stack: 1
-});
-Recipes.addShaped({
-    id: ItemID.twilightClock, count: 1, data: 0}, [
-		"bbb",
-		"bbb",
-		"bbb"
-	], ['b', 347, 0]);
 /*
 Callback.addCallback('EntityDeath', function(entity, attacker, damageType) {
     if (Entity.getType(entity) == 52) {
@@ -74,6 +62,7 @@ IDRegistry.genItemID("moltenShard");
 IDRegistry.genItemID("moltenStone");
 IDRegistry.genItemID("corruptShard");
 IDRegistry.genItemID("corruptStone");
+IDRegistry.genItemID("twilightClock");
 Item.createItem("ingotReal", "Реалмитовый слиток", {
     name: "realmiteingot"
 });
@@ -146,7 +135,17 @@ Item.createItem("corruptShard", "Corrupted Shard", {
 Item.createItem("corruptStone", "Corrupted Stone", {
     name: "corruptedStone"
 });
-
+Item.createItem("twilightClock", "Сумеречные Часы", {
+    name: "twilightClock"
+}, {
+    stack: 1
+});
+Recipes.addShaped({
+    id: ItemID.twilightClock, count: 1, data: 0}, [
+        "bbb",
+        "bbb",
+        "bbb"
+    ], ['b', 347, 0]);
 //molten
 IDRegistry.genItemID("moltenSword");
 Item.createItem("moltenSword", "Molten Sword", {
@@ -498,42 +497,6 @@ Item.createArmorItem("trBoots", "Terran Boots", {
 });
 
 //worlds
-IDRegistry.genItemID("quanda");
-IDRegistry.genItemID("quandb");
-IDRegistry.genItemID("quandc");
-IDRegistry.genItemID("quandd");
-Item.createArmorItem("quanda", "Шлем эдема", {
-    name: "quandahelm"
-}, {
-    type: "helmet",
-    armor: 6,
-    durability: 2000,
-    texture: "armor/quanda_1.png"
-});
-Item.createArmorItem("quandb", "Нагрудник эдема", {
-    name: "quandbchest"
-}, {
-    type: "chestplate",
-    armor: 6,
-    durability: 2500,
-    texture: "armor/quanda_1.png"
-});
-Item.createArmorItem("quandc", "Штаны эдема", {
-    name: "quandclegs"
-}, {
-    type: "leggings",
-    armor: 6,
-    durability: 2400,
-    texture: "armor/quanda_2.png"
-});
-Item.createArmorItem("quandd", "Ботинки эдема", {
-    name: "quanddboots"
-}, {
-    type: "boots",
-    armor: 6,
-    durability: 2000,
-    texture: "armor/quanda_1.png"
-});
 
 IDRegistry.genItemID("quande");
 IDRegistry.genItemID("quandf");
@@ -805,46 +768,6 @@ ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
 ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);
 
-IDRegistry.genItemID("edemsword");
-IDRegistry.genItemID("edempickaxe");
-IDRegistry.genItemID("edemshovel");
-IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "меч эдема", {
-    name: "edemsword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemshovel", "лопата эдема", {
-    name: "edemshovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edempickaxe", " кирка эдема", {
-    name: "edempickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemaxe", "тапор эдема", {
-    name: "edemaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("edem", {
-    durability: 1500,
-    level: 4,
-    efficiency: 24,
-    damage: 25,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
-ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
-ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
 
 IDRegistry.genItemID("ternsword");
 IDRegistry.genItemID("ternpickaxe");
@@ -1042,89 +965,6 @@ Recipes.addShaped({
     "a a",
     "a a"
 ], ['a', ItemID.edemkusok, 0]);
-
-Recipes.addShaped({
-    id: ItemID.edempickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemsword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.edemshovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quanda,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "   ",
-], ['a', ItemID.edemkristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandb,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa ",
-    " a ",
-], ['a', ItemID.edemkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandc,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.edemkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandd,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.edemkristal, 0]);
 
 Recipes.addShaped({
     id: ItemID.leskusok,
