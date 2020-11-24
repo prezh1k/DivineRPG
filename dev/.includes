@@ -10,6 +10,7 @@ items/armors/rupee.js
 items/armors/divine.js
 items/armors/bedrock.js
 items/armors/nether.js
+items/armors/edem.js
 items/tools/arlemite.js
 items/tools/rupee.js
 items/tools/realmite.js
