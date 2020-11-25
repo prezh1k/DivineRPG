@@ -2,25 +2,25 @@ IDRegistry.genItemID("edemsword");
 IDRegistry.genItemID("edempickaxe");
 IDRegistry.genItemID("edemshovel");
 IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "меч эдема", {
+Item.createItem("edemsword", "Дравитовый клинок", {
     name: "edemsword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemshovel", "лопата эдема", {
+Item.createItem("edemshovel", "Дравитовая лопата", {
     name: "edemshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edempickaxe", " кирка эдема", {
+Item.createItem("edempickaxe", "Дравитовая кирка", {
     name: "edempickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemaxe", "тапор эдема", {
+Item.createItem("edemaxe", "Дравитовый топор", {
     name: "edemaxe",
     meta: 0
 }, {
@@ -28,10 +28,10 @@ Item.createItem("edemaxe", "тапор эдема", {
 });
 
 ToolAPI.addToolMaterial("edem", {
-    durability: 1500,
+    durability: 2000,
     level: 4,
     efficiency: 24,
-    damage: 25,
+    damage: 24,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);

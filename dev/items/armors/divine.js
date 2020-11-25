@@ -73,3 +73,9 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.divinestone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.divHelmet && Player.getArmorSlot(1).id == ItemID.divChestplate && Player.getArmorSlot(2).id == ItemID.divLeggings && Player.getArmorSlot(3).id == ItemID.divBoots) {
+        Entity.addEffect(Player.get(), 5, 1, 20,false, false);
+        Entity.addEffect(Player.get(), 8, 1, 20, false, false);
+    }
+})

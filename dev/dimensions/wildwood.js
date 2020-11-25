@@ -66,12 +66,30 @@ if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.wildwoodPortal){
     Dimensions.transfer(Player.get(), 0);
 }});
 
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) { 
+if (to == wildwood.id) { 
+ var players = Network.getConnectedPlayers(); 
+ for (var i in players) { 
+var player = players[i]; 
+var CP = Entity.getPosition(player); 
+CP = GenerationUtils.findSurface(CP.x, 78, CP.z); 
+ 
+ Updatable.addUpdatable({ 
+ age: 0, 
+ update: function () { 
+ Entity.setPosition(player, CP.x, CP.y + 2, CP.z); 
+ this.remove = this.age++ > 5; 
+ } 
+ }); 
+ } 
+ } 
+});
+
 var teleport = false;
 
-Callback.addCallback('CustomDimensionTransfer', function (entity, from, to, coords) {
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
 
-if (to == wildwood.id) { 
-if (!teleport) {
+if (to == 0 && from == wildwood.id) { 
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
@@ -80,36 +98,12 @@ var players = Network.getConnectedPlayers();
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y+3, CP.z);
- if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
-    portalGenerationHelper2.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
+Entity.setPosition(player, CP.x, CP.y+4, CP.z-2); 
  this.remove = this.age++ > 5;
-       }
-     }
-   });
-   teleport = true;
-  }}
-}});
-
- 
-var teleport = false;
-Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
-if (to == 0 && from == wildwood.id) { 
-    if (!teleport){
-var players = Network.getConnectedPlayers();
- for (var i in players) {
- var player = players[i];
- var CP = Entity.getPosition(player);
- CP = GenerationUtils.findSurface(CP.x, 70, CP.z);
- Updatable.addUpdatable({
- age: 0,
- update: function () {
-Entity.setPosition(player, CP.x, CP.y + 3, CP.z);
- this.remove = this.age++ > 5;
-       }
-    });
-    teleport = true;
-  }}
+ }
+});
+teleport = true;
+}
 }});
 
 Saver.addSavesScope("teleport",

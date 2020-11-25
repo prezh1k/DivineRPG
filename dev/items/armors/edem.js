@@ -2,36 +2,36 @@ IDRegistry.genItemID("quanda");
 IDRegistry.genItemID("quandb");
 IDRegistry.genItemID("quandc");
 IDRegistry.genItemID("quandd");
-Item.createArmorItem("quanda", "Шлем эдема", {
+Item.createArmorItem("quanda", "Дравитовый шлем", {
     name: "quandahelm"
 }, {
     type: "helmet",
     armor: 6,
-    durability: 2000,
+    durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandb", "Нагрудник эдема", {
+Item.createArmorItem("quandb", "Дравитовая кираса", {
     name: "quandbchest"
 }, {
     type: "chestplate",
     armor: 6,
-    durability: 2500,
+    durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandc", "Штаны эдема", {
+Item.createArmorItem("quandc", "Дравитовые поножи", {
     name: "quandclegs"
 }, {
     type: "leggings",
     armor: 6,
-    durability: 2400,
+    durability: 10000000,
     texture: "armor/quanda_2.png"
 });
-Item.createArmorItem("quandd", "Ботинки эдема", {
+Item.createArmorItem("quandd", "Дравитовые ботинки", {
     name: "quanddboots"
 }, {
     type: "boots",
     armor: 6,
-    durability: 2000,
+    durability: 10000000,
     texture: "armor/quanda_1.png"
 });
 
@@ -75,3 +75,9 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.edemkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quanda && Player.getArmorSlot(1).id == ItemID.quandb && Player.getArmorSlot(2).id == ItemID.quandc && Player.getArmorSlot(3).id == ItemID.quandd) {
+        Entity.addEffect(Player.get(), 5, 10, 2, false, false);
+    }
+    
+})

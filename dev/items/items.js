@@ -87,31 +87,31 @@ Item.createItem("ingotArl", "Арлемитовый слиток", {
 Item.createItem("ingotRup", "Рупиевый слиток", {
     name: "rupeeingot"
 });
-Item.createItem("crabclaw", "Crab Claw", {
+Item.createItem("crabclaw", "Коготь краба", {
     name: "crabclaw"
 });
-Item.createItem("cyclopeye", "Cyclops Eye", {
+Item.createItem("cyclopeye", "Око циклопа", {
     name: "cyclopseye"
 });
-Item.createItem("smesh", "Divine Shard", {
+Item.createItem("smesh", "Божественный осколок", {
     name: "divineShard"
 });
 Item.createItem("divinestone", "Divine Stone", {
     name: "divinestone"
 });
-Item.createItem("krscale", "Kraken Scale", {
+Item.createItem("krscale", "Чешуя кракена", {
     name: "krakenscale"
 });
-Item.createItem("krskin", "Kraken Skin", {
+Item.createItem("krskin", "Кожа кракена", {
     name: "krakenskin"
 });
 Item.createItem("terrastone", "Terra Stone", {
     name: "terranStone"
 });
-Item.createItem("shadowingot", "Shadow Ingot", {
+Item.createItem("shadowingot", "Теневой слиток", {
     name: "shadowing"
 });
-Item.createItem("shadowstone", "Shadow Stone", {
+Item.createItem("shadowstone", "Теневой камень", {
     name: "shadowstone"
 });
 Item.createItem("shadowstick", "Shadow Stick", {
@@ -129,10 +129,10 @@ Item.createItem("moltenStone", "Molten Stone", {
 Item.createItem("moltenShard", "Molten Shard", {
     name: "moltenShard"
 });
-Item.createItem("corruptShard", "Corrupted Shard", {
+Item.createItem("corruptShard", "Поврежденный осколок", {
     name: "corruptedShard"
 });
-Item.createItem("corruptStone", "Corrupted Stone", {
+Item.createItem("corruptStone", "Повреждённый камень", {
     name: "corruptedStone"
 });
 Item.createItem("twilightClock", "Сумеречные Часы", {
@@ -146,240 +146,25 @@ Recipes.addShaped({
         "bbb",
         "bbb"
     ], ['b', 347, 0]);
-//molten
-IDRegistry.genItemID("moltenSword");
-Item.createItem("moltenSword", "Molten Sword", {
-    name: "moltenSword",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("molt", {
-    durability: 2500,
-    level: 4,
-    efficiency: 16,
-    damage: 10,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.moltenSword, "molt", ToolType.sword);
-//corrupt
-IDRegistry.genItemID("corruptedSword");
-Item.createItem("corruptedSword", "Corrupted Sword", {
-    name: "corruptedSword",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("crpt", {
-    durability: 6000,
-    level: 4,
-    efficiency: 16,
-    damage: 25,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.corruptedSword, "crpt", ToolType.sword);
-//bedrock
-
-//ice
-IDRegistry.genItemID("iceBlade");
-IDRegistry.genItemID("icePick");
-Item.createItem("iceBlade", "Ice Blade", {
-    name: "iceBlade",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("icePick", "Ice Pickaxe", {
-    name: "icePick",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("ice", {
-    durability: 5000,
-    level: 4,
-    efficiency: 18,
-    damage: 25,
-    enchantability: 15
-});
-ToolAPI.setTool(ItemID.iceBlade, "ice", ToolType.sword);
-ToolAPI.setTool(ItemID.icePick, "ice", ToolType.pickaxe);
-//cyclop
-IDRegistry.genItemID("crabclawmaul");
-Item.createItem("crabclawmaul", "Crab Claw Maul", {
-    name: "crabclawmaul",
-    meta: 0
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.crabclawmaul, "divine", ToolType.sword);
-//crab
-IDRegistry.genItemID("cyclopSword");
-Item.createItem("cyclopSword", "Cyclopsian Sword", {
-    name: "cyclopsiansword",
-    meta: 0
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.cyclopSword, "divine", ToolType.sword);
 
 Recipes.addShaped({
-    id: ItemID.cyclopSword,
+    id: ItemID.shadowingot,
     count: 1,
     data: 0
 }, [
-    "b",
-    "b",
-    "d"
-], ['b', ItemID.cyclopeye, 0, 'd', 280, 0]);
-
-//massivnec
-//shadow
-IDRegistry.genItemID("massivnic");
-Item.createItem("massivnic", "Massivence", {
-    name: "massivence"
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.massivnic, "real", ToolType.maul);
+    "bc"
+], ['b', ItemID.ingotArl, 0, 'c', ItemID.ingotRup, 0]);
 Recipes.addShaped({
-    id: ItemID.massivnic,
+    id: ItemID.shadowstone,
     count: 1,
     data: 0
 }, [
-    "b",
-    "cbc",
-    "d"
-], ['b', ItemID.shadowstone, 0, 'd', 280, 0, 'c', ItemID.ingotRup, 0]);
-//terrain
-IDRegistry.genItemID("terranDagger");
-IDRegistry.genItemID("terranMaul");
-IDRegistry.genItemID("terranKnife");
-Item.createItem("terranDagger", "Terran Dagger", {
-    name: "terranDagger"
-}, {
-    stack: 1
-});
-Item.createItem("terranMaul", "Terran Maul", {
-    name: "terranMaul"
-}, {
-    stack: 1
-});
-Item.createItem("terranKnife", "Terran Knife", {
-    name: "terranKnife"
-}, {
-    stack: 1
-});
-ToolAPI.addToolMaterial("terra", {
-    durability: 1500,
-    level: 4,
-    efficiency: 27,
-    damage: 6,
-    enchantability: 13
-});
-ToolAPI.addToolMaterial("terraone", {
-    durability: 2000,
-    level: 4,
-    efficiency: 27,
-    damage: 12,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.terranDagger, "terra", ToolType.sword);
-ToolAPI.setTool(ItemID.terranMaul, "terra", ToolType.maul);
-ToolAPI.setTool(ItemID.terranKnife, "terraone", ToolType.maul);
-//RecipeTerranSwords
-Recipes.addShaped({
-    id: ItemID.terranDagger,
-    count: 1,
-    data: 0
-}, [
-    "b",
-    "d"
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-Recipes.addShaped({
-    id: ItemID.terranMaul,
-    count: 1,
-    data: 0
-}, [
-    " b ",
-    "10000000b",
-    " d "
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-Recipes.addShaped({
-    id: ItemID.shadowstick,
-    count: 1,
-    data: 0
-}, [
+    "bb",
     "bb"
 ], ['b', ItemID.shadowingot, 0]);
-Recipes.addShaped({
-    id: ItemID.terranKnife,
-    count: 1,
-    data: 0
-}, [
-    "b b",
-    "10000000b",
-    " d "
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-//shadow
-IDRegistry.genItemID("shadowSaber");
-Item.createItem("shadowSaber", "Shadow Saber", {
-    name: "shadowSaber"
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.shadowSaber, "terra", ToolType.maul);
-Recipes.addShaped({
-    id: ItemID.shadowSaber,
-    count: 1,
-    data: 0
-}, [
-    "b",
-    "b",
-    "d"
-], ['b', ItemID.shadowstone, 0, 'd', 280, 0]);
 
-//corrupt
-IDRegistry.genItemID("corptHelm");
-IDRegistry.genItemID("corptChest");
-IDRegistry.genItemID("corptLegs");
-IDRegistry.genItemID("corptBoots");
 
-Item.createArmorItem("corptHelm", "Corrupted Helmet", {
-    name: "corruptedHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptChest", "Corrupted Chestplate", {
-    name: "corruptedChestplate"
-}, {
-    type: "chestplate",
-    armor: 7,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptLegs", "Corrupted Leggings", {
-    name: "corruptedLeggings"
-}, {
-    type: "leggings",
-    armor: 4,
-    durability: 6000,
-    texture: "armor/corrupted_2.png"
-});
-Item.createArmorItem("corptBoots", "Corrupted Boots", {
-    name: "corruptedBoots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
+
 
 //shadow
 IDRegistry.genItemID("shadowHelmet");
@@ -459,83 +244,7 @@ Item.createArmorItem("krBoots", "Kraken Boots", {
     texture: "armor/kraken_1.png"
 });
 
-IDRegistry.genItemID("trHelmet");
-IDRegistry.genItemID("trChestplate");
-IDRegistry.genItemID("trLeggings");
-IDRegistry.genItemID("trBoots");
-Item.createArmorItem("trHelmet", "Terran Helmet", {
-    name: "terranHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-Item.createArmorItem("trChestplate", "Terran Chestplate", {
-    name: "terranChestplate"
-}, {
-    type: "chestplate",
-    armor: 7,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-Item.createArmorItem("trLeggings", "Terran Leggings", {
-    name: "terranLeggings"
-}, {
-    type: "leggings",
-    armor: 5,
-    durability: 5000,
-    texture: "armor/terran_2.png"
-});
-Item.createArmorItem("trBoots", "Terran Boots", {
-    name: "terranBoots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-
 //worlds
-
-IDRegistry.genItemID("quande");
-IDRegistry.genItemID("quandf");
-IDRegistry.genItemID("quandg");
-IDRegistry.genItemID("quandh");
-Item.createArmorItem("quande", "Шлем дикого леса", {
-    name: "quandehelm"
-}, {
-    type: "helmet",
-    armor: 8,
-    durability: 3000,
-    texture: "armor/quanda_3.png"
-});
-Item.createArmorItem("quandf", "Нагрудник дикого леса", {
-    name: "quandfchest"
-}, {
-    type: "chestplate",
-    armor: 8,
-    durability: 3100,
-    texture: "armor/quanda_3.png"
-});
-Item.createArmorItem("quandg", "Штаны дикого леса", {
-    name: "quandglegs"
-}, {
-    type: "leggings",
-    armor: 8,
-    durability: 3050,
-    texture: "armor/quanda_4.png"
-});
-Item.createArmorItem("quandh", "Ботинки дикого леса", {
-    name: "quandhboots"
-}, {
-    type: "boots",
-    armor: 8,
-    durability: 3000,
-    texture: "armor/quanda_3.png"
-});
-
-
 IDRegistry.genItemID("quandj");
 IDRegistry.genItemID("quandk");
 IDRegistry.genItemID("quandl");
@@ -716,58 +425,16 @@ Item.createItem("apalaziaxe", "апалачивый тапор", {
 });
 
 ToolAPI.addToolMaterial("apalazi", {
-    durability: 3500,
+    durability: 2000,
     level: 4,
     efficiency: 30,
-    damage: 30,
+    damage: 29,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
 ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
 ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);
-
-IDRegistry.genItemID("azurisword");
-IDRegistry.genItemID("azuripickaxe");
-IDRegistry.genItemID("azurishovel");
-IDRegistry.genItemID("azuriaxe");
-Item.createItem("azurisword", "меч дикого леса", {
-    name: "azurisword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azurishovel", "лопата дикого леса", {
-    name: "azurishovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azuripickaxe", " кирка дикого леса", {
-    name: "azuripickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azuriaxe", "тапор дикого леса", {
-    name: "azuriaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("azuri", {
-    durability: 2500,
-    level: 4,
-    efficiency: 27,
-    damage: 28,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.azurisword, "azuri", ToolType.sword);
-ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
-ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);
-
 
 IDRegistry.genItemID("ternsword");
 IDRegistry.genItemID("ternpickaxe");
@@ -799,10 +466,10 @@ Item.createItem("ternaxe", "тапор небесного терна", {
 });
 
 ToolAPI.addToolMaterial("tern", {
-    durability: 4500,
+    durability: 2000,
     level: 4,
     efficiency: 44,
-    damage: 32,
+    damage: 31,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
@@ -840,10 +507,10 @@ Item.createItem("moraxe", "топор мортума", {
 });
 
 ToolAPI.addToolMaterial("mor", {
-    durability: 5000,
+    durability: 2000,
     level: 4,
     efficiency: 55,
-    damage: 34,
+    damage: 33,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
@@ -996,88 +663,7 @@ Recipes.addShaped({
     "a a"
 ], ['a', ItemID.leskusok, 0]);
 
-Recipes.addShaped({
-    id: ItemID.azuripickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
 
-
-Recipes.addShaped({
-    id: ItemID.azurisword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.azuriaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.azurishovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quande,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "      ",
-], ['a', ItemID.leskristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandf,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a ",
-], ['a', ItemID.leskristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandg,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.leskristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandh,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.leskristal, 0]);
 
 
 Recipes.addShaped({
@@ -1991,7 +1577,15 @@ var portalGenerationHelper1 = {
             this.p(crds.x, crds.y, crds.z+2,
                 block.frame);
             this.p(crds.x+1, crds.y, crds.z+2,
-                block.frame);                 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
+                block.frame);
             }
       }
 }
@@ -2076,6 +1670,15 @@ var portalGenerationHelper2 = {
             this.p(crds.x, crds.y, crds.z+2,
                 block.frame);
             this.p(crds.x+1, crds.y, crds.z+2,
+ 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
                 block.frame);
             }
       }

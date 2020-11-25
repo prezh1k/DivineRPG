@@ -4,13 +4,12 @@ var Aether = new Dimensions.CustomDimension("Aether", 1991); // (-_-)
 Aether.setSkyColor(.97, .87, .7)
 Aether.setFogColor(.97, .87, .7);
 World.setDayMode(true);
-alert(World.getWeather());
 
 Aether.setGenerator(Dimensions.newGenerator({
 layers: [
 {
-minY: 0, maxY: 75,
-yConversion: [[0, -.5], [.25, -.25], [.5, 0], [.75, -.25], [1, -.5 ]],
+minY: 0, maxY: 180,
+yConversion: [[0, -.6], [0.1, -.52], [0.5, -.25], [0.7, -.25], [.85, -.24], [1, -.6]],
 material: {base: BlockID.twilightStone, surface: {id:BlockID.edenDirt, data: 0, width:4}, cover: BlockID.edenGrass},
 noise: {octaves: {count: 4, scale: 40, weight_factor: 3, weight: 1.28}}
 }
@@ -67,41 +66,38 @@ if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.edenPortal){
     Dimensions.transfer(Player.get(), 0);
 }});
 
-var teleport = false;
 Callback.addCallback('CustomDimensionTransfer', function (entity, from, to, coords) {
 if (to == Aether.id) { 
-if (!teleport) {
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- CP = GenerationUtils.findSurface(CP.x, 78, CP.z);
+ CP = GenerationUtils.findSurface(CP.x, 89, CP.z);
+ 
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y, CP.z);
- if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
-    portalGenerationHelper1.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
- this.remove = this.age++ > 5;
-       }
-     }
-   })
-  }}
-}});
+   for (i =0; i < 256; i++) {
 
-Saver.addSavesScope("teleport",
-function read(scope) {
-TPA = scope.teleport;
-  },
-function save() {
-return {TPA : teleport };
+   if (World.getBlock(CP.x, i, CP.z) == BlockID.edenGrass){
+continue;
+ portalGenerationHelper1.generatePortal({x: CP.x, y: i, z: CP.z});
+ Entity.setPosition(player, CP.x+1, i+2, CP.z+1);
+}
+  else{
+  portalGenerationHelper1.generatePortal({x: CP.x, y: 140, z: CP.z});
+  Entity.setPosition(player, CP.x+2, 142, CP.z+2);
+ this.remove = this.age++ > 100;
   }
-);
+ }
+}
+})
+}}
+}); 
 
+var teleport = false;
 Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
-
 if (to == 0 && from == Aether.id) { 
-
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
@@ -114,5 +110,15 @@ Entity.setPosition(player, CP.x, CP.y+4, CP.z-2);
  this.remove = this.age++ > 5;
  }
 });
+teleport = true;
 }
 }});
+
+Saver.addSavesScope("teleport",
+function read(scope) {
+TPA = scope.teleport;
+  },
+function save() {
+return {TPA : teleport };
+  }
+);

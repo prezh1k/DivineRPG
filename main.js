@@ -2,7 +2,7 @@
 BUILD INFO:
   dir: dev
   target: main.js
-  files: 19
+  files: 27
 */
 
 
@@ -730,13 +730,12 @@ var Aether = new Dimensions.CustomDimension("Aether", 1991); // (-_-)
 Aether.setSkyColor(.97, .87, .7)
 Aether.setFogColor(.97, .87, .7);
 World.setDayMode(true);
-alert(World.getWeather());
 
 Aether.setGenerator(Dimensions.newGenerator({
 layers: [
 {
-minY: 0, maxY: 75,
-yConversion: [[0, -.5], [.25, -.25], [.5, 0], [.75, -.25], [1, -.5 ]],
+minY: 0, maxY: 180,
+yConversion: [[0, -.6], [0.1, -.52], [0.5, -.25], [0.7, -.25], [.85, -.24], [1, -.6]],
 material: {base: BlockID.twilightStone, surface: {id:BlockID.edenDirt, data: 0, width:4}, cover: BlockID.edenGrass},
 noise: {octaves: {count: 4, scale: 40, weight_factor: 3, weight: 1.28}}
 }
@@ -793,41 +792,38 @@ if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.edenPortal){
     Dimensions.transfer(Player.get(), 0);
 }});
 
-var teleport = false;
 Callback.addCallback('CustomDimensionTransfer', function (entity, from, to, coords) {
 if (to == Aether.id) { 
-if (!teleport) {
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
  var CP = Entity.getPosition(player);
- CP = GenerationUtils.findSurface(CP.x, 78, CP.z);
+ CP = GenerationUtils.findSurface(CP.x, 89, CP.z);
+ 
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y, CP.z);
- if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
-    portalGenerationHelper1.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
- this.remove = this.age++ > 5;
-       }
-     }
-   })
-  }}
-}});
+   for (i =0; i < 256; i++) {
 
-Saver.addSavesScope("teleport",
-function read(scope) {
-TPA = scope.teleport;
-  },
-function save() {
-return {TPA : teleport };
+   if (World.getBlock(CP.x, i, CP.z) == BlockID.edenGrass){
+continue;
+ portalGenerationHelper1.generatePortal({x: CP.x, y: i, z: CP.z});
+ Entity.setPosition(player, CP.x+1, i+2, CP.z+1);
+}
+  else{
+  portalGenerationHelper1.generatePortal({x: CP.x, y: 140, z: CP.z});
+  Entity.setPosition(player, CP.x+2, 142, CP.z+2);
+ this.remove = this.age++ > 100;
   }
-);
+ }
+}
+})
+}}
+}); 
 
+var teleport = false;
 Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
-
 if (to == 0 && from == Aether.id) { 
-
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
@@ -840,8 +836,18 @@ Entity.setPosition(player, CP.x, CP.y+4, CP.z-2);
  this.remove = this.age++ > 5;
  }
 });
+teleport = true;
 }
 }});
+
+Saver.addSavesScope("teleport",
+function read(scope) {
+TPA = scope.teleport;
+  },
+function save() {
+return {TPA : teleport };
+  }
+);
 
 
 
@@ -916,12 +922,30 @@ if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.wildwoodPortal){
     Dimensions.transfer(Player.get(), 0);
 }});
 
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) { 
+if (to == wildwood.id) { 
+ var players = Network.getConnectedPlayers(); 
+ for (var i in players) { 
+var player = players[i]; 
+var CP = Entity.getPosition(player); 
+CP = GenerationUtils.findSurface(CP.x, 78, CP.z); 
+ 
+ Updatable.addUpdatable({ 
+ age: 0, 
+ update: function () { 
+ Entity.setPosition(player, CP.x, CP.y + 2, CP.z); 
+ this.remove = this.age++ > 5; 
+ } 
+ }); 
+ } 
+ } 
+});
+
 var teleport = false;
 
-Callback.addCallback('CustomDimensionTransfer', function (entity, from, to, coords) {
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
 
-if (to == wildwood.id) { 
-if (!teleport) {
+if (to == 0 && from == wildwood.id) { 
 var players = Network.getConnectedPlayers();
  for (var i in players) {
  var player = players[i];
@@ -930,36 +954,12 @@ var players = Network.getConnectedPlayers();
  Updatable.addUpdatable({
  age: 0,
  update: function () {
-Entity.setPosition(player, CP.x, CP.y+2, CP.z);
- if(GenerationUtils.isTransparentBlock(World.getBlockID(CP.x, CP.y, CP.z-2))){
-    portalGenerationHelper2.generatePortal({x: CP.x, y: CP.y, z: CP.z-2});    
+Entity.setPosition(player, CP.x, CP.y+4, CP.z-2); 
  this.remove = this.age++ > 5;
-       }
-     }
-   });
-   teleport = true;
-  }}
-}});
-
- 
-var teleport = false;
-Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
-if (to == 0 && from == wildwood.id) { 
-    if (!teleport){
-var players = Network.getConnectedPlayers();
- for (var i in players) {
- var player = players[i];
- var CP = Entity.getPosition(player);
- crdsP = GenerationUtils.findSurface(CP.x, 70, CP.z);
- Updatable.addUpdatable({
- age: 0,
- update: function () {
-Entity.setPosition(player, CP.x, CP.y + 1, CP.z);
- this.remove = this.age++ > 5;
-       }
-    });
-    teleport = true;
-  }}
+ }
+});
+teleport = true;
+}
 }});
 
 Saver.addSavesScope("teleport",
@@ -1291,6 +1291,12 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.divinestone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.divHelmet && Player.getArmorSlot(1).id == ItemID.divChestplate && Player.getArmorSlot(2).id == ItemID.divLeggings && Player.getArmorSlot(3).id == ItemID.divBoots) {
+        Entity.addEffect(Player.get(), 5, 1, 20,false, false);
+        Entity.addEffect(Player.get(), 8, 1, 20, false, false);
+    }
+})
 
 
 
@@ -1460,6 +1466,339 @@ Recipes.addShaped({
     "x x",
     "a a"
 ], ['a', ItemID.netheriteChunk, 0, 'x', ItemID.shadowingot,0]);
+
+
+
+
+// file: items/armors/edem.js
+
+IDRegistry.genItemID("quanda");
+IDRegistry.genItemID("quandb");
+IDRegistry.genItemID("quandc");
+IDRegistry.genItemID("quandd");
+Item.createArmorItem("quanda", "Дравитовый шлем", {
+    name: "quandahelm"
+}, {
+    type: "helmet",
+    armor: 6,
+    durability: 10000000,
+    texture: "armor/quanda_1.png"
+});
+Item.createArmorItem("quandb", "Дравитовая кираса", {
+    name: "quandbchest"
+}, {
+    type: "chestplate",
+    armor: 6,
+    durability: 10000000,
+    texture: "armor/quanda_1.png"
+});
+Item.createArmorItem("quandc", "Дравитовые поножи", {
+    name: "quandclegs"
+}, {
+    type: "leggings",
+    armor: 6,
+    durability: 10000000,
+    texture: "armor/quanda_2.png"
+});
+Item.createArmorItem("quandd", "Дравитовые ботинки", {
+    name: "quanddboots"
+}, {
+    type: "boots",
+    armor: 6,
+    durability: 10000000,
+    texture: "armor/quanda_1.png"
+});
+
+Recipes.addShaped({
+    id: ItemID.quanda,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "   ",
+], ['a', ItemID.edemkristal, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.quandb,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa ",
+    " a ",
+], ['a', ItemID.edemkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandc,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a",
+], ['a', ItemID.edemkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandd,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a",
+    "  "
+], ['a', ItemID.edemkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quanda && Player.getArmorSlot(1).id == ItemID.quandb && Player.getArmorSlot(2).id == ItemID.quandc && Player.getArmorSlot(3).id == ItemID.quandd) {
+        Entity.addEffect(Player.get(), 5, 10, 2, false, false);
+    }
+    
+})
+
+
+
+
+// file: items/armors/corrupted.js
+
+IDRegistry.genItemID("corptHelm");
+IDRegistry.genItemID("corptChest");
+IDRegistry.genItemID("corptLegs");
+IDRegistry.genItemID("corptBoots");
+
+Item.createArmorItem("corptHelm", "Corrupted Helmet", {
+    name: "corruptedHelmet"
+}, {
+    type: "helmet",
+    armor: 3,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Item.createArmorItem("corptChest", "Corrupted Chestplate", {
+    name: "corruptedChestplate"
+}, {
+    type: "chestplate",
+    armor: 7,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Item.createArmorItem("corptLegs", "Corrupted Leggings", {
+    name: "corruptedLeggings"
+}, {
+    type: "leggings",
+    armor: 4,
+    durability: 6000,
+    texture: "armor/corrupted_2.png"
+});
+Item.createArmorItem("corptBoots", "Corrupted Boots", {
+    name: "corruptedBoots"
+}, {
+    type: "boots",
+    armor: 2,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Recipes.addShaped({
+    id: ItemID.corptHelm,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptChest,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a "
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptLegs,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptBoots,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+
+
+
+
+// file: items/armors/azurite.js
+
+IDRegistry.genItemID("quande");
+IDRegistry.genItemID("quandf");
+IDRegistry.genItemID("quandg");
+IDRegistry.genItemID("quandh");
+Item.createArmorItem("quande", "Азуритовый шлем", {
+    name: "quandehelm"
+}, {
+    type: "helmet",
+    armor: 8,
+    durability: 10000000,
+    texture: "armor/quanda_3.png"
+});
+Item.createArmorItem("quandf", "Азуритовая кираса", {
+    name: "quandfchest"
+}, {
+    type: "chestplate",
+    armor: 8,
+    durability: 10000000,
+    texture: "armor/quanda_3.png"
+});
+Item.createArmorItem("quandg", "Азуритовые поножи", {
+    name: "quandglegs"
+}, {
+    type: "leggings",
+    armor: 8,
+    durability: 10000000,
+    texture: "armor/quanda_4.png"
+});
+Item.createArmorItem("quandh", "Азуритовые ботинки", {
+    name: "quandhboots"
+}, {
+    type: "boots",
+    armor: 8,
+    durability: 10000000,
+    texture: "armor/quanda_3.png"
+});
+Recipes.addShaped({
+    id: ItemID.quande,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "      ",
+], ['a', ItemID.leskristal, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.quandf,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a ",
+], ['a', ItemID.leskristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandg,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a",
+], ['a', ItemID.leskristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandh,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a",
+    "  "
+], ['a', ItemID.leskristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quande && Player.getArmorSlot(1).id == ItemID.quandf && Player.getArmorSlot(2).id == ItemID.quandg && Player.getArmorSlot(3).id == ItemID.quandh) {
+      var crdsP = Player.getPosition();
+      if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == 8 || 9) {
+        Entity.addEffect(Player.get(), 10, 10, 20,false, false);
+    }}
+});
+
+
+
+
+// file: items/armors/group.js
+
+Item.addCreativeGroup("helmets", Translation.translate("Шлемы"), [
+	ItemID.arlHelmet,
+	ItemID.quanda,
+	ItemID.quande,
+	ItemID.rupHelmet,
+	ItemID.realHelmet,
+	ItemID.corptHelm,
+	ItemID.divHelmet,
+	ItemID.bedrHelmet,
+	ItemID.netherHelmet,
+	ItemID.quandj,
+	ItemID.quandn,
+	ItemID.quandr,
+	ItemID.quandv,
+	ItemID.shadowHelmet,
+	ItemID.krHelmet,
+	ItemID.angel1
+]);
+Item.addCreativeGroup("chestplates", Translation.translate("Нагрудники"), [
+	ItemID.arlChestplate,
+	ItemID.quandb,
+	ItemID.quandf,
+	ItemID.rupChestplate,
+	ItemID.realChestplate,
+	ItemID.corptChest,
+	ItemID.divChestplate,
+	ItemID.bedrChestplate,
+	ItemID.netherChestplate,
+	ItemID.quandk,
+	ItemID.quando,
+	ItemID.quands,
+	ItemID.quandw,
+	ItemID.shadowChestplate,
+	ItemID.krChestplate,
+	ItemID.angel2
+]);
+Item.addCreativeGroup("leggings", Translation.translate("Поножи"), [
+	ItemID.arlLeggings,
+	ItemID.quandc,
+	ItemID.quandg,
+	ItemID.rupLeggings,
+	ItemID.realLeggings,
+	ItemID.corptLegs,
+	ItemID.divLeggings,
+	ItemID.bedrLeggings,
+	ItemID.netherLeggings,
+	ItemID.quandl,
+	ItemID.quandp,
+	ItemID.quandt,
+	ItemID.quandx,
+	ItemID.shadowLeggings,
+	ItemID.krLeggings,
+	ItemID.angel3
+]);
+Item.addCreativeGroup("boots", Translation.translate("Ботинки"), [
+	ItemID.arlBoots,
+	ItemID.quandd,
+	ItemID.quandh,
+	ItemID.rupBoots,
+	ItemID.realBoots,
+	ItemID.corptBoots,
+	ItemID.divBoots,
+	ItemID.bedrBoots,
+	ItemID.netherBoots,
+	ItemID.quandm,
+	ItemID.quandq,
+	ItemID.quandu,
+	ItemID.quandy,
+	ItemID.shadowBoots,
+	ItemID.krBoots,
+	ItemID.angel4
+]);
 
 
 
@@ -2100,6 +2439,364 @@ Recipes.addShaped({
 
 
 
+// file: items/tools/edem.js
+
+IDRegistry.genItemID("edemsword");
+IDRegistry.genItemID("edempickaxe");
+IDRegistry.genItemID("edemshovel");
+IDRegistry.genItemID("edemaxe");
+Item.createItem("edemsword", "Дравитовый клинок", {
+    name: "edemsword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edemshovel", "Дравитовая лопата", {
+    name: "edemshovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edempickaxe", "Дравитовая кирка", {
+    name: "edempickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edemaxe", "Дравитовый топор", {
+    name: "edemaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("edem", {
+    durability: 2000,
+    level: 4,
+    efficiency: 24,
+    damage: 24,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
+ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
+ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
+
+Recipes.addShaped({
+    id: ItemID.edempickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.edemsword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.edemaxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.edemshovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/corrupted.js
+
+ToolType.maul = {
+    isWeapon: true,
+    enchantType: Native.EnchantType.weapon,
+    damage: 15,
+    blockTypes: ["fibre", "corweb"],
+    onAttack: function(item, mob) {}
+}
+IDRegistry.genItemID("corruptedSword");
+IDRegistry.genItemID("corruptedPickaxe");
+IDRegistry.genItemID("corruptedAxe");
+IDRegistry.genItemID("corruptedShovel");
+IDRegistry.genItemID("corruptedMaul");
+Item.createItem("corruptedSword", "Приносящий смерть", {
+    name: "deathBringer",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("corruptedPickaxe", "Поврежденная кирка", {
+    name: "corruptedPickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("corruptedAxe", "Поврежденный топор", {
+    name: "corruptedAxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("corruptedShovel", "Поврежденная лопата", {
+    name: "corruptedShovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("corruptedMaul", "Поврежденная кувалда", {
+    name: "corruptedMaul",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("crpt", {
+    durability: 6000,
+    level: 4,
+    efficiency: 16,
+    damage: 25,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.corruptedSword, "crpt", ToolType.sword);
+ToolAPI.setTool(ItemID.corruptedPickaxe, "crpt", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.corruptedAxe, "crpt", ToolType.axe);
+ToolAPI.setTool(ItemID.corruptedShovel, "crpt", ToolType.shovel);
+ToolAPI.setTool(ItemID.corruptedMaul, "crpt", ToolType.maul);
+Recipes.addShaped({
+    id: ItemID.corruptedSword,
+    count: 1,
+    data: 0
+}, [
+    " a ",
+    "aba",
+    " b "
+], ['a', ItemID.corruptStone, 0, 'b', 280, 0]);
+Recipes.addShaped({
+    id: ItemID.corruptedPickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.corruptStone, 0, 'b', 280, 0]);
+Recipes.addShaped({
+    id: ItemID.corruptedAxe,
+    count: 1,
+    data: 0
+}, [
+    "aa ",
+    "ab ",
+    " b "
+], ['a', ItemID.corruptStone, 0, 'b', 280, 0]);
+Recipes.addShaped({
+    id: ItemID.corruptedShovel,
+    count: 1,
+    data: 0
+}, [
+    "a",
+    "b",
+    "b"
+], ['a', ItemID.corruptStone, 0, 'b', 280, 0]);
+Recipes.addShaped({
+    id: ItemID.corruptedMaul,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aba",
+    " b "
+], ['a', ItemID.corruptStone, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/azurite.js
+
+IDRegistry.genItemID("azurisword");
+IDRegistry.genItemID("azuripickaxe");
+IDRegistry.genItemID("azurishovel");
+IDRegistry.genItemID("azuriaxe");
+Item.createItem("azurisword", "Азуритовый клинок", {
+    name: "azurisword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("azurishovel", "Азуритовая лопата", {
+    name: "azurishovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("azuripickaxe", "Азуритовая кирка", {
+    name: "azuripickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("azuriaxe", "Азуритовый топор", {
+    name: "azuriaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("azuri", {
+    durability: 2000,
+    level: 4,
+    efficiency: 28,
+    damage: 26,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.azurisword, "azuri", ToolType.sword);
+ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
+ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);
+Recipes.addShaped({
+    id: ItemID.azuripickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.azurisword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.azuriaxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.azurishovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/group.js
+
+Item.addCreativeGroup("swords", Translation.translate("Мечи"), [
+	ItemID.edemsword,
+	ItemID.arlSword,
+	ItemID.realSword,
+	ItemID.bedrSword,
+	ItemID.rupSword,
+	ItemID.corruptedSword,
+	ItemID.divineSword,
+	ItemID.apalazisword,
+	ItemID.azurisword,
+	ItemID.ternsword,
+	ItemID.morsword,
+	ItemID.halsword,
+	ItemID.azurisword
+]);
+Item.addCreativeGroup("pickaxes", Translation.translate("Кирки"), [
+	ItemID.edempickaxe,
+	ItemID.arlPickaxe,
+	ItemID.bedrPickaxe,
+	ItemID.realPickaxe,
+	ItemID.rupPickaxe,
+	ItemID.corruptedPickaxe,
+	ItemID.divinePickaxe,
+	ItemID.apalazipickaxe,
+	ItemID.azuripickaxe,
+	ItemID.ternpickaxe,
+	ItemID.morpickaxe,
+	ItemID.azuripickaxe
+]);
+Item.addCreativeGroup("axes", Translation.translate("Топоры"), [
+	ItemID.edemaxe,
+	ItemID.arlAxe,
+	ItemID.bedrAxe,
+	ItemID.rupAxe,
+	ItemID.realAxe,
+	ItemID.corruptedAxe,
+	ItemID.divineAxe,
+	ItemID.apalaziaxe,
+	ItemID.azuriaxe,
+	ItemID.ternaxe,
+	ItemID.moraxe,
+	ItemID.azuriaxe
+]);
+Item.addCreativeGroup("shovels", Translation.translate("Лопаты"), [
+	ItemID.edemshovel,
+	ItemID.arlShovel,
+	ItemID.bedrShovel,
+	ItemID.rupShovel,
+	ItemID.realShovel,
+	ItemID.corruptedShovel,
+	ItemID.divineShovel,
+	ItemID.apalazishovel,
+	ItemID.azurishovel,
+	ItemID.ternshovel,
+	ItemID.morshovel,
+	ItemID.azurishovel
+]);
+Item.addCreativeGroup("mauls", Translation.translate("Кувалды"), [
+	ItemID.bedrMaul,
+	ItemID.corruptedMaul
+]);
+Item.addCreativeGroup("shickaxes", Translation.translate("Мультиинструменты"), [
+	ItemID.rupShickaxe,
+	ItemID.arlShickaxe,
+	ItemID.divineShickaxe
+]);
+Item.addCreativeGroup("hoes", Translation.translate("Мотыги"), [
+	ItemID.rupHoe,
+	ItemID.realHoe,
+	ItemID.arlHoe
+]);
+
+
+
+
 // file: items/tools/bows/wildwoodBow.js
 
 IMPORT("Bow");
@@ -2217,18 +2914,6 @@ IMPORT("ToolLib");
 IMPORT("ENV");
 IMPORT("PortalUtils");
 
-IDRegistry.genItemID("twilightClock");
-Item.createItem("twilightClock", "Сумеречные Часы", {
-    name: "twilightClock"
-}, {
-    stack: 1
-});
-Recipes.addShaped({
-    id: ItemID.twilightClock, count: 1, data: 0}, [
-		"bbb",
-		"bbb",
-		"bbb"
-	], ['b', 347, 0]);
 /*
 Callback.addCallback('EntityDeath', function(entity, attacker, damageType) {
     if (Entity.getType(entity) == 52) {
@@ -2288,6 +2973,7 @@ IDRegistry.genItemID("moltenShard");
 IDRegistry.genItemID("moltenStone");
 IDRegistry.genItemID("corruptShard");
 IDRegistry.genItemID("corruptStone");
+IDRegistry.genItemID("twilightClock");
 Item.createItem("ingotReal", "Реалмитовый слиток", {
     name: "realmiteingot"
 });
@@ -2312,31 +2998,31 @@ Item.createItem("ingotArl", "Арлемитовый слиток", {
 Item.createItem("ingotRup", "Рупиевый слиток", {
     name: "rupeeingot"
 });
-Item.createItem("crabclaw", "Crab Claw", {
+Item.createItem("crabclaw", "Коготь краба", {
     name: "crabclaw"
 });
-Item.createItem("cyclopeye", "Cyclops Eye", {
+Item.createItem("cyclopeye", "Око циклопа", {
     name: "cyclopseye"
 });
-Item.createItem("smesh", "Divine Shard", {
+Item.createItem("smesh", "Божественный осколок", {
     name: "divineShard"
 });
 Item.createItem("divinestone", "Divine Stone", {
     name: "divinestone"
 });
-Item.createItem("krscale", "Kraken Scale", {
+Item.createItem("krscale", "Чешуя кракена", {
     name: "krakenscale"
 });
-Item.createItem("krskin", "Kraken Skin", {
+Item.createItem("krskin", "Кожа кракена", {
     name: "krakenskin"
 });
 Item.createItem("terrastone", "Terra Stone", {
     name: "terranStone"
 });
-Item.createItem("shadowingot", "Shadow Ingot", {
+Item.createItem("shadowingot", "Теневой слиток", {
     name: "shadowing"
 });
-Item.createItem("shadowstone", "Shadow Stone", {
+Item.createItem("shadowstone", "Теневой камень", {
     name: "shadowstone"
 });
 Item.createItem("shadowstick", "Shadow Stick", {
@@ -2354,247 +3040,42 @@ Item.createItem("moltenStone", "Molten Stone", {
 Item.createItem("moltenShard", "Molten Shard", {
     name: "moltenShard"
 });
-Item.createItem("corruptShard", "Corrupted Shard", {
+Item.createItem("corruptShard", "Поврежденный осколок", {
     name: "corruptedShard"
 });
-Item.createItem("corruptStone", "Corrupted Stone", {
+Item.createItem("corruptStone", "Повреждённый камень", {
     name: "corruptedStone"
 });
-
-//molten
-IDRegistry.genItemID("moltenSword");
-Item.createItem("moltenSword", "Molten Sword", {
-    name: "moltenSword",
-    meta: 0
+Item.createItem("twilightClock", "Сумеречные Часы", {
+    name: "twilightClock"
 }, {
     stack: 1
 });
-
-ToolAPI.addToolMaterial("molt", {
-    durability: 2500,
-    level: 4,
-    efficiency: 16,
-    damage: 10,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.moltenSword, "molt", ToolType.sword);
-//corrupt
-IDRegistry.genItemID("corruptedSword");
-Item.createItem("corruptedSword", "Corrupted Sword", {
-    name: "corruptedSword",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("crpt", {
-    durability: 6000,
-    level: 4,
-    efficiency: 16,
-    damage: 25,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.corruptedSword, "crpt", ToolType.sword);
-//bedrock
-
-//ice
-IDRegistry.genItemID("iceBlade");
-IDRegistry.genItemID("icePick");
-Item.createItem("iceBlade", "Ice Blade", {
-    name: "iceBlade",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("icePick", "Ice Pickaxe", {
-    name: "icePick",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("ice", {
-    durability: 5000,
-    level: 4,
-    efficiency: 18,
-    damage: 25,
-    enchantability: 15
-});
-ToolAPI.setTool(ItemID.iceBlade, "ice", ToolType.sword);
-ToolAPI.setTool(ItemID.icePick, "ice", ToolType.pickaxe);
-//cyclop
-IDRegistry.genItemID("crabclawmaul");
-Item.createItem("crabclawmaul", "Crab Claw Maul", {
-    name: "crabclawmaul",
-    meta: 0
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.crabclawmaul, "divine", ToolType.sword);
-//crab
-IDRegistry.genItemID("cyclopSword");
-Item.createItem("cyclopSword", "Cyclopsian Sword", {
-    name: "cyclopsiansword",
-    meta: 0
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.cyclopSword, "divine", ToolType.sword);
+Recipes.addShaped({
+    id: ItemID.twilightClock, count: 1, data: 0}, [
+        "bbb",
+        "bbb",
+        "bbb"
+    ], ['b', 347, 0]);
 
 Recipes.addShaped({
-    id: ItemID.cyclopSword,
+    id: ItemID.shadowingot,
     count: 1,
     data: 0
 }, [
-    "b",
-    "b",
-    "d"
-], ['b', ItemID.cyclopeye, 0, 'd', 280, 0]);
-
-//massivnec
-//shadow
-IDRegistry.genItemID("massivnic");
-Item.createItem("massivnic", "Massivence", {
-    name: "massivence"
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.massivnic, "real", ToolType.maul);
+    "bc"
+], ['b', ItemID.ingotArl, 0, 'c', ItemID.ingotRup, 0]);
 Recipes.addShaped({
-    id: ItemID.massivnic,
+    id: ItemID.shadowstone,
     count: 1,
     data: 0
 }, [
-    "b",
-    "cbc",
-    "d"
-], ['b', ItemID.shadowstone, 0, 'd', 280, 0, 'c', ItemID.ingotRup, 0]);
-//terrain
-IDRegistry.genItemID("terranDagger");
-IDRegistry.genItemID("terranMaul");
-IDRegistry.genItemID("terranKnife");
-Item.createItem("terranDagger", "Terran Dagger", {
-    name: "terranDagger"
-}, {
-    stack: 1
-});
-Item.createItem("terranMaul", "Terran Maul", {
-    name: "terranMaul"
-}, {
-    stack: 1
-});
-Item.createItem("terranKnife", "Terran Knife", {
-    name: "terranKnife"
-}, {
-    stack: 1
-});
-ToolAPI.addToolMaterial("terra", {
-    durability: 1500,
-    level: 4,
-    efficiency: 27,
-    damage: 6,
-    enchantability: 13
-});
-ToolAPI.addToolMaterial("terraone", {
-    durability: 2000,
-    level: 4,
-    efficiency: 27,
-    damage: 12,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.terranDagger, "terra", ToolType.sword);
-ToolAPI.setTool(ItemID.terranMaul, "terra", ToolType.maul);
-ToolAPI.setTool(ItemID.terranKnife, "terraone", ToolType.maul);
-//RecipeTerranSwords
-Recipes.addShaped({
-    id: ItemID.terranDagger,
-    count: 1,
-    data: 0
-}, [
-    "b",
-    "d"
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-Recipes.addShaped({
-    id: ItemID.terranMaul,
-    count: 1,
-    data: 0
-}, [
-    " b ",
-    "10000000b",
-    " d "
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-Recipes.addShaped({
-    id: ItemID.shadowstick,
-    count: 1,
-    data: 0
-}, [
+    "bb",
     "bb"
 ], ['b', ItemID.shadowingot, 0]);
-Recipes.addShaped({
-    id: ItemID.terranKnife,
-    count: 1,
-    data: 0
-}, [
-    "b b",
-    "10000000b",
-    " d "
-], ['b', ItemID.terrastone, 0, 'd', 280, 0]);
-//shadow
-IDRegistry.genItemID("shadowSaber");
-Item.createItem("shadowSaber", "Shadow Saber", {
-    name: "shadowSaber"
-}, {
-    stack: 1
-});
-ToolAPI.setTool(ItemID.shadowSaber, "terra", ToolType.maul);
-Recipes.addShaped({
-    id: ItemID.shadowSaber,
-    count: 1,
-    data: 0
-}, [
-    "b",
-    "b",
-    "d"
-], ['b', ItemID.shadowstone, 0, 'd', 280, 0]);
 
-//corrupt
-IDRegistry.genItemID("corptHelm");
-IDRegistry.genItemID("corptChest");
-IDRegistry.genItemID("corptLegs");
-IDRegistry.genItemID("corptBoots");
 
-Item.createArmorItem("corptHelm", "Corrupted Helmet", {
-    name: "corruptedHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptChest", "Corrupted Chestplate", {
-    name: "corruptedChestplate"
-}, {
-    type: "chestplate",
-    armor: 7,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptLegs", "Corrupted Leggings", {
-    name: "corruptedLeggings"
-}, {
-    type: "leggings",
-    armor: 4,
-    durability: 6000,
-    texture: "armor/corrupted_2.png"
-});
-Item.createArmorItem("corptBoots", "Corrupted Boots", {
-    name: "corruptedBoots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
+
 
 //shadow
 IDRegistry.genItemID("shadowHelmet");
@@ -2674,119 +3155,7 @@ Item.createArmorItem("krBoots", "Kraken Boots", {
     texture: "armor/kraken_1.png"
 });
 
-IDRegistry.genItemID("trHelmet");
-IDRegistry.genItemID("trChestplate");
-IDRegistry.genItemID("trLeggings");
-IDRegistry.genItemID("trBoots");
-Item.createArmorItem("trHelmet", "Terran Helmet", {
-    name: "terranHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-Item.createArmorItem("trChestplate", "Terran Chestplate", {
-    name: "terranChestplate"
-}, {
-    type: "chestplate",
-    armor: 7,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-Item.createArmorItem("trLeggings", "Terran Leggings", {
-    name: "terranLeggings"
-}, {
-    type: "leggings",
-    armor: 5,
-    durability: 5000,
-    texture: "armor/terran_2.png"
-});
-Item.createArmorItem("trBoots", "Terran Boots", {
-    name: "terranBoots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 5000,
-    texture: "armor/terran_1.png"
-});
-
 //worlds
-IDRegistry.genItemID("quanda");
-IDRegistry.genItemID("quandb");
-IDRegistry.genItemID("quandc");
-IDRegistry.genItemID("quandd");
-Item.createArmorItem("quanda", "Шлем эдема", {
-    name: "quandahelm"
-}, {
-    type: "helmet",
-    armor: 6,
-    durability: 2000,
-    texture: "armor/quanda_1.png"
-});
-Item.createArmorItem("quandb", "Нагрудник эдема", {
-    name: "quandbchest"
-}, {
-    type: "chestplate",
-    armor: 6,
-    durability: 2500,
-    texture: "armor/quanda_1.png"
-});
-Item.createArmorItem("quandc", "Штаны эдема", {
-    name: "quandclegs"
-}, {
-    type: "leggings",
-    armor: 6,
-    durability: 2400,
-    texture: "armor/quanda_2.png"
-});
-Item.createArmorItem("quandd", "Ботинки эдема", {
-    name: "quanddboots"
-}, {
-    type: "boots",
-    armor: 6,
-    durability: 2000,
-    texture: "armor/quanda_1.png"
-});
-
-IDRegistry.genItemID("quande");
-IDRegistry.genItemID("quandf");
-IDRegistry.genItemID("quandg");
-IDRegistry.genItemID("quandh");
-Item.createArmorItem("quande", "Шлем дикого леса", {
-    name: "quandehelm"
-}, {
-    type: "helmet",
-    armor: 8,
-    durability: 3000,
-    texture: "armor/quanda_3.png"
-});
-Item.createArmorItem("quandf", "Нагрудник дикого леса", {
-    name: "quandfchest"
-}, {
-    type: "chestplate",
-    armor: 8,
-    durability: 3100,
-    texture: "armor/quanda_3.png"
-});
-Item.createArmorItem("quandg", "Штаны дикого леса", {
-    name: "quandglegs"
-}, {
-    type: "leggings",
-    armor: 8,
-    durability: 3050,
-    texture: "armor/quanda_4.png"
-});
-Item.createArmorItem("quandh", "Ботинки дикого леса", {
-    name: "quandhboots"
-}, {
-    type: "boots",
-    armor: 8,
-    durability: 3000,
-    texture: "armor/quanda_3.png"
-});
-
-
 IDRegistry.genItemID("quandj");
 IDRegistry.genItemID("quandk");
 IDRegistry.genItemID("quandl");
@@ -2967,98 +3336,16 @@ Item.createItem("apalaziaxe", "апалачивый тапор", {
 });
 
 ToolAPI.addToolMaterial("apalazi", {
-    durability: 3500,
+    durability: 2000,
     level: 4,
     efficiency: 30,
-    damage: 30,
+    damage: 29,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
 ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
 ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);
-
-IDRegistry.genItemID("azurisword");
-IDRegistry.genItemID("azuripickaxe");
-IDRegistry.genItemID("azurishovel");
-IDRegistry.genItemID("azuriaxe");
-Item.createItem("azurisword", "меч дикого леса", {
-    name: "azurisword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azurishovel", "лопата дикого леса", {
-    name: "azurishovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azuripickaxe", " кирка дикого леса", {
-    name: "azuripickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("azuriaxe", "тапор дикого леса", {
-    name: "azuriaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("azuri", {
-    durability: 2500,
-    level: 4,
-    efficiency: 27,
-    damage: 28,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.azurisword, "azuri", ToolType.sword);
-ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
-ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);
-
-IDRegistry.genItemID("edemsword");
-IDRegistry.genItemID("edempickaxe");
-IDRegistry.genItemID("edemshovel");
-IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "меч эдема", {
-    name: "edemsword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemshovel", "лопата эдема", {
-    name: "edemshovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edempickaxe", " кирка эдема", {
-    name: "edempickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemaxe", "тапор эдема", {
-    name: "edemaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("edem", {
-    durability: 1500,
-    level: 4,
-    efficiency: 24,
-    damage: 25,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
-ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
-ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
 
 IDRegistry.genItemID("ternsword");
 IDRegistry.genItemID("ternpickaxe");
@@ -3090,10 +3377,10 @@ Item.createItem("ternaxe", "тапор небесного терна", {
 });
 
 ToolAPI.addToolMaterial("tern", {
-    durability: 4500,
+    durability: 2000,
     level: 4,
     efficiency: 44,
-    damage: 32,
+    damage: 31,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
@@ -3131,10 +3418,10 @@ Item.createItem("moraxe", "топор мортума", {
 });
 
 ToolAPI.addToolMaterial("mor", {
-    durability: 5000,
+    durability: 2000,
     level: 4,
     efficiency: 55,
-    damage: 34,
+    damage: 33,
     enchantability: 13
 });
 ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
@@ -3258,89 +3545,6 @@ Recipes.addShaped({
 ], ['a', ItemID.edemkusok, 0]);
 
 Recipes.addShaped({
-    id: ItemID.edempickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemsword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.edemshovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quanda,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "   ",
-], ['a', ItemID.edemkristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandb,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa ",
-    " a ",
-], ['a', ItemID.edemkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandc,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.edemkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandd,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.edemkristal, 0]);
-
-Recipes.addShaped({
     id: ItemID.leskusok,
     count: 1,
     data: 0
@@ -3370,88 +3574,7 @@ Recipes.addShaped({
     "a a"
 ], ['a', ItemID.leskusok, 0]);
 
-Recipes.addShaped({
-    id: ItemID.azuripickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
 
-
-Recipes.addShaped({
-    id: ItemID.azurisword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.azuriaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.azurishovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quande,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "      ",
-], ['a', ItemID.leskristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandf,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a ",
-], ['a', ItemID.leskristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandg,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.leskristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandh,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.leskristal, 0]);
 
 
 Recipes.addShaped({
@@ -4365,7 +4488,15 @@ var portalGenerationHelper1 = {
             this.p(crds.x, crds.y, crds.z+2,
                 block.frame);
             this.p(crds.x+1, crds.y, crds.z+2,
-                block.frame);                 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
+                block.frame);
             }
       }
 }
@@ -4450,6 +4581,15 @@ var portalGenerationHelper2 = {
             this.p(crds.x, crds.y, crds.z+2,
                 block.frame);
             this.p(crds.x+1, crds.y, crds.z+2,
+ 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
                 block.frame);
             }
       }
@@ -4468,32 +4608,32 @@ Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, ra
 if (dimensionId == Aether.id) {
  let regi = BlockSource.getCurrentWorldGenRegion();
   var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
- coords = GenerationUtils.findSurface(coords.x, 75, coords.z);
- for (i = 0; i < 25; i++) {
- if (coords.y < 20) return;
-if (random.nextFloat() < .9) {
+ coords = GenerationUtils.findSurface(coords.x, 160, coords.z);
+ if (coords.y < 52) return;
+if (random.nextFloat() < .85) {
   if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.edenGrass)
 edentree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
     }
-  }
 }
 });
+function randomInt(min, max){
+  return Math.floor(Math.random() * (max - min+1))+min;
+};
 
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) { 
-if(dimensionId == Aether.id) { 
- var coords = GenerationUtils.randomCoords(chunkX, chunkZ); 
- coords = GenerationUtils.findSurface(coords.x, 75, coords.z); 
- let regi = BlockSource.getCurrentWorldGenRegion(); 
- if(coords.y < 20) return; 
- function randomInt(min, max){ 
-return Math.floor(Math.random() * (max - min + 1)) + min; 
+if(dimensionId == Aether.id) {
+ var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
+ coords = GenerationUtils.findSurface(coords.x, 140, coords.z);
+  let regi = BlockSource.getCurrentWorldGenRegion();
+ if(coords.y < 48) return;
+  for(var i = 0; i < randomInt(40, 55); i++) { 
+         if(Math.random() < .95){
+          if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.edenGrass) {
+       regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.edenBrush, 0);    
+               }  
+          }  
+     }  
 }
- for(var i = 0; i < randomInt(20, 34); i++) { 
- if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.edenGrass) { 
- regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.edenBrush, 0); 
- } 
- } 
-} 
 });
 
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) {
@@ -4501,9 +4641,9 @@ if (dimensionId == wildwood.id) {
  let regi = BlockSource.getCurrentWorldGenRegion();
   var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
  coords = GenerationUtils.findSurface(coords.x, 75, coords.z);
- for (i = 0; i < 30; i++) {
- if (coords.y < 20) return;
-if (random.nextFloat() < .9) {
+ for (i = 0; i < 60; i++) {
+ if (coords.y < 10) return;
+if (random.nextFloat() < .95) {
   if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.wildwoodGrass)
 wildwoodtree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
     }
@@ -4520,8 +4660,8 @@ if(dimensionId == wildwood.id) {
  function randomInt(min, max){ 
 return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
- for(var i = 0; i < randomInt(16, 24); i++) { 
- if(Math.random() < .75){ 
+ for(var i = 0; i < randomInt(90, 100); i++) { 
+ if(Math.random() < .9){ 
  if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.wildwoodGrass) { 
  regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.wildwoodTallgrassBottom, 0);
  regi.setBlock(coords.x, coords.y + 2, coords.z,
