@@ -2,7 +2,7 @@
 BUILD INFO:
   dir: dev
   target: main.js
-  files: 27
+  files: 37
 */
 
 
@@ -123,6 +123,45 @@ Block.registerDropFunction("rupeeBlock", function(coords, blockID, blockData, le
 	return [];
 }, 2);
 
+Recipes.addShaped({
+    id: BlockID.arlemiteBlock,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xxx",
+    "xxx",
+], ['x', ItemID.ingotArl, 0]);
+Recipes.addShaped({
+    id: BlockID.realmiteBlock,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xxx",
+    "xxx",
+], ['x', ItemID.ingotReal, 0]);
+Recipes.addShaped({
+    id: BlockID.rupeeBlock,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xxx",
+    "xxx",
+], ['x', ItemID.ingotRup, 0]);
+Recipes.addShaped({
+    id: ItemID.divinestone,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xxx",
+    "xxx",
+], ['x', ItemID.smesh, 0]);
+
+
+
 IDRegistry.genBlockID("arlemiteLamp");
 Block.createBlock("arlemiteLamp", [
 	{name: "Arlemite Lamp", texture: [["arlemitelamp", 0]], inCreative: true}
@@ -188,6 +227,43 @@ Block.createBlock("krakLamp", [
 	{name: "Kraken Lamp", texture: [["krakenlamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.krakenLamp, "stone", 2);
+Recipes.addShaped({
+    id: BlockID.arlemiteLamp,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xbx",
+    "xxx",
+], ['x', ItemID.ingotArl, 0, 'b', 89, 0]);
+Recipes.addShaped({
+    id: BlockID.rupeeLamp,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xbx",
+    "xxx",
+], ['x', ItemID.ingotRup, 0, 'b', 89, 0]);
+Recipes.addShaped({
+    id: BlockID.lapisLamp,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xbx",
+    "xxx",
+], ['x', 351, 4, 'b', 89, 0]);
+Recipes.addShaped({
+    id: BlockID.goldLamp,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "xbx",
+    "xxx",
+], ['x', 266, 0, 'b', 89, 0]);
+
 
 IDRegistry.genBlockID("ironBrick");
 Block.createBlock("ironBrick", [
@@ -576,6 +652,7 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 
 
 
+
 // file: blocks/ores.js
 
 IMPORT("DivineHelper");
@@ -718,6 +795,52 @@ function (){
   Recipes.addFurnace(BlockID.arlemiteOre, ItemID.ingotArl);
   Recipes.addFurnace(BlockID.realmiteOre, ItemID.ingotReal);
 });
+
+
+
+
+// file: blocks/group.js
+
+Item.addCreativeGroup("blocks", Translation.translate("Блоки"), [
+  Block.realmiteBlock,
+  Block.edenBlock,
+  Block.arlemiteBlock,
+  Block.rupeeBlock,
+]);
+ 
+Item.addCreativeGroup("lamps", Translation.translate("Лампы"), [
+  Block.arlemiteLamp,
+  Block.rupeeLamp,
+  Block.goldLamp,
+  Block.lapisLamp,
+  Block.redsLamp,
+  Block.realLamp,
+  Block.endLamp,
+  Block.blazeLamp,
+  Block.lavaLamp,
+  Block.diamondLamp,
+  Block.krakLamp
+]);
+
+Item.addCreativeGroup("bricks", Translation.translate("Кирпичи"), [
+  Block.ironBrick,
+  Block.goldBrick,
+  Block.lapisBrick,
+  Block.lavaBrick,
+  Block.diamBrick,
+  Block.realBrick,
+  Block.arleBrick
+]);
+
+Item.addCreativeGroup("ores", Translation.translate("Руды"), [
+  Block.edenOre,
+  Block.netheriteOre,
+  Block.bloodgemOre,
+  Block.wildwoodOre,
+  Block.arlemiteOre,
+  Block.realmiteOre,
+  Block.rupeeOre,
+]);
 
 
 
@@ -1308,7 +1431,7 @@ IDRegistry.genItemID("bedrChestplate");
 IDRegistry.genItemID("bedrLeggings");
 IDRegistry.genItemID("bedrBoots");
 
-Item.createArmorItem("bedrHelmet", "Bedrock Helmet", {
+Item.createArmorItem("bedrHelmet", "Шлем из коренной породы", {
     name: "bedrockhelm"
 }, {
     type: "helmet",
@@ -1316,14 +1439,14 @@ Item.createArmorItem("bedrHelmet", "Bedrock Helmet", {
     durability: 10000000,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrChestplate", "Bedrock Chestplate", {
+Item.createArmorItem("bedrChestplate", "Кираса из коренной породы", {
     name: "bedrockch"
 }, {
     type: "chestplate",
     armor: 8,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrLeggings", "Bedrock Leggings", {
+Item.createArmorItem("bedrLeggings", "Поножи из коренной породы", {
     name: "bedrockleg"
 }, {
     type: "leggings",
@@ -1331,7 +1454,7 @@ Item.createArmorItem("bedrLeggings", "Bedrock Leggings", {
     durability: 10000000,
     texture: "armor/bedrock_2.png"
 });
-Item.createArmorItem("bedrBoots", "Bedrock Boots", {
+Item.createArmorItem("bedrBoots", "Ботинки из коренной породы", {
     name: "bedrockboots"
 }, {
     type: "boots",
@@ -1470,7 +1593,287 @@ Recipes.addShaped({
 
 
 
-// file: items/armors/edem.js
+// file: items/armors/corrupted.js
+
+IDRegistry.genItemID("corptHelm");
+IDRegistry.genItemID("corptChest");
+IDRegistry.genItemID("corptLegs");
+IDRegistry.genItemID("corptBoots");
+
+Item.createArmorItem("corptHelm", "Поврежденный шлем", {
+    name: "corruptedHelmet"
+}, {
+    type: "helmet",
+    armor: 3,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Item.createArmorItem("corptChest", "Поврежденная кираса", {
+    name: "corruptedChestplate"
+}, {
+    type: "chestplate",
+    armor: 7,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Item.createArmorItem("corptLegs", "Поврежденные поножи", {
+    name: "corruptedLeggings"
+}, {
+    type: "leggings",
+    armor: 4,
+    durability: 6000,
+    texture: "armor/corrupted_2.png"
+});
+Item.createArmorItem("corptBoots", "Поврежденные ботинки", {
+    name: "corruptedBoots"
+}, {
+    type: "boots",
+    armor: 2,
+    durability: 6000,
+    texture: "armor/corrupted_1.png"
+});
+Recipes.addShaped({
+    id: ItemID.corptHelm,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptChest,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a "
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptLegs,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+Recipes.addShaped({
+    id: ItemID.corptBoots,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a"
+], ['a', ItemID.corruptStone, 0]);
+
+
+
+
+// file: items/armors/shadow.js
+
+IDRegistry.genItemID("shadowHelmet");
+IDRegistry.genItemID("shadowChestplate");
+IDRegistry.genItemID("shadowLeggings");
+IDRegistry.genItemID("shadowBoots");
+
+Item.createArmorItem("shadowHelmet", "Shadow Helmet", {
+    name: "shadowhelmet"
+}, {
+    type: "helmet",
+    armor: 3,
+    durability: 10000000,
+    texture: "armor/shadow_1.png"
+});
+Item.createArmorItem("shadowChestplate", "Shadow Chestplate", {
+    name: "shadowbody"
+}, {
+    type: "chestplate",
+    armor: 8,
+    durability: 10000000,
+    texture: "armor/shadow_1.png"
+});
+Item.createArmorItem("shadowLeggings", "Shadow Leggings", {
+    name: "shadowlegs"
+}, {
+    type: "leggings",
+    armor: 5,
+    durability: 10000000,
+    texture: "armor/shadow_2.png"
+});
+Item.createArmorItem("shadowBoots", "Shadow Boots", {
+    name: "shadowboots"
+}, {
+    type: "boots",
+    armor: 2,
+    durability: 10000000,
+    texture: "armor/shadow_1.png"
+});
+
+Recipes.addShaped({
+    id: ItemID.shadowHelmet,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x"
+], ['x', ItemID.shadowstone, 0]);
+
+Recipes.addShaped({
+    id: ItemID.shadowChestplate,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "xxx",
+    "xxx"
+], ['x', ItemID.shadowstone, 0]);
+
+Recipes.addShaped({
+    id: ItemID.shadowLeggings,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x",
+    "x x"
+], ['x', ItemID.shadowstone, 0]);
+
+Recipes.addShaped({
+    id: ItemID.shadowBoots,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "x x"
+], ['x', ItemID.shadowstone, 0]);
+
+
+
+
+// file: items/armors/kraken.js
+
+IDRegistry.genItemID("krHelmet");
+IDRegistry.genItemID("krChestplate");
+IDRegistry.genItemID("krLeggings");
+IDRegistry.genItemID("krBoots");
+
+Item.createArmorItem("krHelmet", "Kraken Helmet", {
+    name: "krakenhelmet"
+}, {
+    type: "helmet",
+    armor: 2,
+    durability: 5000,
+    texture: "armor/kraken_1.png"
+});
+Item.createArmorItem("krChestplate", "Kraken Chestplate", {
+    name: "krakenbody"
+}, {
+    type: "chestplate",
+    armor: 6,
+    durability: 5000,
+    texture: "armor/kraken_1.png"
+});
+Item.createArmorItem("krLeggings", "Kraken Leggings", {
+    name: "krakenlegs"
+}, {
+    type: "leggings",
+    armor: 4,
+    durability: 5000,
+    texture: "armor/kraken_2.png"
+});
+Item.createArmorItem("krBoots", "Kraken Boots", {
+    name: "krakenboots"
+}, {
+    type: "boots",
+    armor: 1,
+    durability: 5000,
+    texture: "armor/kraken_1.png"
+});
+Recipes.addShaped({
+    id: ItemID.krHelmet,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x"
+], ['x', ItemID.krscale, 0]);
+
+Recipes.addShaped({
+    id: ItemID.krChestplate,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "xxx",
+    "xxx"
+], ['x', ItemID.krscale, 0]);
+
+Recipes.addShaped({
+    id: ItemID.krLeggings,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x",
+    "x x"
+], ['x', ItemID.krscale, 0]);
+
+Recipes.addShaped({
+    id: ItemID.krBoots,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "x x"
+], ['x', ItemID.krscale, 0]);
+
+
+
+
+// file: items/armors/halite.js
+
+IDRegistry.genItemID("quandv");
+IDRegistry.genItemID("quandw");
+IDRegistry.genItemID("quandx");
+IDRegistry.genItemID("quandy");
+Item.createArmorItem("quandv", " Халитовый Шлем", {
+    name: "quandvhelm"
+}, {
+    type: "helmet",
+    armor: 20,
+    durability: 5100,
+    texture: "armor/quanda_11.png"
+});
+Item.createArmorItem("quandw", "Халитовый нагрудник", {
+    name: "quandwchest"
+}, {
+    type: "chestplate",
+    armor: 20,
+    durability: 5500,
+    texture: "armor/quanda_11.png"
+});
+Item.createArmorItem("quandx", "Халитовые штаны", {
+    name: "quandxlegs"
+}, {
+    type: "leggings",
+    armor: 20,
+    durability: 5500,
+    texture: "armor/quanda_12.png"
+});
+Item.createArmorItem("quandy", "Халитовые ботинки ", {
+    name: "quandyboots"
+}, {
+    type: "boots",
+    armor: 20,
+    durability: 5200,
+    texture: "armor/quanda_11.png"
+});
+
+
+
+
+// file: items/armors/worlds/edem.js
 
 IDRegistry.genItemID("quanda");
 IDRegistry.genItemID("quandb");
@@ -1559,84 +1962,7 @@ Callback.addCallback("tick", function() {
 
 
 
-// file: items/armors/corrupted.js
-
-IDRegistry.genItemID("corptHelm");
-IDRegistry.genItemID("corptChest");
-IDRegistry.genItemID("corptLegs");
-IDRegistry.genItemID("corptBoots");
-
-Item.createArmorItem("corptHelm", "Corrupted Helmet", {
-    name: "corruptedHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptChest", "Corrupted Chestplate", {
-    name: "corruptedChestplate"
-}, {
-    type: "chestplate",
-    armor: 7,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Item.createArmorItem("corptLegs", "Corrupted Leggings", {
-    name: "corruptedLeggings"
-}, {
-    type: "leggings",
-    armor: 4,
-    durability: 6000,
-    texture: "armor/corrupted_2.png"
-});
-Item.createArmorItem("corptBoots", "Corrupted Boots", {
-    name: "corruptedBoots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 6000,
-    texture: "armor/corrupted_1.png"
-});
-Recipes.addShaped({
-    id: ItemID.corptHelm,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a"
-], ['a', ItemID.corruptStone, 0]);
-Recipes.addShaped({
-    id: ItemID.corptChest,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a "
-], ['a', ItemID.corruptStone, 0]);
-Recipes.addShaped({
-    id: ItemID.corptLegs,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a"
-], ['a', ItemID.corruptStone, 0]);
-Recipes.addShaped({
-    id: ItemID.corptBoots,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a"
-], ['a', ItemID.corruptStone, 0]);
-
-
-
-
-// file: items/armors/azurite.js
+// file: items/armors/worlds/azurite.js
 
 IDRegistry.genItemID("quande");
 IDRegistry.genItemID("quandf");
@@ -1721,6 +2047,253 @@ Callback.addCallback("tick", function() {
         Entity.addEffect(Player.get(), 10, 10, 20,false, false);
     }}
 });
+
+
+
+
+// file: items/armors/worlds/uvite.js
+
+IDRegistry.genItemID("quandj");
+IDRegistry.genItemID("quandk");
+IDRegistry.genItemID("quandl");
+IDRegistry.genItemID("quandm");
+Item.createArmorItem("quandj", "Увитовый шлем", {
+    name: "quandjhelm"
+}, {
+    type: "helmet",
+    armor: 9,
+    durability: 3500,
+    texture: "armor/quanda_5.png"
+});
+Item.createArmorItem("quandk", "Увитовая кираса", {
+    name: "quandkchest"
+}, {
+    type: "chestplate",
+    armor: 9,
+    durability: 3700,
+    texture: "armor/quanda_5.png"
+});
+Item.createArmorItem("quandl", "Увитовые поножи", {
+    name: "quandllegs"
+}, {
+    type: "leggings",
+    armor: 9,
+    durability: 3700,
+    texture: "armor/quanda_6.png"
+});
+Item.createArmorItem("quandm", "Увитовые ботинки", {
+    name: "quandmboots"
+}, {
+    type: "boots",
+    armor: 9,
+    durability: 3500,
+    texture: "armor/quanda_5.png"
+});
+
+Recipes.addShaped({
+    id: ItemID.quandj,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "      ",
+], ['a', ItemID.apakristal, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.quandk,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a ",
+], ['a', ItemID.apakristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandl,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a",
+], ['a', ItemID.apakristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandm,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a",
+    "  "
+], ['a', ItemID.apakristal, 0]);
+
+
+
+
+// file: items/armors/worlds/avgite.js
+
+IDRegistry.genItemID("quandr");
+IDRegistry.genItemID("quands");
+IDRegistry.genItemID("quandt");
+IDRegistry.genItemID("quandu");
+Item.createArmorItem("quandr", "Авгитовый шлем", {
+    name: "quandrhelm"
+}, {
+    type: "helmet",
+    armor: 12,
+    durability: 4500,
+    texture: "armor/quanda_9.png"
+});
+Item.createArmorItem("quands", "Авгитовая кираса", {
+    name: "quandschest"
+}, {
+    type: "chestplate",
+    armor: 12,
+    durability: 5000,
+    texture: "armor/quanda_9.png"
+});
+Item.createArmorItem("quandt", "Авгитовые поножи", {
+    name: "quandtlegs"
+}, {
+    type: "leggings",
+    armor: 12,
+    durability: 5000,
+    texture: "armor/quanda_10.png"
+});
+Item.createArmorItem("quandu", "Авгитовые ботинки", {
+    name: "quanduboots"
+}, {
+    type: "boots",
+    armor: 12,
+    durability: 4500,
+    texture: "armor/quanda_9.png"
+});
+Recipes.addShaped({
+    id: ItemID.quandr,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "      ",
+], ['a', ItemID.morkristal, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.quands,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a ",
+], ['a', ItemID.morkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandt,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a",
+], ['a', ItemID.morkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandu,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a",
+    "  "
+], ['a', ItemID.morkristal, 0]);
+
+
+
+
+// file: items/armors/worlds/myphrile.js
+
+IDRegistry.genItemID("quandn");
+IDRegistry.genItemID("quando");
+IDRegistry.genItemID("quandp");
+IDRegistry.genItemID("quandq");
+Item.createArmorItem("quandn", "Мифриловый", {
+    name: "quandnhelm"
+}, {
+    type: "helmet",
+    armor: 10,
+    durability: 4000,
+    texture: "armor/quanda_7.png"
+});
+Item.createArmorItem("quando", "Мифриловая кираса", {
+    name: "quandochest"
+}, {
+    type: "chestplate",
+    armor: 10,
+    durability: 4200,
+    texture: "armor/quanda_7.png"
+});
+Item.createArmorItem("quandp", "Мифриловые поножи", {
+    name: "quandplegs"
+}, {
+    type: "leggings",
+    armor: 10,
+    durability: 4000,
+    texture: "armor/quanda_8.png"
+});
+Item.createArmorItem("quandq", "Мифриловые ботинки", {
+    name: "quandqboots"
+}, {
+    type: "boots",
+    armor: 10,
+    durability: 4000,
+    texture: "armor/quanda_7.png"
+});
+Recipes.addShaped({
+    id: ItemID.quandn,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "      ",
+], ['a', ItemID.ternkristal, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.quando,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "aaa",
+    " a ",
+], ['a', ItemID.ternkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandp,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    "a a",
+    "a a",
+], ['a', ItemID.ternkristal, 0]);
+
+Recipes.addShaped({
+    id: ItemID.quandq,
+    count: 1,
+    data: 0
+}, [
+    "a a",
+    "a a",
+    "  "
+], ['a', ItemID.ternkristal, 0]);
 
 
 
@@ -2439,94 +3012,6 @@ Recipes.addShaped({
 
 
 
-// file: items/tools/edem.js
-
-IDRegistry.genItemID("edemsword");
-IDRegistry.genItemID("edempickaxe");
-IDRegistry.genItemID("edemshovel");
-IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "Дравитовый клинок", {
-    name: "edemsword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemshovel", "Дравитовая лопата", {
-    name: "edemshovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edempickaxe", "Дравитовая кирка", {
-    name: "edempickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("edemaxe", "Дравитовый топор", {
-    name: "edemaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("edem", {
-    durability: 2000,
-    level: 4,
-    efficiency: 24,
-    damage: 24,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
-ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
-ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
-
-Recipes.addShaped({
-    id: ItemID.edempickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemsword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.edemaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.edemshovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
-
-
-
-
 // file: items/tools/corrupted.js
 
 ToolType.maul = {
@@ -2633,7 +3118,95 @@ Recipes.addShaped({
 
 
 
-// file: items/tools/azurite.js
+// file: items/tools/worlds/edem.js
+
+IDRegistry.genItemID("edemsword");
+IDRegistry.genItemID("edempickaxe");
+IDRegistry.genItemID("edemshovel");
+IDRegistry.genItemID("edemaxe");
+Item.createItem("edemsword", "Дравитовый клинок", {
+    name: "edemsword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edemshovel", "Дравитовая лопата", {
+    name: "edemshovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edempickaxe", "Дравитовая кирка", {
+    name: "edempickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("edemaxe", "Дравитовый топор", {
+    name: "edemaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("edem", {
+    durability: 2000,
+    level: 4,
+    efficiency: 24,
+    damage: 24,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
+ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
+ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
+
+Recipes.addShaped({
+    id: ItemID.edempickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.edemsword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.edemaxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.edemshovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.edemkristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/worlds/azurite.js
 
 IDRegistry.genItemID("azurisword");
 IDRegistry.genItemID("azuripickaxe");
@@ -2716,6 +3289,271 @@ Recipes.addShaped({
     " b ",
     " b "
 ], ['a', ItemID.leskristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/worlds/uvite.js
+
+IDRegistry.genItemID("apalazisword");
+IDRegistry.genItemID("apalazipickaxe");
+IDRegistry.genItemID("apalazishovel");
+IDRegistry.genItemID("apalaziaxe");
+Item.createItem("apalazisword", "Увитовый клинок", {
+    name: "apalazisword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("apalazishovel", "Увитовая лопата", {
+    name: "apalazishovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("apalazipickaxe", "Увитовая кирка", {
+    name: "apalazipickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("apalaziaxe", "Увитовый топор", {
+    name: "apalaziaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("apalazi", {
+    durability: 2000,
+    level: 4,
+    efficiency: 30,
+    damage: 29,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
+ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
+ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);
+
+Recipes.addShaped({
+    id: ItemID.apalazipickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.apalazisword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.apalaziaxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.apalazishovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/worlds/myphrile.js
+
+IDRegistry.genItemID("ternsword");
+IDRegistry.genItemID("ternpickaxe");
+IDRegistry.genItemID("ternshovel");
+IDRegistry.genItemID("ternaxe");
+Item.createItem("ternsword", "Мифриловый клинок", {
+    name: "ternsword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("ternshovel", "Мифриловая лопата", {
+    name: "ternshovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("ternpickaxe", "Мифриловая лопата", {
+    name: "ternpickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("ternaxe", "Мифриловый топор", {
+    name: "ternaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("tern", {
+    durability: 2000,
+    level: 4,
+    efficiency: 44,
+    damage: 31,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
+ToolAPI.setTool(ItemID.ternshovel, "tern", ToolType.shovel);
+ToolAPI.setTool(ItemID.ternpickaxe, "tern", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.ternaxe, "tern", ToolType.axe);
+
+Recipes.addShaped({
+    id: ItemID.ternpickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.ternsword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.ternaxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.ternshovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
+
+
+
+
+// file: items/tools/worlds/avgite.js
+
+IDRegistry.genItemID("morsword");
+IDRegistry.genItemID("morpickaxe");
+IDRegistry.genItemID("morshovel");
+IDRegistry.genItemID("moraxe");
+Item.createItem("morsword", "Авгитовый клинок", {
+    name: "morsword",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("morshovel", "Авгитовая лопата", {
+    name: "morshovel",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("morpickaxe", "Авгитовая кирка", {
+    name: "morpickaxe",
+    meta: 0
+}, {
+    stack: 1
+});
+Item.createItem("moraxe", "Авгитовый топор", {
+    name: "moraxe",
+    meta: 0
+}, {
+    stack: 1
+});
+
+ToolAPI.addToolMaterial("mor", {
+    durability: 2000,
+    level: 4,
+    efficiency: 55,
+    damage: 33,
+    enchantability: 13
+});
+ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
+ToolAPI.setTool(ItemID.morshovel, "mor", ToolType.shovel);
+ToolAPI.setTool(ItemID.morpickaxe, "mor", ToolType.pickaxe);
+ToolAPI.setTool(ItemID.moraxe, "mor", ToolType.axe);
+
+Recipes.addShaped({
+    id: ItemID.morpickaxe,
+    count: 1,
+    data: 0
+}, [
+    "aaa",
+    " b ",
+    " b "
+], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.morsword,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " a ",
+    " b "
+], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
+
+
+Recipes.addShaped({
+    id: ItemID.moraxe,
+    count: 1,
+    data: 0
+}, [
+    "aa",
+    "ab ",
+    " b "
+], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
+
+Recipes.addShaped({
+    id: ItemID.morshovel,
+    count: 1,
+    data: 0
+}, [
+    " a",
+    " b ",
+    " b "
+], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
+
 
 
 
@@ -2898,7 +3736,7 @@ SuperBow2.Create({
 	animation: SuperBowAnimator2,
 	arrows: {
 		arrow1: {
-			arrow: SuperArrow,
+			arrow: SuperArrow2,
 			startUseAnimation: 'anim1'
 		}
 	}
@@ -2974,6 +3812,7 @@ IDRegistry.genItemID("moltenStone");
 IDRegistry.genItemID("corruptShard");
 IDRegistry.genItemID("corruptStone");
 IDRegistry.genItemID("twilightClock");
+IDRegistry.genItemID("misteriousClock");
 Item.createItem("ingotReal", "Реалмитовый слиток", {
     name: "realmiteingot"
 });
@@ -3057,6 +3896,21 @@ Recipes.addShaped({
         "bbb",
         "bbb"
     ], ['b', 347, 0]);
+Item.createItem("misteriousClock", "Мистические часы", {
+    name: "mysteriousClock"
+}, {
+    stack: 1
+});
+Recipes.addShaped({
+    id: ItemID.misteriousClock, count: 1, data: 0}, [
+        " c ",
+        "bab",
+        " b"
+    ], ['b',ItemID.corruptStone, 0, 'a', 347, 0, 'c', ItemID.netherIngot, 0]);
+Item.registerUseFunction("misteriousClock", function(coords, item, block, player){
+  let b = BlockSource.getDefaultForActor(player);
+  let mob = b.spawnEntity(coords.x, coords.y, coords.z, "Divine:ancient_entity")
+});
 
 Recipes.addShaped({
     id: ItemID.shadowingot,
@@ -3074,360 +3928,6 @@ Recipes.addShaped({
     "bb"
 ], ['b', ItemID.shadowingot, 0]);
 
-
-
-
-//shadow
-IDRegistry.genItemID("shadowHelmet");
-IDRegistry.genItemID("shadowChestplate");
-IDRegistry.genItemID("shadowLeggings");
-IDRegistry.genItemID("shadowBoots");
-
-Item.createArmorItem("shadowHelmet", "Shadow Helmet", {
-    name: "shadowhelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 10000000,
-    texture: "armor/shadow_1.png"
-});
-Item.createArmorItem("shadowChestplate", "Shadow Chestplate", {
-    name: "shadowbody"
-}, {
-    type: "chestplate",
-    armor: 8,
-    durability: 10000000,
-    texture: "armor/shadow_1.png"
-});
-Item.createArmorItem("shadowLeggings", "Shadow Leggings", {
-    name: "shadowlegs"
-}, {
-    type: "leggings",
-    armor: 5,
-    durability: 10000000,
-    texture: "armor/shadow_2.png"
-});
-Item.createArmorItem("shadowBoots", "Shadow Boots", {
-    name: "shadowboots"
-}, {
-    type: "boots",
-    armor: 2,
-    durability: 10000000,
-    texture: "armor/shadow_1.png"
-});
-
-//kraken
-IDRegistry.genItemID("krHelmet");
-IDRegistry.genItemID("krChestplate");
-IDRegistry.genItemID("krLeggings");
-IDRegistry.genItemID("krBoots");
-
-Item.createArmorItem("krHelmet", "Kraken Helmet", {
-    name: "krakenhelmet"
-}, {
-    type: "helmet",
-    armor: 2,
-    durability: 5000,
-    texture: "armor/kraken_1.png"
-});
-Item.createArmorItem("krChestplate", "Kraken Chestplate", {
-    name: "krakenbody"
-}, {
-    type: "chestplate",
-    armor: 6,
-    durability: 5000,
-    texture: "armor/kraken_1.png"
-});
-Item.createArmorItem("krLeggings", "Kraken Leggings", {
-    name: "krakenlegs"
-}, {
-    type: "leggings",
-    armor: 4,
-    durability: 5000,
-    texture: "armor/kraken_2.png"
-});
-Item.createArmorItem("krBoots", "Kraken Boots", {
-    name: "krakenboots"
-}, {
-    type: "boots",
-    armor: 1,
-    durability: 5000,
-    texture: "armor/kraken_1.png"
-});
-
-//worlds
-IDRegistry.genItemID("quandj");
-IDRegistry.genItemID("quandk");
-IDRegistry.genItemID("quandl");
-IDRegistry.genItemID("quandm");
-Item.createArmorItem("quandj", "Шлем апалачия", {
-    name: "quandjhelm"
-}, {
-    type: "helmet",
-    armor: 9,
-    durability: 3500,
-    texture: "armor/quanda_5.png"
-});
-Item.createArmorItem("quandk", "Нагрудник апалачия", {
-    name: "quandkchest"
-}, {
-    type: "chestplate",
-    armor: 9,
-    durability: 3700,
-    texture: "armor/quanda_5.png"
-});
-Item.createArmorItem("quandl", "Штаны апалачии", {
-    name: "quandllegs"
-}, {
-    type: "leggings",
-    armor: 9,
-    durability: 3700,
-    texture: "armor/quanda_6.png"
-});
-Item.createArmorItem("quandm", "Ботинки апалачии", {
-    name: "quandmboots"
-}, {
-    type: "boots",
-    armor: 9,
-    durability: 3500,
-    texture: "armor/quanda_5.png"
-});
-
-
-IDRegistry.genItemID("quandn");
-IDRegistry.genItemID("quando");
-IDRegistry.genItemID("quandp");
-IDRegistry.genItemID("quandq");
-Item.createArmorItem("quandn", "Шлем небесного терна", {
-    name: "quandnhelm"
-}, {
-    type: "helmet",
-    armor: 10,
-    durability: 4000,
-    texture: "armor/quanda_7.png"
-});
-Item.createArmorItem("quando", "Нагрудник небесного терна", {
-    name: "quandochest"
-}, {
-    type: "chestplate",
-    armor: 10,
-    durability: 4200,
-    texture: "armor/quanda_7.png"
-});
-Item.createArmorItem("quandp", "Штаны небесного терна", {
-    name: "quandplegs"
-}, {
-    type: "leggings",
-    armor: 10,
-    durability: 4000,
-    texture: "armor/quanda_8.png"
-});
-Item.createArmorItem("quandq", "Ботинки небесного терна", {
-    name: "quandqboots"
-}, {
-    type: "boots",
-    armor: 10,
-    durability: 4000,
-    texture: "armor/quanda_7.png"
-});
-
-IDRegistry.genItemID("quandr");
-IDRegistry.genItemID("quands");
-IDRegistry.genItemID("quandt");
-IDRegistry.genItemID("quandu");
-Item.createArmorItem("quandr", "Шлем мортума", {
-    name: "quandrhelm"
-}, {
-    type: "helmet",
-    armor: 12,
-    durability: 4500,
-    texture: "armor/quanda_9.png"
-});
-Item.createArmorItem("quands", "Нагрудник мортума", {
-    name: "quandschest"
-}, {
-    type: "chestplate",
-    armor: 12,
-    durability: 5000,
-    texture: "armor/quanda_9.png"
-});
-Item.createArmorItem("quandt", "Штаны мортума", {
-    name: "quandtlegs"
-}, {
-    type: "leggings",
-    armor: 12,
-    durability: 5000,
-    texture: "armor/quanda_10.png"
-});
-Item.createArmorItem("quandu", "Ботинки мортума", {
-    name: "quanduboots"
-}, {
-    type: "boots",
-    armor: 12,
-    durability: 4500,
-    texture: "armor/quanda_9.png"
-});
-
-
-IDRegistry.genItemID("quandv");
-IDRegistry.genItemID("quandw");
-IDRegistry.genItemID("quandx");
-IDRegistry.genItemID("quandy");
-Item.createArmorItem("quandv", " Халитовый Шлем", {
-    name: "quandvhelm"
-}, {
-    type: "helmet",
-    armor: 20,
-    durability: 5100,
-    texture: "armor/quanda_11.png"
-});
-Item.createArmorItem("quandw", "Халитовый нагрудник", {
-    name: "quandwchest"
-}, {
-    type: "chestplate",
-    armor: 20,
-    durability: 5500,
-    texture: "armor/quanda_11.png"
-});
-Item.createArmorItem("quandx", "Халитовые штаны", {
-    name: "quandxlegs"
-}, {
-    type: "leggings",
-    armor: 20,
-    durability: 5500,
-    texture: "armor/quanda_12.png"
-});
-Item.createArmorItem("quandy", "Халитовые ботинки ", {
-    name: "quandyboots"
-}, {
-    type: "boots",
-    armor: 20,
-    durability: 5200,
-    texture: "armor/quanda_11.png"
-});
-
-IDRegistry.genItemID("apalazisword");
-IDRegistry.genItemID("apalazipickaxe");
-IDRegistry.genItemID("apalazishovel");
-IDRegistry.genItemID("apalaziaxe");
-Item.createItem("apalazisword", "апалачивый меч", {
-    name: "apalazisword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("apalazishovel", "апалачивая лопата", {
-    name: "apalazishovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("apalazipickaxe", "апалачивая кирка", {
-    name: "apalazipickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("apalaziaxe", "апалачивый тапор", {
-    name: "apalaziaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("apalazi", {
-    durability: 2000,
-    level: 4,
-    efficiency: 30,
-    damage: 29,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
-ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
-ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);
-
-IDRegistry.genItemID("ternsword");
-IDRegistry.genItemID("ternpickaxe");
-IDRegistry.genItemID("ternshovel");
-IDRegistry.genItemID("ternaxe");
-Item.createItem("ternsword", "меч неберного терна", {
-    name: "ternsword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("ternshovel", "лопата небесного терна", {
-    name: "ternshovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("ternpickaxe", " кирка небесного терна", {
-    name: "ternpickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("ternaxe", "тапор небесного терна", {
-    name: "ternaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("tern", {
-    durability: 2000,
-    level: 4,
-    efficiency: 44,
-    damage: 31,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
-ToolAPI.setTool(ItemID.ternshovel, "tern", ToolType.shovel);
-ToolAPI.setTool(ItemID.ternpickaxe, "tern", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.ternaxe, "tern", ToolType.axe);
-
-IDRegistry.genItemID("morsword");
-IDRegistry.genItemID("morpickaxe");
-IDRegistry.genItemID("morshovel");
-IDRegistry.genItemID("moraxe");
-Item.createItem("morsword", "меч мортума", {
-    name: "morsword",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("morshovel", "лопата мортума", {
-    name: "morshovel",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("morpickaxe", " кирка мортума", {
-    name: "morpickaxe",
-    meta: 0
-}, {
-    stack: 1
-});
-Item.createItem("moraxe", "топор мортума", {
-    name: "moraxe",
-    meta: 0
-}, {
-    stack: 1
-});
-
-ToolAPI.addToolMaterial("mor", {
-    durability: 2000,
-    level: 4,
-    efficiency: 55,
-    damage: 33,
-    enchantability: 13
-});
-ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
-ToolAPI.setTool(ItemID.morshovel, "mor", ToolType.shovel);
-ToolAPI.setTool(ItemID.morpickaxe, "mor", ToolType.pickaxe);
-ToolAPI.setTool(ItemID.moraxe, "mor", ToolType.axe);
 
 IDRegistry.genItemID("halsword");
 Item.createItem("halsword", "Халитовый клинок", {
@@ -3575,8 +4075,6 @@ Recipes.addShaped({
 ], ['a', ItemID.leskusok, 0]);
 
 
-
-
 Recipes.addShaped({
     id: ItemID.apakusok,
     count: 1,
@@ -3608,89 +4106,6 @@ Recipes.addShaped({
 ], ['a', ItemID.apakusok, 0]);
 
 Recipes.addShaped({
-    id: ItemID.apalazipickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.apalazisword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.apalaziaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.apalazishovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.apakristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandj,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "      ",
-], ['a', ItemID.apakristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandk,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a ",
-], ['a', ItemID.apakristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandl,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.apakristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandm,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.apakristal, 0]);
-
-Recipes.addShaped({
     id: ItemID.ternkusok,
     count: 1,
     data: 0
@@ -3720,88 +4135,6 @@ Recipes.addShaped({
     "a a"
 ], ['a', ItemID.ternkusok, 0]);
 
-Recipes.addShaped({
-    id: ItemID.ternpickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.ternsword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.ternaxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.ternshovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.ternkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandn,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "      ",
-], ['a', ItemID.ternkristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quando,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a ",
-], ['a', ItemID.ternkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandp,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.ternkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandq,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.ternkristal, 0]);
 
 Recipes.addShaped({
     id: ItemID.morkusok,
@@ -3834,89 +4167,6 @@ Recipes.addShaped({
 ], ['a', ItemID.morkusok, 0]);
 
 Recipes.addShaped({
-    id: ItemID.morpickaxe,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    " b ",
-    " b "
-], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.morsword,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " a ",
-    " b "
-], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.moraxe,
-    count: 1,
-    data: 0
-}, [
-    "aa",
-    "ab ",
-    " b "
-], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.morshovel,
-    count: 1,
-    data: 0
-}, [
-    " a",
-    " b ",
-    " b "
-], ['a', ItemID.morkristal, 0, 'b', 280, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandr,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "      ",
-], ['a', ItemID.morkristal, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quands,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "aaa",
-    " a ",
-], ['a', ItemID.morkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandt,
-    count: 1,
-    data: 0
-}, [
-    "aaa",
-    "a a",
-    "a a",
-], ['a', ItemID.morkristal, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandu,
-    count: 1,
-    data: 0
-}, [
-    "a a",
-    "a a",
-    "  "
-], ['a', ItemID.morkristal, 0]);
-
-Recipes.addShaped({
     id: ItemID.halsword,
     count: 1,
     data: 0
@@ -3925,47 +4175,6 @@ Recipes.addShaped({
     "bab",
     " c "
 ], ['a', ItemID.morsword, 0, 'b', 388, 0, 'c', 280, 0]);
-
-
-Recipes.addShaped({
-    id: ItemID.quandv,
-    count: 1,
-    data: 0
-}, [
-    " b",
-    " a ",
-    "  "
-], ['a', ItemID.quandr, 0, 'b', 388, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandw,
-    count: 1,
-    data: 0
-}, [
-    " b",
-    " a ",
-    "  "
-], ['a', ItemID.quands, 0, 'b', 388, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandx,
-    count: 1,
-    data: 0
-}, [
-    "    ",
-    " a ",
-    " b "
-], ['a', ItemID.quandt, 0, 'b', 388, 0]);
-
-Recipes.addShaped({
-    id: ItemID.quandy,
-    count: 1,
-    data: 0
-}, [
-    "    ",
-    " a ",
-    " b "
-], ['a', ItemID.quandu, 0, 'b', 388, 0]);
 
 Recipes.addShaped({
     id: ItemID.ingotArl,
@@ -3988,78 +4197,8 @@ Recipes.addShaped({
 }, [
     "x"
 ], ['x', BlockID.rupeeBlock, 0]);
-Recipes.addShaped({
-    id: BlockID.arlemiteBlock,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xxx",
-    "xxx",
-], ['x', ItemID.ingotArl, 0]);
-Recipes.addShaped({
-    id: BlockID.realmiteBlock,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xxx",
-    "xxx",
-], ['x', ItemID.ingotReal, 0]);
-Recipes.addShaped({
-    id: BlockID.rupeeBlock,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xxx",
-    "xxx",
-], ['x', ItemID.ingotRup, 0]);
-Recipes.addShaped({
-    id: ItemID.divinestone,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xxx",
-    "xxx",
-], ['x', ItemID.smesh, 0]);
-Recipes.addShaped({
-    id: BlockID.arlemiteLamp,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xbx",
-    "xxx",
-], ['x', ItemID.ingotArl, 0, 'b', 89, 0]);
-Recipes.addShaped({
-    id: BlockID.rupeeLamp,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xbx",
-    "xxx",
-], ['x', ItemID.ingotRup, 0, 'b', 89, 0]);
-Recipes.addShaped({
-    id: BlockID.lapisLamp,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xbx",
-    "xxx",
-], ['x', 351, 4, 'b', 89, 0]);
-Recipes.addShaped({
-    id: BlockID.goldLamp,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xbx",
-    "xxx",
-], ['x', 266, 0, 'b', 89, 0]);
+
+
 Recipes.addShaped({
     id: ItemID.shadowingot,
     count: 1,
@@ -4092,121 +4231,6 @@ Recipes.addShaped({
     " b ",
     "x x",
 ], ['x', ItemID.shadowingot, 0, 'b', 264, 0]);
-//shadowarmors
-Recipes.addShaped({
-    id: ItemID.shadowHelmet,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x"
-], ['x', ItemID.shadowstone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.shadowChestplate,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "xxx",
-    "xxx"
-], ['x', ItemID.shadowstone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.shadowLeggings,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x",
-    "x x"
-], ['x', ItemID.shadowstone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.shadowBoots,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "x x"
-], ['x', ItemID.shadowstone, 0]);
-
-//kraken
-Recipes.addShaped({
-    id: ItemID.krHelmet,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x"
-], ['x', ItemID.krscale, 0]);
-
-Recipes.addShaped({
-    id: ItemID.krChestplate,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "xxx",
-    "xxx"
-], ['x', ItemID.krscale, 0]);
-
-Recipes.addShaped({
-    id: ItemID.krLeggings,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x",
-    "x x"
-], ['x', ItemID.krscale, 0]);
-
-Recipes.addShaped({
-    id: ItemID.krBoots,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "x x"
-], ['x', ItemID.krscale, 0]);
-
-Recipes.addShaped({
-    id: ItemID.trHelmet,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x"
-], ['x', ItemID.terrastone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.trChestplate,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "xxx",
-    "xxx"
-], ['x', ItemID.terrastone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.trLeggings,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x",
-    "x x"
-], ['x', ItemID.terrastone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.trBoots,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "x x"
-], ['x', ItemID.terrastone, 0]);
 
 Recipes.addShaped({
     id: ItemID.iceBlade,
@@ -4239,26 +4263,6 @@ Recipes.addShaped({
 ], ['a', ItemID.iceShard, 0]);
 
 Recipes.addShaped({
-    id: ItemID.moltenStone,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "xxx",
-    "xxx"
-], ['x', ItemID.moltenShard, 0]);
-
-Recipes.addShaped({
-    id: ItemID.moltenSword,
-    count: 1,
-    data: 0
-}, [
-    " x ",
-    " x ",
-    " b "
-], ['x', ItemID.moltenStone, 0, 'b', ItemID.shadowstick, 0]);
-
-Recipes.addShaped({
     id: ItemID.corruptStone,
     count: 1,
     data: 0
@@ -4267,146 +4271,6 @@ Recipes.addShaped({
     "xxx",
     "xxx"
 ], ['x', ItemID.corruptShard, 0]);
-
-Recipes.addShaped({
-    id: ItemID.corptHelm,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x"
-], ['x', ItemID.corruptStone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.corptChest,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "xxx",
-    "xxx"
-], ['x', ItemID.corruptStone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.corptLegs,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x",
-    "x x"
-], ['x', ItemID.corruptStone, 0]);
-
-Recipes.addShaped({
-    id: ItemID.corptBoots,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "x x",
-], ['x', ItemID.corruptStone, 0]);
-
-IDRegistry.genItemID("angel");
-Item.createItem("angel", "Angelic Crystal", {
-    name: "angelian_crystal"
-});
-Recipes.addShaped({
-    id: ItemID.angel,
-    count: 1,
-    data: 0
-}, [
-    " xb "
-], ['x', ItemID.morkristal, 0, 'b', 388, 0]);
-Callback.addCallback("tick", function() {
-    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
-        UIbuttons.enableButton("fly_on_button");
-    }
-})
-
-Callback.addCallback("tick", function() {
-    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
-        UIbuttons.enableButton("button_fly");
-    }
-});
-//registerArmor
-IDRegistry.genItemID("angel1");
-IDRegistry.genItemID("angel2");
-IDRegistry.genItemID("angel3");
-IDRegistry.genItemID("angel4");
-Item.createArmorItem("angel1", "Angel Helmet", {
-    name: "angelicHelmet"
-}, {
-    type: "helmet",
-    armor: 3,
-    durability: 10000000,
-    texture: "armor/angelic_1.png"
-});
-Item.createArmorItem("angel2", "Angel Chestplate", {
-    name: "angelicChestplate"
-}, {
-    type: "chestplate",
-    armor: 3,
-    durability: 10000000,
-    texture: "armor/angelic_1.png"
-});
-Item.createArmorItem("angel3", "Angel Leggins", {
-    name: "angelicLeggings"
-}, {
-    type: "leggings",
-    armor: 3,
-    durability: 10000000,
-    texture: "armor/angelic_2.png"
-});
-Item.createArmorItem("angel4", "Angel Boots", {
-    name: "angelicBoots"
-}, {
-    type: "boots",
-    armor: 3,
-    durability: 10000000,
-    texture: "armor/angelic_1.png"
-});
-
-Recipes.addShaped({
-    id: ItemID.angel1,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x"
-], ['x', ItemID.angel, 0]);
-
-Recipes.addShaped({
-    id: ItemID.angel2,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "xxx",
-    "xxx"
-], ['x', ItemID.angel, 0]);
-
-Recipes.addShaped({
-    id: ItemID.angel3,
-    count: 1,
-    data: 0
-}, [
-    "xxx",
-    "x x",
-    "x x"
-], ['x', ItemID.angel, 0]);
-
-Recipes.addShaped({
-    id: ItemID.angel4,
-    count: 1,
-    data: 0
-}, [
-    "x x",
-    "x x"
-], ['x', ItemID.angel, 0]);
-
-Recipes.addFurnace(BlockID.arlemiteOre, ItemID.ingotArl, 0);
-Recipes.addFurnace(BlockID.realmiteOre, ItemID.ingotReal, 0);
-Recipes.addFurnace(BlockID.rupeeOre, ItemID.ingotRup, 0)
 
 var portalGenerationHelper1 = {
     p: function(x, y, z, id){

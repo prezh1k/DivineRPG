@@ -9,7 +9,7 @@ let SuperBow2 = new Bow()
 
 
 SuperBowAnimator2.Create({
-	name: 'Увитовый лук',
+	name: 'Apalachia bow',
 	defaultTexture: 'uviteBow',
 	defaultTextureData: 0,
 	animtations: {
@@ -23,7 +23,7 @@ SuperBowAnimator2.Create({
 
 SuperArrow2.Create({
 	namedID: "uviteArrow",
-	name: "Увитовая стрела",
+	name: "Apalachia arrow",
 	texture: "uviteArrow",
 	data: 0,
 	skin: "entity/wildwoodArrow",
@@ -42,7 +42,7 @@ SuperBow2.Create({
 	animation: SuperBowAnimator2,
 	arrows: {
 		arrow1: {
-			arrow: SuperArrow,
+			arrow: SuperArrow2,
 			startUseAnimation: 'anim1'
 		}
 	}

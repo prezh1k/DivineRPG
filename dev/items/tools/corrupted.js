@@ -10,31 +10,31 @@ IDRegistry.genItemID("corruptedPickaxe");
 IDRegistry.genItemID("corruptedAxe");
 IDRegistry.genItemID("corruptedShovel");
 IDRegistry.genItemID("corruptedMaul");
-Item.createItem("corruptedSword", "Приносящий смерть", {
+Item.createItem("corruptedSword", "Death bringer", {
     name: "deathBringer",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedPickaxe", "Поврежденная кирка", {
+Item.createItem("corruptedPickaxe", "Corrupted pickaxe", {
     name: "corruptedPickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedAxe", "Поврежденный топор", {
+Item.createItem("corruptedAxe", "Corrupted axe", {
     name: "corruptedAxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedShovel", "Поврежденная лопата", {
+Item.createItem("corruptedShovel", "Corrupted shovel", {
     name: "corruptedShovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedMaul", "Поврежденная кувалда", {
+Item.createItem("corruptedMaul", "Corrupted maul", {
     name: "corruptedMaul",
     meta: 0
 }, {

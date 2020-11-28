@@ -1,5 +1,5 @@
 IDRegistry.genItemID("netherIngot")
-Item.createItem("netherIngot", "Слиток адского камня", {
+Item.createItem("netherIngot", "Nether ingot", {
     name: "netherIngot"
 });
 Recipes.addShaped({
@@ -12,7 +12,7 @@ IDRegistry.genItemID("netherChestplate");
 IDRegistry.genItemID("netherLeggings");
 IDRegistry.genItemID("netherBoots");
 
-Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
+Item.createArmorItem("netherHelmet", "Nether helmet", {
     name: "netheriteHelmet"
 }, {
     type: "helmet",
@@ -20,7 +20,7 @@ Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("netherChestplate", "Незеритовая кираса", {
+Item.createArmorItem("netherChestplate", "Nether chestplate", {
     name: "netheriteChestplate"
 }, {
     type: "chestplate",
@@ -28,7 +28,7 @@ Item.createArmorItem("netherChestplate", "Незеритовая кираса", 
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
+Item.createArmorItem("netherLeggings", "Nether leggings", {
     name: "netheriteLeggins"
 }, {
     type: "leggings",
@@ -36,7 +36,7 @@ Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
     durability: 5000,
     texture: "armor/netherite_2.png"
 });
-Item.createArmorItem("netherBoots", "Незеритовые ботинки", {
+Item.createArmorItem("netherBoots", "Nether boots", {
     name: "netheriteBoots"
 }, {
     type: "boots",

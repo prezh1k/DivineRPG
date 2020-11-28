@@ -1,0 +1,98 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "divine:ancient_entity",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:nameable": {},
+            "minecraft:type_family": {
+                "family": ["zombie", "undead", "monster", "mob"]
+            },
+            "minecraft:scale": {
+                "value":6
+            },
+            "minecraft:collision_box": {
+                "width": 2.7,
+                "height": 6.75
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:navigation.walk": {
+                "is_amphibious": true,
+                "can_pass_doors": true,
+                "can_walk": true,
+                "can_break_doors": true
+            },
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:health": {
+                "value": 800,
+                "max": 800
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [{
+                    "filters": {
+                        "test": "in_lava",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": true
+                    },
+                    "cause": "lava",
+                    "damage_per_tick": 1
+                }]
+            },
+            "minecraft:breathable": {
+                "total_supply": 25,
+                "suffocate_time": 0,
+                "breathes_air": true,
+                "breathes_water": true
+            },
+            "minecraft:attack": {
+                "damage": 12
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/ancient_entity.json"
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 3
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 7,
+                "speed_multiplier": 0.38
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 8,
+                "look_distance": 20,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "within_radius": 30,
+                "reselect_targets": true,
+                "entity_types": [{
+                    "filters": {
+                        "test": "is_family",
+                        "subject": "other",
+                        "value": "player"
+                    },
+                    "max_dist": 32
+                }],
+                "must_see": true
+            },
+            "minecraft:physics": {},
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            }
+        }
+    }
+}

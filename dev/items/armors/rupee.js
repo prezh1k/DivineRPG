@@ -3,7 +3,7 @@ IDRegistry.genItemID("rupChestplate");
 IDRegistry.genItemID("rupLeggings");
 IDRegistry.genItemID("rupBoots");
 
-Item.createArmorItem("rupHelmet", "Rupee Helmet", {
+Item.createArmorItem("rupHelmet", "Rupee helmet", {
     name: "rupeehelmet"
 }, {
     type: "helmet",
@@ -11,7 +11,7 @@ Item.createArmorItem("rupHelmet", "Rupee Helmet", {
     durability: 3000,
     texture: "armor/rupee_1.png"
 });
-Item.createArmorItem("rupChestplate", "Rupee Chestplate", {
+Item.createArmorItem("rupChestplate", "Rupee chestplate", {
     name: "rupeebody"
 }, {
     type: "chestplate",
@@ -19,7 +19,7 @@ Item.createArmorItem("rupChestplate", "Rupee Chestplate", {
     durability: 3000,
     texture: "armor/rupee_1.png"
 });
-Item.createArmorItem("rupLeggings", "Rupee Leggings", {
+Item.createArmorItem("rupLeggings", "Rupee leggings", {
     name: "rupeelegs"
 }, {
     type: "leggings",
@@ -27,7 +27,7 @@ Item.createArmorItem("rupLeggings", "Rupee Leggings", {
     durability: 3000,
     texture: "armor/rupee_2.png"
 });
-Item.createArmorItem("rupBoots", "Rupee Boots", {
+Item.createArmorItem("rupBoots", "Rupee boots", {
     name: "rupeeboots"
 }, {
     type: "boots",

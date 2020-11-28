@@ -12,37 +12,37 @@ IDRegistry.genItemID("arlPickaxe");
 IDRegistry.genItemID("arlAxe");
 IDRegistry.genItemID("arlHoe");
 IDRegistry.genItemID("arlShickaxe");
-Item.createItem("arlSword", "Арлемитовый меч", {
+Item.createItem("arlSword", "Arlemite sword", {
     name: "arlemitesw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlShovel", "Арлемитовая лопата", {
+Item.createItem("arlShovel", "Arlemite shovel", {
     name: "arlemitesh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlPickaxe", "Арлемитовая кирка", {
+Item.createItem("arlPickaxe", "Arlemite pickaxe", {
     name: "arlemitepick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlAxe", "Арлемитовый топор", {
+Item.createItem("arlAxe", "Arlemite axe", {
     name: "arlemiteaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlHoe", "Арлемитовый топоо", {
+Item.createItem("arlHoe", "Arlemite hoe", {
     name: "arlemitehoe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlShickaxe", "Арлемитовый мультиинструмент", {
+Item.createItem("arlShickaxe", "Arlemite shickaxe", {
     name: "arlemiteshickaxe",
     meta: 0
 }, {

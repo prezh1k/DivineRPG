@@ -2,25 +2,25 @@ IDRegistry.genItemID("edemsword");
 IDRegistry.genItemID("edempickaxe");
 IDRegistry.genItemID("edemshovel");
 IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "Дравитовый клинок", {
+Item.createItem("edemsword", "Eden sword", {
     name: "edemsword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemshovel", "Дравитовая лопата", {
+Item.createItem("edemshovel", "Eden shovel", {
     name: "edemshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edempickaxe", "Дравитовая кирка", {
+Item.createItem("edempickaxe", "Eden pickaxe", {
     name: "edempickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemaxe", "Дравитовый топор", {
+Item.createItem("edemaxe", "Eden axe", {
     name: "edemaxe",
     meta: 0
 }, {

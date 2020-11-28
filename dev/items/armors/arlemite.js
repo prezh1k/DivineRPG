@@ -3,7 +3,7 @@ IDRegistry.genItemID("arlChestplate");
 IDRegistry.genItemID("arlLeggings");
 IDRegistry.genItemID("arlBoots");
 
-Item.createArmorItem("arlHelmet", "Arlemite Helmet", {
+Item.createArmorItem("arlHelmet", "Arlemite helmet", {
     name: "arlemitehelmet"
 }, {
     type: "helmet",
@@ -11,7 +11,7 @@ Item.createArmorItem("arlHelmet", "Arlemite Helmet", {
     durability: 2000,
     texture: "armor/arlemite_1.png"
 });
-Item.createArmorItem("arlChestplate", "Arlemite Chestplate", {
+Item.createArmorItem("arlChestplate", "Arlemite chestplate", {
     name: "arlemitebody"
 }, {
     type: "chestplate",
@@ -19,7 +19,7 @@ Item.createArmorItem("arlChestplate", "Arlemite Chestplate", {
     durability: 2000,
     texture: "armor/arlemite_1.png"
 });
-Item.createArmorItem("arlLeggings", "Arlemite Leggings", {
+Item.createArmorItem("arlLeggings", "Arlemite leggings", {
     name: "arlemitelegs"
 }, {
     type: "leggings",
@@ -27,7 +27,7 @@ Item.createArmorItem("arlLeggings", "Arlemite Leggings", {
     durability: 2000,
     texture: "armor/arlemite_2.png"
 });
-Item.createArmorItem("arlBoots", "Arlemite Boots", {
+Item.createArmorItem("arlBoots", "Arlemite boots", {
     name: "arlemiteboots"
 }, {
     type: "boots",

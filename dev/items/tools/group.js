@@ -1,4 +1,4 @@
-Item.addCreativeGroup("swords", Translation.translate("Мечи"), [
+Item.addCreativeGroup("swords", Translation.translate("Swords"), [
 	ItemID.edemsword,
 	ItemID.arlSword,
 	ItemID.realSword,
@@ -13,7 +13,7 @@ Item.addCreativeGroup("swords", Translation.translate("Мечи"), [
 	ItemID.halsword,
 	ItemID.azurisword
 ]);
-Item.addCreativeGroup("pickaxes", Translation.translate("Кирки"), [
+Item.addCreativeGroup("pickaxes", Translation.translate("Pickaxes"), [
 	ItemID.edempickaxe,
 	ItemID.arlPickaxe,
 	ItemID.bedrPickaxe,
@@ -27,7 +27,7 @@ Item.addCreativeGroup("pickaxes", Translation.translate("Кирки"), [
 	ItemID.morpickaxe,
 	ItemID.azuripickaxe
 ]);
-Item.addCreativeGroup("axes", Translation.translate("Топоры"), [
+Item.addCreativeGroup("axes", Translation.translate("Axes"), [
 	ItemID.edemaxe,
 	ItemID.arlAxe,
 	ItemID.bedrAxe,
@@ -41,7 +41,7 @@ Item.addCreativeGroup("axes", Translation.translate("Топоры"), [
 	ItemID.moraxe,
 	ItemID.azuriaxe
 ]);
-Item.addCreativeGroup("shovels", Translation.translate("Лопаты"), [
+Item.addCreativeGroup("shovels", Translation.translate("Shovels"), [
 	ItemID.edemshovel,
 	ItemID.arlShovel,
 	ItemID.bedrShovel,
@@ -55,16 +55,16 @@ Item.addCreativeGroup("shovels", Translation.translate("Лопаты"), [
 	ItemID.morshovel,
 	ItemID.azurishovel
 ]);
-Item.addCreativeGroup("mauls", Translation.translate("Кувалды"), [
+Item.addCreativeGroup("mauls", Translation.translate("Mauls"), [
 	ItemID.bedrMaul,
 	ItemID.corruptedMaul
 ]);
-Item.addCreativeGroup("shickaxes", Translation.translate("Мультиинструменты"), [
+Item.addCreativeGroup("shickaxes", Translation.translate("Shickaxes"), [
 	ItemID.rupShickaxe,
 	ItemID.arlShickaxe,
 	ItemID.divineShickaxe
 ]);
-Item.addCreativeGroup("hoes", Translation.translate("Мотыги"), [
+Item.addCreativeGroup("hoes", Translation.translate("Hoes"), [
 	ItemID.rupHoe,
 	ItemID.realHoe,
 	ItemID.arlHoe

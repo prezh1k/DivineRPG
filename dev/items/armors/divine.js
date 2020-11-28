@@ -3,7 +3,7 @@ IDRegistry.genItemID("divChestplate");
 IDRegistry.genItemID("divLeggings");
 IDRegistry.genItemID("divBoots");
 
-Item.createArmorItem("divHelmet", "Divine Helmet", {
+Item.createArmorItem("divHelmet", "Divine helmet", {
     name: "divinehelmet"
 }, {
     type: "helmet",
@@ -11,7 +11,7 @@ Item.createArmorItem("divHelmet", "Divine Helmet", {
     durability: 10000000,
     texture: "armor/divine_1.png"
 });
-Item.createArmorItem("divChestplate", "Divine Chestplate", {
+Item.createArmorItem("divChestplate", "Divine chestplate", {
     name: "divinechestplate"
 }, {
     type: "chestplate",
@@ -19,7 +19,7 @@ Item.createArmorItem("divChestplate", "Divine Chestplate", {
     durability: 10000000,
     texture: "armor/divine_1.png"
 });
-Item.createArmorItem("divLeggings", "Divine Leggings", {
+Item.createArmorItem("divLeggings", "Divine leggings", {
     name: "divineleggings"
 }, {
     type: "leggings",
@@ -27,7 +27,7 @@ Item.createArmorItem("divLeggings", "Divine Leggings", {
     durability: 10000000,
     texture: "armor/divine_2.png"
 });
-Item.createArmorItem("divBoots", "Divine Boots", {
+Item.createArmorItem("divBoots", "Divine boots", {
     name: "divineboots"
 }, {
     type: "boots",

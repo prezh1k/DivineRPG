@@ -13,31 +13,31 @@ IDRegistry.genItemID("bedrShovel");
 IDRegistry.genItemID("bedrPickaxe");
 IDRegistry.genItemID("bedrAxe");
 IDRegistry.genItemID("bedrMaul");
-Item.createItem("bedrSword", "Bedrock Sword", {
+Item.createItem("bedrSword", "Bedrock sword", {
     name: "bedrocksw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrShovel", "Bedrock Shovel", {
+Item.createItem("bedrShovel", "Bedrock shovel", {
     name: "bedrocksh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrPickaxe", "Bedrock Pickaxe", {
+Item.createItem("bedrPickaxe", "Bedrock pickaxe", {
     name: "bedrockpick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrAxe", "Bedrock Axe", {
+Item.createItem("bedrAxe", "Bedrock axe", {
     name: "bedrockaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrMaul", "Bedrock Maul", {
+Item.createItem("bedrMaul", "Bedrock maul", {
     name: "bedrockmaul"
 }, {
     stack: 1

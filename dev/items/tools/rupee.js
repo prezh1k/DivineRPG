@@ -12,37 +12,37 @@ IDRegistry.genItemID("rupPickaxe");
 IDRegistry.genItemID("rupAxe");
 IDRegistry.genItemID("rupHoe");
 IDRegistry.genItemID("rupShickaxe");
-Item.createItem("rupSword", "Рупиевый меч", {
+Item.createItem("rupSword", "Rupee sword", {
     name: "rupeesword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupShovel", "Рупиевая лопата", {
+Item.createItem("rupShovel", "Rupee shovel", {
     name: "rupeeshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupPickaxe", "Рупиевая кирка", {
+Item.createItem("rupPickaxe", "Rupee pickaxe", {
     name: "rupeepickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupAxe", "Рупиевый топор", {
+Item.createItem("rupAxe", "Rupee axe", {
     name: "rupeeaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupHoe", "Rupee Hoe", {
+Item.createItem("rupHoe", "Rupee hoe", {
     name: "rupeehoe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupShickaxe", "Рупиевый мультиинструмент", {
+Item.createItem("rupShickaxe", "Rupee shickaxe", {
     name: "rupeeshickaxe",
     meta: 0
 }, {

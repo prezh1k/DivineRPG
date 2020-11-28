@@ -9,7 +9,7 @@ let SuperBow = new Bow()
 
 
 SuperBowAnimator.Create({
-	name: 'Азуритовый лук',
+	name: 'Wildwood bow',
 	defaultTexture: 'wildwoodBow',
 	defaultTextureData: 0,
 	animtations: {
@@ -23,7 +23,7 @@ SuperBowAnimator.Create({
 
 SuperArrow.Create({
 	namedID: "wildwoodArrow",
-	name: "Азуритовая стрела",
+	name: "Wildwood arrow",
 	texture: "wildwoodArrow",
 	data: 0,
 	skin: "entity/wildwoodArrow",

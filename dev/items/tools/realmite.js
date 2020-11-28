@@ -5,31 +5,31 @@ IDRegistry.genItemID("realShovel");
 IDRegistry.genItemID("realPickaxe");
 IDRegistry.genItemID("realAxe");
 IDRegistry.genItemID("realHoe");
-Item.createItem("realSword", "Реалмитовый меч", {
+Item.createItem("realSword", "Realmite sword", {
     name: "realmitesw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realShovel", "Реалмитовая лопата", {
+Item.createItem("realShovel", "Realmite shovel", {
     name: "realmitesh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realPickaxe", "Реалмитовая кирка", {
+Item.createItem("realPickaxe", "Realmite pickaxe", {
     name: "realmitepick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realAxe", "Реалмитовый топор", {
+Item.createItem("realAxe", "Realmite axe", {
     name: "realmiteaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realHoe", "Реалмитовая мотыга", {
+Item.createItem("realHoe", "Realmite hoe", {
     name: "realmitehoe",
     meta: 0
 }, {

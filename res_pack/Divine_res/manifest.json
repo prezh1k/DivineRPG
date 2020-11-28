@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "header": {
+        "name": "Abyss",
+        "description": "DansTS",
+        "uuid": "3c1288ee-daf6-45e7-9dc9-cfbf6ec16a88",
+        "version": [0, 0, 2]
+    },
+    "modules": [
+        {
+            "description": " DansTS ",
+            "type": "resources",
+            "uuid": "3abf9409-1d49-4d31-8b40-8ea0c0409c92",
+            "version": [0, 0, 2]
+        }
+      ],
+    "dependencies": [
+    {
+      "uuid": "8f20ca82-be56-459a-b4b2-20c35dbbf9b3",
+      "version": [ 0, 0, 2 ] 
+    } 
+  ]
+}

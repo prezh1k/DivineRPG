@@ -3,7 +3,7 @@ IDRegistry.genItemID("corptChest");
 IDRegistry.genItemID("corptLegs");
 IDRegistry.genItemID("corptBoots");
 
-Item.createArmorItem("corptHelm", "Corrupted Helmet", {
+Item.createArmorItem("corptHelm", "Corrupted helmet", {
     name: "corruptedHelmet"
 }, {
     type: "helmet",
@@ -11,7 +11,7 @@ Item.createArmorItem("corptHelm", "Corrupted Helmet", {
     durability: 6000,
     texture: "armor/corrupted_1.png"
 });
-Item.createArmorItem("corptChest", "Corrupted Chestplate", {
+Item.createArmorItem("corptChest", "Corrupted chestplate", {
     name: "corruptedChestplate"
 }, {
     type: "chestplate",
@@ -19,7 +19,7 @@ Item.createArmorItem("corptChest", "Corrupted Chestplate", {
     durability: 6000,
     texture: "armor/corrupted_1.png"
 });
-Item.createArmorItem("corptLegs", "Corrupted Leggings", {
+Item.createArmorItem("corptLegs", "Corrupted chestplate", {
     name: "corruptedLeggings"
 }, {
     type: "leggings",
@@ -27,7 +27,7 @@ Item.createArmorItem("corptLegs", "Corrupted Leggings", {
     durability: 6000,
     texture: "armor/corrupted_2.png"
 });
-Item.createArmorItem("corptBoots", "Corrupted Boots", {
+Item.createArmorItem("corptBoots", "Corrupted boots", {
     name: "corruptedBoots"
 }, {
     type: "boots",

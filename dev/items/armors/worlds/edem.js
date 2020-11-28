@@ -2,7 +2,7 @@ IDRegistry.genItemID("quanda");
 IDRegistry.genItemID("quandb");
 IDRegistry.genItemID("quandc");
 IDRegistry.genItemID("quandd");
-Item.createArmorItem("quanda", "Дравитовый шлем", {
+Item.createArmorItem("quanda", "Eden helmet", {
     name: "quandahelm"
 }, {
     type: "helmet",
@@ -10,7 +10,7 @@ Item.createArmorItem("quanda", "Дравитовый шлем", {
     durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandb", "Дравитовая кираса", {
+Item.createArmorItem("quandb", "Eden chestplate", {
     name: "quandbchest"
 }, {
     type: "chestplate",
@@ -18,7 +18,7 @@ Item.createArmorItem("quandb", "Дравитовая кираса", {
     durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandc", "Дравитовые поножи", {
+Item.createArmorItem("quandc", "Eden leggings", {
     name: "quandclegs"
 }, {
     type: "leggings",
@@ -26,7 +26,7 @@ Item.createArmorItem("quandc", "Дравитовые поножи", {
     durability: 10000000,
     texture: "armor/quanda_2.png"
 });
-Item.createArmorItem("quandd", "Дравитовые ботинки", {
+Item.createArmorItem("quandd", "Eden boots", {
     name: "quanddboots"
 }, {
     type: "boots",

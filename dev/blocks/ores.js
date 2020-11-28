@@ -4,7 +4,7 @@ IMPORT("ENV");
 
 IDRegistry.genBlockID("edenOre");
 Block.createBlock("edenOre", [
-	{name: "Дравитовая Руда", texture: [["edenOre", 0]], inCreative: true}]);
+	{name: "Eden ore", texture: [["edenOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.edenOre, "stone", 3);
 Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -24,7 +24,7 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 
 IDRegistry.genBlockID("netheriteOre");
 Block.createBlock("netheriteOre", [
-	{name: "Незеритовая руда", texture: [["netherore", 0]], inCreative: true}]);
+	{name: "Netherite ore", texture: [["netherore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone", 3);
 Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -41,7 +41,7 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 
 IDRegistry.genBlockID("bloodgemOre");
 Block.createBlock("bloodgemOre", [
-	{name: "Каменно-кровавая руда", texture: [["bloodgemore", 0]], inCreative: true}]);
+	{name: "Bloodgem ore", texture: [["bloodgemore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.bloodgemOre, "stone", 3);
 Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
@@ -59,7 +59,7 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 
 IDRegistry.genBlockID("wildwoodOre");
 Block.createBlock("wildwoodOre", [
-	{name: "Азуритовая Руда", texture: [["wildwoodOre", 0]], inCreative: true}]);
+	{name: "Wildwood ore", texture: [["wildwoodOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "stone", 3);
 Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -80,7 +80,7 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 
 IDRegistry.genBlockID("arlemiteOre");
 Block.createBlock("arlemiteOre", [
-	{name: "Арлемитовая Руда", texture: [["arlemiteore", 0]], inCreative: true}]);
+	{name: "Arlemite ore", texture: [["arlemiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "stone", 3);
 Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
@@ -96,7 +96,7 @@ Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
 });
 IDRegistry.genBlockID("realmiteOre");
 Block.createBlock("realmiteOre", [
-	{name: "Реалмитовая ", texture: [["realmiteore", 0]], inCreative: true}]);
+	{name: "Realmite ore", texture: [["realmiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "stone", 3);
 Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -113,7 +113,7 @@ Block.setDestroyLevel(BlockID.realmiteOre, 3);
 
 IDRegistry.genBlockID("rupeeOre");
 Block.createBlock("rupeeOre", [
-	{name: "Рупиевая Руда", texture: [["rupeeore", 0]], inCreative: true}]);
+	{name: "Rupee ore", texture: [["rupeeore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "stone", 3);
 Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {

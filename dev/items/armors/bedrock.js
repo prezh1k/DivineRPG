@@ -3,7 +3,7 @@ IDRegistry.genItemID("bedrChestplate");
 IDRegistry.genItemID("bedrLeggings");
 IDRegistry.genItemID("bedrBoots");
 
-Item.createArmorItem("bedrHelmet", "Bedrock Helmet", {
+Item.createArmorItem("bedrHelmet", "Bedrock helmet", {
     name: "bedrockhelm"
 }, {
     type: "helmet",
@@ -11,14 +11,14 @@ Item.createArmorItem("bedrHelmet", "Bedrock Helmet", {
     durability: 10000000,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrChestplate", "Bedrock Chestplate", {
+Item.createArmorItem("bedrChestplate", "Bedrock chestplate", {
     name: "bedrockch"
 }, {
     type: "chestplate",
     armor: 8,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrLeggings", "Bedrock Leggings", {
+Item.createArmorItem("bedrLeggings", "Bedrocl leggings", {
     name: "bedrockleg"
 }, {
     type: "leggings",
@@ -26,7 +26,7 @@ Item.createArmorItem("bedrLeggings", "Bedrock Leggings", {
     durability: 10000000,
     texture: "armor/bedrock_2.png"
 });
-Item.createArmorItem("bedrBoots", "Bedrock Boots", {
+Item.createArmorItem("bedrBoots", "Bedrock boots", {
     name: "bedrockboots"
 }, {
     type: "boots",

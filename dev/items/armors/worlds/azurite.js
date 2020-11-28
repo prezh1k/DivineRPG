@@ -2,7 +2,7 @@ IDRegistry.genItemID("quande");
 IDRegistry.genItemID("quandf");
 IDRegistry.genItemID("quandg");
 IDRegistry.genItemID("quandh");
-Item.createArmorItem("quande", "Азуритовый шлем", {
+Item.createArmorItem("quande", "Wildwood helmet", {
     name: "quandehelm"
 }, {
     type: "helmet",
@@ -10,7 +10,7 @@ Item.createArmorItem("quande", "Азуритовый шлем", {
     durability: 10000000,
     texture: "armor/quanda_3.png"
 });
-Item.createArmorItem("quandf", "Азуритовая кираса", {
+Item.createArmorItem("quandf", "Wildwood chestplate", {
     name: "quandfchest"
 }, {
     type: "chestplate",
@@ -18,7 +18,7 @@ Item.createArmorItem("quandf", "Азуритовая кираса", {
     durability: 10000000,
     texture: "armor/quanda_3.png"
 });
-Item.createArmorItem("quandg", "Азуритовые поножи", {
+Item.createArmorItem("quandg", "Wildwood leggings", {
     name: "quandglegs"
 }, {
     type: "leggings",
@@ -26,7 +26,7 @@ Item.createArmorItem("quandg", "Азуритовые поножи", {
     durability: 10000000,
     texture: "armor/quanda_4.png"
 });
-Item.createArmorItem("quandh", "Азуритовые ботинки", {
+Item.createArmorItem("quandh", "Wildwood boots", {
     name: "quandhboots"
 }, {
     type: "boots",

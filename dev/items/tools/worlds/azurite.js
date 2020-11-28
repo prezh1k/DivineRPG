@@ -2,25 +2,25 @@ IDRegistry.genItemID("azurisword");
 IDRegistry.genItemID("azuripickaxe");
 IDRegistry.genItemID("azurishovel");
 IDRegistry.genItemID("azuriaxe");
-Item.createItem("azurisword", "Азуритовый клинок", {
+Item.createItem("azurisword", "Wildwood sword", {
     name: "azurisword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azurishovel", "Азуритовая лопата", {
+Item.createItem("azurishovel", "Wildwood shovel", {
     name: "azurishovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azuripickaxe", "Азуритовая кирка", {
+Item.createItem("azuripickaxe", "Wildwood pickaxe", {
     name: "azuripickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azuriaxe", "Азуритовый топор", {
+Item.createItem("azuriaxe", "Wildwood axe", {
     name: "azuriaxe",
     meta: 0
 }, {

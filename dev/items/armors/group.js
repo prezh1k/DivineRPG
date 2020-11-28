@@ -1,4 +1,4 @@
-Item.addCreativeGroup("helmets", Translation.translate("Шлемы"), [
+Item.addCreativeGroup("helmets", Translation.translate("Helmets"), [
 	ItemID.arlHelmet,
 	ItemID.quanda,
 	ItemID.quande,
@@ -16,7 +16,7 @@ Item.addCreativeGroup("helmets", Translation.translate("Шлемы"), [
 	ItemID.krHelmet,
 	ItemID.angel1
 ]);
-Item.addCreativeGroup("chestplates", Translation.translate("Нагрудники"), [
+Item.addCreativeGroup("chestplates", Translation.translate("Chestplates"), [
 	ItemID.arlChestplate,
 	ItemID.quandb,
 	ItemID.quandf,
@@ -34,7 +34,7 @@ Item.addCreativeGroup("chestplates", Translation.translate("Нагрудники
 	ItemID.krChestplate,
 	ItemID.angel2
 ]);
-Item.addCreativeGroup("leggings", Translation.translate("Поножи"), [
+Item.addCreativeGroup("leggings", Translation.translate("Leggings"), [
 	ItemID.arlLeggings,
 	ItemID.quandc,
 	ItemID.quandg,
@@ -52,7 +52,7 @@ Item.addCreativeGroup("leggings", Translation.translate("Поножи"), [
 	ItemID.krLeggings,
 	ItemID.angel3
 ]);
-Item.addCreativeGroup("boots", Translation.translate("Ботинки"), [
+Item.addCreativeGroup("boots", Translation.translate("Boots"), [
 	ItemID.arlBoots,
 	ItemID.quandd,
 	ItemID.quandh,

@@ -11,31 +11,31 @@ IDRegistry.genItemID("divineShovel");
 IDRegistry.genItemID("divinePickaxe");
 IDRegistry.genItemID("divineAxe");
 IDRegistry.genItemID("divineShickaxe");
-Item.createItem("divineSword", "Божественный меч", {
+Item.createItem("divineSword", "Divine sword", {
     name: "divinesword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineShovel", "Божественная лопата", {
+Item.createItem("divineShovel", "Divine shovel", {
     name: "divineshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divinePickaxe", "Божественная кирка", {
+Item.createItem("divinePickaxe", "Divine pickaxe", {
     name: "divinepickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineAxe", "Божественный топор", {
+Item.createItem("divineAxe", "Divine axe", {
     name: "divineaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineShickaxe", "Божественный мультиинструмент", {
+Item.createItem("divineShickaxe", "Divine shickaxe", {
     name: "divineshickaxe",
     meta: 0
 }, {
