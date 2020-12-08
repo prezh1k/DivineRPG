@@ -69,3 +69,13 @@ Recipes.addShaped({
     "a a",
     "a a"
 ], ['a', ItemID.corruptStone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.corptHelmet && Player.getArmorSlot(1).id == ItemID.corptChestplate && Player.getArmorSlot(2).id == ItemID.corptLeggings && Player.getArmorSlot(3).id == ItemID.corptBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+      }
+    }
+  )}
+});

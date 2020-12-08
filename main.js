@@ -2,7 +2,7 @@
 BUILD INFO:
   dir: dev
   target: main.js
-  files: 37
+  files: 40
 */
 
 
@@ -72,7 +72,7 @@ var GlassType = Block.createSpecialType({
 
 IDRegistry.genBlockID("realmiteBlock");
 Block.createBlock("realmiteBlock", [
-	{name: "Realmite Block", texture: [["realmiteblock", 0]], inCreative: true}
+	{name: "Realmite block", texture: [["realmiteblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
 ToolAPI.registerBlockMaterial(BlockID.realmiteBlock, "stone", 3);
 Block.registerDropFunction("realmiteBlock", function(coords, blockID, blockData, level){
@@ -90,18 +90,29 @@ Recipes.addShaped({id: 7, count: 3, data: 0}, [
 
 IDRegistry.genBlockID("edenBlock");
 Block.createBlock("edenBlock", [
-	{name: "Дравитовый Блок", texture: [["edenBlock", 0]], inCreative: true}
+	{name: "Eden block", texture: [["edenBlock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
-ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone", 3);
+ToolAPI.registerBlockMaterial(BlockID.edenBlock, "stone", 3);
 Recipes.addShaped({id: BlockID.edenBlock, count: 1, data: 0}, [
 		"bbb",
 		"bbb",
 		"bbb"
 	], ['b', ItemID.edemfrag, 0]);
 
+IDRegistry.genBlockID("wildwoodBlock");
+Block.createBlock("wildwoodBlock", [
+	{name: "Wildwood block", texture: [["wildwoodBlock", 0]], inCreative: true}
+], BLOCK_Type_ORE);
+ToolAPI.registerBlockMaterial(BlockID.wildwoodBlock, "stone", 3);
+Recipes.addShaped({id: BlockID.wildwoodBlock, count: 1, data: 0}, [
+		"bbb",
+		"bbb",
+		"bbb"
+	], ['b', ItemID.lesfrag, 0]);
+
 IDRegistry.genBlockID("arlemiteBlock");
 Block.createBlock("arlemiteBlock", [
-	{name: "Arlemite Block", texture: [["arlemiteblock", 0]], inCreative: true}
+	{name: "Arlemite block", texture: [["arlemiteblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
 ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone", 3);
 Block.registerDropFunction("arlemiteBlock", function(coords, blockID, blockData, level){
@@ -113,7 +124,7 @@ Block.registerDropFunction("arlemiteBlock", function(coords, blockID, blockData,
 
 IDRegistry.genBlockID("rupeeBlock");
 Block.createBlock("rupeeBlock", [
-	{name: "Rupee Block", texture: [["rupeeblock", 0]], inCreative: true}
+	{name: "Rupee block", texture: [["rupeeblock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
 ToolAPI.registerBlockMaterial(BlockID.rupeeBlock, "stone", 3);
 Block.registerDropFunction("rupeeBlock", function(coords, blockID, blockData, level){
@@ -164,67 +175,67 @@ Recipes.addShaped({
 
 IDRegistry.genBlockID("arlemiteLamp");
 Block.createBlock("arlemiteLamp", [
-	{name: "Arlemite Lamp", texture: [["arlemitelamp", 0]], inCreative: true}
+	{name: "Arlemite lamp", texture: [["arlemitelamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.arlemiteLamp, "stone", 2);
 
 IDRegistry.genBlockID("rupeeLamp");
 Block.createBlock("rupeeLamp", [
-	{name: "Rupee Lamp", texture: [["rupeelamp", 0]], inCreative: true}
+	{name: "Rupee lamp", texture: [["rupeelamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.rupeeLamp, "stone", 2);
 
 IDRegistry.genBlockID("goldLamp");
 Block.createBlock("goldLamp", [
-	{name: "Gold Lamp", texture: [["goldlamp", 0]], inCreative: true}
+	{name: "Gold lamp", texture: [["goldlamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.goldLamp, "stone", 2);
 
 IDRegistry.genBlockID("lapisLamp");
 Block.createBlock("lapisLamp", [
-	{name: "Lapis Lamp", texture: [["lapislamp", 0]], inCreative: true}
+	{name: "Lapis lamp", texture: [["lapislamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.lapisLamp, "stone", 2);
 
 IDRegistry.genBlockID("redsLamp");
 Block.createBlock("redsLamp", [
-	{name: "Redstone Lamp", texture: [["redstonelamp", 0]], inCreative: true}
+	{name: "Redstone lamp", texture: [["redstonelamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.redsLamp, "stone", 2);
 
 IDRegistry.genBlockID("realLamp");
 Block.createBlock("realLamp", [
-	{name: "Realmite Lamp", texture: [["realmitelamp", 0]], inCreative: true}
+	{name: "Realmite lamp", texture: [["realmitelamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.realLamp, "stone", 2);
 
 IDRegistry.genBlockID("endLamp");
 Block.createBlock("endLamp", [
-	{name: "Ender Lamp", texture: [["enderLamp", 0]], inCreative: true}
+	{name: "Ender lamp", texture: [["enderLamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.endLamp, "stone", 2);
 
 IDRegistry.genBlockID("blazeLamp");
 Block.createBlock("blazeLamp", [
-	{name: "Blaze Lamp", texture: [["blazelamp", 0]], inCreative: true}
+	{name: "Blaze lamp", texture: [["blazelamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.blazeLamp, "stone", 2);
 
 IDRegistry.genBlockID("lavaLamp");
 Block.createBlock("lavaLamp", [
-	{name: "Lava Lamp", texture: [["lavalamp", 0]], inCreative: true}
+	{name: "Lava lamp", texture: [["lavalamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.lavaLamp, "stone", 2);
 
 IDRegistry.genBlockID("diamondLamp");
 Block.createBlock("diamondLamp", [
-	{name: "Diamond Lamp", texture: [["diamondlamp", 0]], inCreative: true}
+	{name: "Diamond lamp", texture: [["diamondlamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.diamondLamp, "stone", 2);
 
 IDRegistry.genBlockID("krakLamp");
 Block.createBlock("krakLamp", [
-	{name: "Kraken Lamp", texture: [["krakenlamp", 0]], inCreative: true}
+	{name: "Kraken lamp", texture: [["krakenlamp", 0]], inCreative: true}
 ], LampType);
 ToolAPI.registerBlockMaterial(BlockID.krakenLamp, "stone", 2);
 Recipes.addShaped({
@@ -267,7 +278,7 @@ Recipes.addShaped({
 
 IDRegistry.genBlockID("ironBrick");
 Block.createBlock("ironBrick", [
-	{name: "Iron Brick", texture: [["ironBricks", 0]], inCreative: true}
+	{name: "Iron brick", texture: [["ironBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.ironBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.ironBrick, count: 1, data: 0}, [
@@ -278,7 +289,7 @@ Recipes.addShaped({id: BlockID.ironBrick, count: 1, data: 0}, [
 
 IDRegistry.genBlockID("goldBrick");
 Block.createBlock("goldBrick", [
-	{name: "Gold Brick", texture: [["goldBricks", 0]], inCreative: true}
+	{name: "Gold brick", texture: [["goldBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.goldBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.goldBrick, count: 1, data: 0}, [
@@ -287,7 +298,7 @@ Recipes.addShaped({id: BlockID.goldBrick, count: 1, data: 0}, [
 	], ['b', 266, 0]);
 IDRegistry.genBlockID("lapisBrick");
 Block.createBlock("lapisBrick", [
-	{name: "Lapis Brick", texture: [["lapisBricks", 0]], inCreative: true}
+	{name: "Lapis brick", texture: [["lapisBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.lapisBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lapisBrick, count: 1, data: 0}, [
@@ -296,32 +307,32 @@ Recipes.addShaped({id: BlockID.lapisBrick, count: 1, data: 0}, [
 	], ['b', 351, 4]);
 IDRegistry.genBlockID("lavaBrick");
 Block.createBlock("lavaBrick", [
-	{name: "Lava Brick", texture: [["lavaBricks", 0]], inCreative: true}
+	{name: "Lava brick", texture: [["lavaBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.lavaBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', 325, 10]);
 IDRegistry.genBlockID("diamBrick");
 Block.createBlock("diamBrick", [
-	{name: "Iron Brick", texture: [["diamondBricks", 0]], inCreative: true}
+	{name: "Iron brick", texture: [["diamondBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.diamBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', 264, 0]);
 IDRegistry.genBlockID("realBrick");
 Block.createBlock("realBrick", [
-	{name: "Realmite Brick", texture: [["realmiteBricks", 0]], inCreative: true}
+	{name: "Realmite brick", texture: [["realmiteBricks", 0]], inCreative: true}
 ]);
 ToolAPI.registerBlockMaterial(BlockID.realBrick, "stone", 2);
 Recipes.addShaped({id: BlockID.lavaBrick, count: 1, data: 0}, ["bb","bb "], ['b', ItemID.ingotReal, 0]);
 IDRegistry.genBlockID("arleBrick");
 Block.createBlock("arleBrick", [
-	{name: "Arlemite Brick", texture: [["arlemiteBricks", 0]], inCreative: true}
+	{name: "Arlemite brick", texture: [["arlemiteBricks", 0]], inCreative: true}
 ]);
 Recipes.addShaped({id: BlockID.arleBrick, count: 1, data: 0}, ["bb","bb "], ['b',ItemID.ingotArl, 0]);
 ToolAPI.registerBlockMaterial(BlockID.arleBrick, "stone", 2);
 
 IDRegistry.genBlockID("edenGrass");
 Block.createBlockWithRotation("edenGrass", [
-	{name: "Земля с травой Эдема", texture: [["edenGrass", 0], ["edenGrass", 1], ["edenGrass", 0], ["edenGrass", 0], ["edenGrass", 0], ["edenGrass", 0]], inCreative: true}
+	{name: "Eden grassblock", texture: [["edenGrass", 0], ["edenGrass", 1], ["edenGrass", 0], ["edenGrass", 0], ["edenGrass", 0], ["edenGrass", 0]], inCreative: true}
 ], "opaque");
 ToolAPI.registerBlockMaterial(BlockID.edenGrass, "dirt", 0, true);
 Block.registerDropFunction("edenGrass", function(){
@@ -329,32 +340,32 @@ return [[BlockID.edenDirt, 1, 0]];});
 
 IDRegistry.genBlockID("edenLog");
 Block.createBlockWithRotation("edenLog", [
-	{name: "Древесина Эдема", texture: [["edenLog", 1], ["edenLog", 1], ["edenLog", 0], ["edenLog", 0], ["edenLog", 0], ["edenLog", 0]], inCreative: true}], BLOCK_TYPE_LOG);
+	{name: "Eden log", texture: [["edenLog", 1], ["edenLog", 1], ["edenLog", 0], ["edenLog", 0], ["edenLog", 0], ["edenLog", 0]], inCreative: true}], BLOCK_TYPE_LOG);
 
 IDRegistry.genBlockID("twilightStone");
 Block.createBlock("twilightStone", [
-	{name: "Сумеречный камень", texture: [["twilightStone", 0]], inCreative: true} 
+	{name: "Twilight stone", texture: [["twilightStone", 0]], inCreative: true} 
 ]);
 ToolAPI.registerBlockMaterial(BlockID.twilightStone, "stone", 0);
 Block.setDestroyTime(BlockID.twilightStone,1)
 IDRegistry.genBlockID("divineStone");
 Block.createBlock("divineStone", [
-	{name: "Божественный камень", texture: [["divinestone", 0]], inCreative: true} 
+	{name: "Divine block", texture: [["divinestone", 0]], inCreative: true} 
 ]);
 Block.setDestroyTime(BlockID.divineStone,1)
 
 
 IDRegistry.genBlockID("edenDirt");
 Block.createBlock("edenDirt", [
-	{name: "Земля Эдема", texture: [["edenDirt", 0]], inCreative: true}]);
+	{name: "Eden dirt", texture: [["edenDirt", 0]], inCreative: true}]);
 Block.setDestroyTime(BlockID.edenDirt, 0.5);
 ToolAPI.registerBlockMaterial(BlockID.edenDirt, "dirt", 0, true);
 
 IDRegistry.genBlockID("edenLeaves");
 Block.createBlock("edenLeaves", [
-	{name: "Листва Дерева эдема", texture: [["edenLeaves", 0]], inCreative: false},
-	{name: "Листва Дерева эдема", texture: [["edenLeaves", 0]], inCreative: false},
-	{name: "Листва Дерева эдема", texture: [["edenLeaves", 0]], inCreative: true}
+	{name: "Eden leaves", texture: [["edenLeaves", 0]], inCreative: false},
+	{name: "Eden leaves", texture: [["edenLeaves", 0]], inCreative: false},
+	{name: "Eden leaves", texture: [["edenLeaves", 0]], inCreative: true}
 ], {
 	base: 18,
 	destroytime: 0.2,
@@ -369,7 +380,7 @@ Block.registerDropFunction("edenLeaves", function(coords, blockID, blockData, le
 		return [[blockID, 1, 2]];
 	}
 	if(Math.random() < .1){
-		return [[ItemID.edenSapling, 1, 0]]
+		return [[BlockID.edenSapling, 1, 0]]
 	}
 	return [];
 });
@@ -418,7 +429,7 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 
 IDRegistry.genBlockID("edenBrush");
 Block.createBlock("edenBrush", [
-    {name: "Трава Эдема", texture:
+    {name: "Eden grass", texture:
         [["edenBrush", 0]], inCreative:
         true}], BLOCK_TYPE_BRUSH);
 ToolAPI.registerBlockMaterial(BlockID.edenBrush, "plant");
@@ -426,7 +437,7 @@ TileRenderer.setPlantModel(BlockID.edenBrush, 0, "edenBrush", 0);
 
 IDRegistry.genBlockID("edenPlanks");
 Block.createBlock("edenPlanks", [
-    {name: "Доски Эдема", texture:
+    {name: "Eden planks", texture:
         [["edenPlanks", 0]], inCreative: 
         true}], BLOCK_TYPE_WOOD);
 ToolAPI.registerBlockMaterial(BlockID.edenPlanks, "wood");
@@ -435,7 +446,7 @@ Recipes.addShaped({id: BlockID.edenPlanks, count: 4, data: 0},
 
 IDRegistry.genBlockID("wildwoodDirt");
 Block.createBlock("wildwoodDirt", [
-    {name: "Азуритовая земля", texture:
+    {name: "Wildwood dirt", texture:
         [["wildwoodDirt", 0]], inCreative:
         true}], "opaque");
 Block.setDestroyTime(BlockID.wildwoodDirt, 0.5);
@@ -443,7 +454,7 @@ ToolAPI.registerBlockMaterial(BlockID.wildwoodDirt, "dirt", 0, true);
 
 IDRegistry.genBlockID("wildwoodGrass");
 Block.createBlockWithRotation("wildwoodGrass", [
-	{name: "Земля с травой Эдема", texture: [["wildwoodGrass", 0], ["wildwoodGrass", 1], ["wildwoodGrass", 0], ["wildwoodGrass", 0], ["wildwoodGrass", 0], ["wildwoodGrass", 0]], inCreative: true}
+	{name: "Wildwood grass", texture: [["wildwoodGrass", 0], ["wildwoodGrass", 1], ["wildwoodGrass", 0], ["wildwoodGrass", 0], ["wildwoodGrass", 0], ["wildwoodGrass", 0]], inCreative: true}
 ], "opaque");
 ToolAPI.registerBlockMaterial(BlockID.wildwoodGrass, "dirt", 0, true);
 Block.registerDropFunction("wildwoodGrass", function(){
@@ -451,11 +462,11 @@ return [[BlockID.wildwoodDirt, 1, 0]];});
 
 IDRegistry.genBlockID("wildwoodLog");
 Block.createBlockWithRotation("wildwoodLog", [
-	{name: "Азуритовая Древесина", texture: [["wildwoodLog", 1], ["wildwoodLog", 1], ["wildwoodLog", 0], ["wildwoodLog", 0], ["wildwoodLog", 0], ["wildwoodLog", 0]], inCreative: true}], BLOCK_TYPE_LOG,"opaque");
+	{name: "Wildwood log", texture: [["wildwoodLog", 1], ["wildwoodLog", 1], ["wildwoodLog", 0], ["wildwoodLog", 0], ["wildwoodLog", 0], ["wildwoodLog", 0]], inCreative: true}], BLOCK_TYPE_LOG,"opaque");
 
 IDRegistry.genBlockID("wildwoodTallgrassTop");
 Block.createBlock("wildwoodTallgrassTop", [
-    {name: "Высокая трава Дикого Леса", texture:
+    {name: "Wildwood tallgrass", texture:
         [["wildwoodTallgrassTop", 0]], inCreative:
         false}], BLOCK_TYPE_LEAVES);
 ToolAPI.registerBlockMaterial(BlockID.wildwoodTallgrass1, "plant");
@@ -468,7 +479,7 @@ TileRenderer.setPlantModel(BlockID.wildwoodTallgrassTop, 0, "wildwoodTallgrassTo
 
 IDRegistry.genBlockID("wildwoodTallgrassBottom");
 Block.createBlock("wildwoodTallgrassBottom", [
-    {name: "Высокая трава Дикого Леса", texture:
+    {name: "Wildwood tallgrass", texture:
         [["wildwoodTallgrassBottom", 0]], inCreative:
         false}], BLOCK_TYPE_LEAVES);
 ToolAPI.registerBlockMaterial(BlockID.wildwoodTallgrass, "plant");
@@ -480,9 +491,9 @@ TileRenderer.setPlantModel(BlockID.wildwoodTallgrassBottom, 0, "wildwoodTallgras
 
 IDRegistry.genBlockID("wildwoodLeaves");
 Block.createBlock("wildwoodLeaves", [
-	{name: "Листва Азуритового дерева", texture: [["wildwoodLeaves", 0]], inCreative: false},
-	{name: "Листва Азуритового дерева", texture: [["wildwoodLeaves", 0]], inCreative: false},
-	{name: "Листва Азуритового дерева", texture: [["wildwoodLeaves", 0]], inCreative: true}
+	{name: "Wildwood leaves", texture: [["wildwoodLeaves", 0]], inCreative: false},
+	{name: "Wildwood leaves", texture: [["wildwoodLeaves", 0]], inCreative: false},
+	{name: "Wildwood leaves", texture: [["wildwoodLeaves", 0]], inCreative: true}
 ], {
 	base: 18,
 	destroytime: 0.2,
@@ -497,7 +508,7 @@ Block.registerDropFunction("wildwoodLeaves", function(coords, blockID, blockData
 		return [[blockID, 1, 2]];
 	}
 	if(Math.random() < .1){
-		return [[ItemID.wildwoodSapling, 1, 0]]
+		return [[BlockID.wildwoodSapling, 1, 0]]
 	}
 	return [];
 });
@@ -545,7 +556,7 @@ var DIRT_TILES = {
 	60: true
 };
 IDRegistry.genItemID("edenSapling");
-Item.createItem("edenSapling", "Саженец божественного дерева", {
+Item.createItem("edenSapling", "Eden sapling", {
     name: "edenSapling"
 }, {
     isTech: true,
@@ -553,7 +564,7 @@ Item.createItem("edenSapling", "Саженец божественного дер
 });
 IDRegistry.genBlockID("edenSapling");
 Block.createBlock("edenSapling", [
-    {name: "Саженец Дерева эдема", texture:
+    {name: "Eden sapling", texture:
         [["edenSapling", 0]], inCreative:
         true}], BLOCK_TYPE_SAPLING);
 ToolAPI.registerBlockMaterial(BlockID.edenSapling, "plant");
@@ -599,7 +610,7 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 
 
 IDRegistry.genItemID("wildwoodSapling");
-Item.createItem("wildwoodSapling", "Саженец азуритового дерева", {
+Item.createItem("wildwoodSapling", "Wildwood sapling", {
     name: "wildwoodSapling"
 }, {
     isTech: true,
@@ -607,7 +618,7 @@ Item.createItem("wildwoodSapling", "Саженец азуритового дер
 });
 IDRegistry.genBlockID("wildwoodSapling");
 Block.createBlock("wildwoodSapling", [
-    {name: "Саженец Азуритового дерева", texture:
+    {name: "Wildwood sapling", texture:
         [["wildwoodSapling", 0]], inCreative:
         true}], BLOCK_TYPE_SAPLING);
 ToolAPI.registerBlockMaterial(BlockID.edenSapling, "plant");
@@ -649,6 +660,156 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 	}
 });
 
+IDRegistry.genBlockID("apalachiaDirt");
+Block.createBlock("apalachiaDirt", [
+    {name: "Apalachia dirt", texture:
+        [["apalachiaDirt", 0]], inCreative:
+        true}], "opaque");
+Block.setDestroyTime(BlockID.apalachiaDirt, 0.5);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaDirt, "dirt", 0, true);
+
+IDRegistry.genBlockID("apalachiaGrass");
+Block.createBlockWithRotation("apalachiaGrass", [
+	{name: "Apalachia grass", texture: [["apalachiaGrass", 0], ["apalachiaGrass", 1], ["apalachiaGrass", 0], ["apalachiaGrass", 0], ["apalachiaGrass", 0], ["apalachiaGrass", 0]], inCreative: true}
+], "opaque");
+ToolAPI.registerBlockMaterial(BlockID.apalachiaGrass, "dirt", 0, true);
+Block.setDestroyTime(BlockID.apalachiaGrass, 0.5);
+Block.registerDropFunction("apalachiaGrass", function(){
+return [[BlockID.apalachiaDirt, 1, 0]];});
+
+IDRegistry.genBlockID("apalachiaLog");
+Block.createBlockWithRotation("apalachiaLog", [
+	{name: "Apalachia log", texture: [["apalachiaLog", 1], ["apalachiaLog", 1], ["apalachiaLog", 0], ["apalachiaLog", 0], ["apalachiaLog", 0], ["apalachiaLog", 0]], inCreative: true}], BLOCK_TYPE_LOG,"opaque");
+IDRegistry.genBlockID("apalachiaLeaves");
+Block.createBlock("apalachiaLeaves", [
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: false},
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: false},
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: true}
+], {
+	base: 18,
+	destroytime: 0.2,
+	explosionres: 1,
+	renderallfaces: true, 
+	renderlayer: 1,
+	lightopacity: 1,
+	translucency: 0.5
+});
+Block.registerDropFunction("apalachiaLeaves", function(coords, blockID, blockData, level, enchant){
+	if(level > 0 || Player.getCarriedItem().id == 359){
+		return [[blockID, 1, 2]];
+	}
+	if(Math.random() < .1){
+		return [[BlockID.apalachiaSapling, 1, 0]]
+	}
+	return [];
+});
+ToolAPI.registerBlockMaterial(BlockID.apalachiaLeaves, "plant");
+function checkLeaves(x, y, z, explored){
+	let blockID = World.getBlockID(x, y, z);
+	if(blockID == BlockID.apalachiaLog){
+		return true;
+	}
+	if(blockID == BlockID.apalachiaLeaves){
+		explored[x+':'+y+':'+z] = true;
+	}
+	return false;
+}
+
+function checkLeavesFor6Sides(x, y, z, explored){
+	return checkLeaves(x-1, y, z, explored) ||
+	checkLeaves(x+1, y, z, explored) ||
+	checkLeaves(x, y, z-1, explored) ||
+	checkLeaves(x, y, z+1, explored) ||
+	checkLeaves(x, y-1, z, explored) ||
+	checkLeaves(x, y+1, z, explored);
+}
+
+function updateLeaves(x, y, z){
+	for(let xx = x - 1; xx <= x + 1; xx++){
+		for(let yy = y - 1; yy <= y + 1; yy++){
+			for(let zz = z - 1; zz <= z + 1; zz++){
+				let block = World.getBlock(xx, yy, zz);
+				if(block.id == BlockID.apalachiaLeaves && block.data == 0){
+					World.setBlock(xx, yy, zz, BlockID.apalachiaLeaves, 1);
+				}
+			}
+		}
+	}
+};
+
+Callback.addCallback("DestroyBlock", function(coords, block, player){
+	updateLeaves(coords.x, coords.y, coords.z);
+});
+
+
+IDRegistry.genBlockID("apalachiaTallgrass");
+Block.createBlock("apalachiaTallgrass", [
+    {name: "Apalachia tall grass", texture:
+        [["apalachiaTallgrass", 0]], inCreative:
+        true}], BLOCK_TYPE_BRUSH);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaTallgrass, "plant");
+TileRenderer.setPlantModel(BlockID.apalachiaTallgrass, 0, "apalachiaTallgrass", 0);
+IDRegistry.genBlockID("apalachiaPlanks");
+Block.createBlock("apalachiaPlanks", [
+    {name: "Apalachia planks", texture:
+        [["apalachiaPlanks", 0]], inCreative: 
+        true}], BLOCK_TYPE_WOOD);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaPlanks, "wood");
+Recipes.addShapeless(
+  {id: BlockID.apalachiaPlanks, count: 4, data: 0},[
+    {id: BlockID.apalachiaLog, data: 0}
+]);
+
+IDRegistry.genItemID("apalachiaSapling");
+Item.createItem("apalachiaSapling", "Apalachia sapling", {
+    name: "apalachiaSapling"
+}, {
+    isTech: true,
+    stack: 64
+});
+IDRegistry.genBlockID("apalachiaSapling");
+Block.createBlock("apalachiaSapling", [
+    {name: "Apalachia sapling", texture:
+        [["apalachiaSapling", 0]], inCreative:
+        true}], BLOCK_TYPE_SAPLING);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaSapling, "plant");
+Block.registerDropFunction("apalachiaLeaves", function(coords, blockID, blockData, level, enchant){
+	if(level > 0 || Player.getCarriedItem().id == 359){
+		return [[blockID, 1, 2]];
+	}
+	if(Math.random() < .1){
+		return [[ItemID.apalachiaSapling, 1, 0]]
+	}
+	return [];
+});
+TileRenderer.setPlantModel(BlockID.apalachiaSapling, 0, "apalachiaSapling", 0);
+Item.registerUseFunction("apalachiaSapling", function(coords, item, block){
+	var place = coords.relative;
+	var tile1 = World.getBlock(place.x, place.y, place.z);
+	var tile2 = World.getBlock(place.x, place.y - 1, place.z);
+	
+	if (World.canTileBeReplaced(tile1.id, tile1.data) && DIRT_TILES[tile2.id]) {
+		World.setBlock(place.x, place.y, place.z, BlockID.apalachiaSapling);
+		Player.setCarriedItem(item.id, item.count - 1, item.data);
+		World.playSound(place.x, place.y, place.z, "dig.grass", 1, 0.8)
+	}
+});
+Block.registerDropFunction("apalachiaSapling", function(){
+    return [[BlockID.apalachiaSapling, 1, 0]];
+});
+Block.setRandomTickCallback(BlockID.apalachiaSapling, function(x, y, z){
+	if(!DIRT_TILES[World.getBlockID(x, y-1, z)]){
+		World.destroyBlock(x, y, z, true);
+	}
+	else if(Math.random() < 0.25 && World.getLightLevel(x, y, z) >= 4){
+		apalachiatree.build(coords.x, coords.y, coords.z, Structure.ROTATE_Y, random, regi);
+	}
+});
+Callback.addCallback("DestroyBlock", function(coords, block, player){
+	if(World.getBlockID(coords.x, coords.y + 1, coords.z) == BlockID.apalachiaSapling){
+		World.destroyBlock(coords.x, coords.y + 1, coords.z, true);
+	}
+});
 
 
 
@@ -661,7 +822,7 @@ IMPORT("ENV");
 
 IDRegistry.genBlockID("edenOre");
 Block.createBlock("edenOre", [
-	{name: "Дравитовая Руда", texture: [["edenOre", 0]], inCreative: true}]);
+	{name: "Eden ore", texture: [["edenOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.edenOre, "stone", 3);
 Block.registerDropFunction("edenOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -681,7 +842,7 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
 
 IDRegistry.genBlockID("netheriteOre");
 Block.createBlock("netheriteOre", [
-	{name: "Незеритовая руда", texture: [["netherore", 0]], inCreative: true}]);
+	{name: "Netherite ore", texture: [["netherore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.netheriteOre, "stone", 3);
 Block.registerDropFunction("netheriteOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -698,7 +859,7 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 
 IDRegistry.genBlockID("bloodgemOre");
 Block.createBlock("bloodgemOre", [
-	{name: "Каменно-кровавая руда", texture: [["bloodgemore", 0]], inCreative: true}]);
+	{name: "Bloodgem ore", texture: [["bloodgemore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.bloodgemOre, "stone", 3);
 Block.registerDropFunction("bloodgemOre",
 function(coords, blockID, blockData, level, enchant){
@@ -716,7 +877,7 @@ Callback.addCallback("GenerateNetherChunk",function(chunkX, chunkZ, random){
 
 IDRegistry.genBlockID("wildwoodOre");
 Block.createBlock("wildwoodOre", [
-	{name: "Азуритовая Руда", texture: [["wildwoodOre", 0]], inCreative: true}]);
+	{name: "Wildwood ore", texture: [["wildwoodOre", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.wildwoodOre, "stone", 3);
 Block.registerDropFunction("wildwoodOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -734,10 +895,29 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
     }
 }});
 
+IDRegistry.genBlockID("apalachiaOre");
+Block.createBlock("apalachiaOre", [
+	{name: "Apalachia ore", texture: [["apalachiaOre", 0]], inCreative: true}]);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaOre, "stone", 3);
+Block.registerDropFunction("apalachiaOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (BlockID.apalachiaOre, 1, 0)
+  });
+Block.setDestroyTime(BlockID.apalachiaOre, 6);
+Block.setDestroyLevel(BlockID.apalachiaOre, 3);
+Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
+
+    if(dimensionid == apalachia.id){
+
+    for (var i=0; i<10; i++) {
+        var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 96);
+        GenerationUtils.generateOreCustom(c.x, c.y, c.z, BlockID.apalachiaOre, 0, 8, true, [BlockID.twilightStone]);
+    }
+}});
 
 IDRegistry.genBlockID("arlemiteOre");
 Block.createBlock("arlemiteOre", [
-	{name: "Арлемитовая Руда", texture: [["arlemiteore", 0]], inCreative: true}]);
+	{name: "Arlemite ore", texture: [["arlemiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.arlemiteOre, "stone", 3);
 Block.registerDropFunction("arlemiteOre",
 function(coords, blockID, blockData, level, enchant){
@@ -753,7 +933,7 @@ Callback.addCallback("GenerateChunkUnderground",function(chunkX, chunkZ){
 });
 IDRegistry.genBlockID("realmiteOre");
 Block.createBlock("realmiteOre", [
-	{name: "Реалмитовая ", texture: [["realmiteore", 0]], inCreative: true}]);
+	{name: "Realmite ore", texture: [["realmiteore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.realmiteOre, "stone", 3);
 Block.registerDropFunction("realmiteOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -770,7 +950,7 @@ Block.setDestroyLevel(BlockID.realmiteOre, 3);
 
 IDRegistry.genBlockID("rupeeOre");
 Block.createBlock("rupeeOre", [
-	{name: "Рупиевая Руда", texture: [["rupeeore", 0]], inCreative: true}]);
+	{name: "Rupee ore", texture: [["rupeeore", 0]], inCreative: true}]);
 ToolAPI.registerBlockMaterial(BlockID.rupeeOre, "stone", 3);
 Block.registerDropFunction("rupeeOre",
   function(coords, blockID, blockData, level, enchant) {
@@ -790,6 +970,8 @@ function (){
   Recipes.addFurnace(BlockID.bloodgemOre, ItemID.bloodgem);
   Recipes.addFurnace(BlockID.edenOre, ItemID.edemfrag);
   Recipes.addFurnace(BlockID.wildwoodOre, ItemID.lesfrag);
+  Recipes.addFurnace(BlockID.apalachiaOre,
+    ItemID.apafrag)
   Recipes.addFurnace(BlockID.netheriteOre, ItemID.netheriteIngot);
   Recipes.addFurnace(BlockID.rupeeOre, ItemID.ingotRup);
   Recipes.addFurnace(BlockID.arlemiteOre, ItemID.ingotArl);
@@ -802,45 +984,334 @@ function (){
 // file: blocks/group.js
 
 Item.addCreativeGroup("blocks", Translation.translate("Блоки"), [
-  Block.realmiteBlock,
-  Block.edenBlock,
-  Block.arlemiteBlock,
-  Block.rupeeBlock,
+  BlockID.realmiteBlock,
+  BlockID.edenBlock,
+  BlockID.arlemiteBlock,
+  BlockID.rupeeBlock,
 ]);
  
 Item.addCreativeGroup("lamps", Translation.translate("Лампы"), [
-  Block.arlemiteLamp,
-  Block.rupeeLamp,
-  Block.goldLamp,
-  Block.lapisLamp,
-  Block.redsLamp,
-  Block.realLamp,
-  Block.endLamp,
-  Block.blazeLamp,
-  Block.lavaLamp,
-  Block.diamondLamp,
-  Block.krakLamp
+  BlockID.arlemiteLamp,
+  BlockID.rupeeLamp,
+  BlockID.goldLamp,
+  BlockID.lapisLamp,
+  BlockID.redsLamp,
+  BlockID.realLamp,
+  BlockID.endLamp,
+  BlockID.blazeLamp,
+  BlockID.lavaLamp,
+  BlockID.diamondLamp,
+  BlockID.krakLamp
 ]);
 
 Item.addCreativeGroup("bricks", Translation.translate("Кирпичи"), [
-  Block.ironBrick,
-  Block.goldBrick,
-  Block.lapisBrick,
-  Block.lavaBrick,
-  Block.diamBrick,
-  Block.realBrick,
-  Block.arleBrick
+  BlockID.ironBrick,
+  BlockID.goldBrick,
+  BlockID.lapisBrick,
+  BlockID.lavaBrick,
+  BlockID.diamBrick,
+  BlockID.realBrick,
+  BlockID.arleBrick
 ]);
 
 Item.addCreativeGroup("ores", Translation.translate("Руды"), [
-  Block.edenOre,
-  Block.netheriteOre,
-  Block.bloodgemOre,
-  Block.wildwoodOre,
-  Block.arlemiteOre,
-  Block.realmiteOre,
-  Block.rupeeOre,
+  BlockID.edenOre,
+  BlockID.netheriteOre,
+  BlockID.bloodgemOre,
+  BlockID.wildwoodOre,
+  BlockID.arlemiteOre,
+  BlockID.realmiteOre,
+  BlockID.rupeeOre,
+  BlockID.apalachiaOre
 ]);
+
+
+
+
+// file: dimensions/PortalGeneration.js
+
+IMPORT("PortalUtils");
+
+var portalGenerationHelper1 = {
+    p: function(x, y, z, id){
+        World.setBlock(x, y, z, id, 0);
+    },
+    random:function(){if(Math.floor(Math.random() * (150 - 0 + 1)) <= 70){return true}else if((Math.floor(Math.random() * (150 - 0 + 1))) >= 68){return false}},
+    radiuse:function(coords, code, i){
+        for(var x = coords.x - i; x < coords.x + i; x++){
+            for(var y = coords.y - i; y < coords.y + i; y++){
+                for(var z = coords.z- i; z < coords.z + i; z++){
+                    code();
+                }
+            }
+        }
+    },    
+    generatePortal:function(crds, block){
+        var block = {
+            frame: BlockID.divineStone,
+            portal: BlockID.edenPortal
+        }
+        if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);                
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+                block.frame);
+            }if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);           
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
+                block.frame);
+            }
+      }
+}
+
+var portalGenerationHelper2 = {
+    p: function(x, y, z, id){
+        World.setBlock(x, y, z, id, 0);
+    },
+    random:function(){if(Math.floor(Math.random() * (150 - 0 + 1)) <= 70){return true}else if((Math.floor(Math.random() * (150 - 0 + 1))) >= 68){return false}},
+    radiuse:function(coords, code, i){
+        for(var x = coords.x - i; x < coords.x + i; x++){
+            for(var y = coords.y - i; y < coords.y + i; y++){
+                for(var z = coords.z- i; z < coords.z + i; z++){
+                    code();
+                }
+            }
+        }
+    },    
+    generatePortal:function(crds, block){
+        var block = {
+            frame: BlockID.edenBlock,
+            portal: BlockID.wildwoodPortal
+        }
+        if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+                block.frame);
+            }if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+ 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
+                block.frame);
+            }
+      }
+}
+
+var portalGenerationHelper3 = {
+    p: function(x, y, z, id){
+        World.setBlock(x, y, z, id, 0);
+    },
+    random:function(){if(Math.floor(Math.random() * (150 - 0 + 1)) <= 70){return true}else if((Math.floor(Math.random() * (150 - 0 + 1))) >= 68){return false}},
+    radiuse:function(coords, code, i){
+        for(var x = coords.x - i; x < coords.x + i; x++){
+            for(var y = coords.y - i; y < coords.y + i; y++){
+                for(var z = coords.z- i; z < coords.z + i; z++){
+                    code();
+                }
+            }
+        }
+    },    
+    generatePortal:function(crds, block){
+        var block = {
+            frame: BlockID.wildwoodBlock,
+            portal: BlockID.apalachiaPortal
+        }
+        if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+                block.frame);
+            }if(this.random()){
+            var a = [];            
+            this.p(crds.x, crds.y, crds.z, block.frame);
+            this.p(crds.x+1, crds.y, crds.z, block.frame);
+            this.p(crds.x-1, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
+            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
+            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
+            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
+            
+            this.p(crds.x, crds.y+1, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
+            this.p(crds.x, crds.y+2, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
+            this.p(crds.x, crds.y+3, crds.z, block.portal);
+            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
+            this.p(crds.x, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x, crds.y, crds.z+2,
+                block.frame);
+            this.p(crds.x+1, crds.y, crds.z+2,
+ 
+                block.frame);               
+            this.p(crds.x + 2, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z + 2,
+                  block.frame);
+            this.p(crds.x - 1, crds.y, crds.z+1,
+                block.frame);
+            this.p(crds.x + 2, crds.y, crds.z+1,
+                block.frame);
+            }
+      }
+}
 
 
 
@@ -848,16 +1319,17 @@ Item.addCreativeGroup("ores", Translation.translate("Руды"), [
 // file: dimensions/eden.js
 
 IMPORT("PortalUtils");
+let portals1 = 0;
+
 
 var Aether = new Dimensions.CustomDimension("Aether", 1991); // (-_-)
-Aether.setSkyColor(.97, .87, .7)
-Aether.setFogColor(.97, .87, .7);
-World.setDayMode(true);
+Aether.setSkyColor(.96, .87, .7)
+Aether.setFogColor(.96, .87, .7);
 
 Aether.setGenerator(Dimensions.newGenerator({
 layers: [
 {
-minY: 0, maxY: 180,
+minY: 0, maxY: 80,
 yConversion: [[0, -.6], [0.1, -.52], [0.5, -.25], [0.7, -.25], [.85, -.24], [1, -.6]],
 material: {base: BlockID.twilightStone, surface: {id:BlockID.edenDirt, data: 0, width:4}, cover: BlockID.edenGrass},
 noise: {octaves: {count: 4, scale: 40, weight_factor: 3, weight: 1.28}}
@@ -915,34 +1387,27 @@ if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.edenPortal){
     Dimensions.transfer(Player.get(), 0);
 }});
 
-Callback.addCallback('CustomDimensionTransfer', function (entity, from, to, coords) {
-if (to == Aether.id) { 
-var players = Network.getConnectedPlayers();
- for (var i in players) {
- var player = players[i];
- var CP = Entity.getPosition(player);
- CP = GenerationUtils.findSurface(CP.x, 89, CP.z);
- 
- Updatable.addUpdatable({
- age: 0,
- update: function () {
-   for (i =0; i < 256; i++) {
-
-   if (World.getBlock(CP.x, i, CP.z) == BlockID.edenGrass){
-continue;
- portalGenerationHelper1.generatePortal({x: CP.x, y: i, z: CP.z});
- Entity.setPosition(player, CP.x+1, i+2, CP.z+1);
-}
-  else{
-  portalGenerationHelper1.generatePortal({x: CP.x, y: 140, z: CP.z});
-  Entity.setPosition(player, CP.x+2, 142, CP.z+2);
- this.remove = this.age++ > 100;
+Callback.addCallback('CustomDimensionTransfer', function(entity, from, to) {
+  if (to == Aether.id) {
+    var players = Network.getConnectedPlayers();
+    for (var i in players) {
+      var player = players[i];
+      var CP = Entity.getPosition(player);
+      CP = GenerationUtils.findSurface(CP.x, 150, CP.z);
+      Updatable.addUpdatable({
+        age: 0,
+        update: function() {
+          Entity.setPosition(player, CP.x, 92, CP.z + 3);
+          if (portals1 == 0) {
+            portalGenerationHelper1.generatePortal({ x: CP.x, y: 90, z: CP.z });
+            portals1 = +1;
+          };
+          this.remove = this.age++ > 5;
+        }
+      });
+    }
   }
- }
-}
-})
-}}
-}); 
+});
 
 var teleport = false;
 Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
@@ -959,18 +1424,17 @@ Entity.setPosition(player, CP.x, CP.y+4, CP.z-2);
  this.remove = this.age++ > 5;
  }
 });
-teleport = true;
+
 }
 }});
 
-Saver.addSavesScope("teleport",
+Saver.addSavesScope("portals1",
 function read(scope) {
-TPA = scope.teleport;
+TPA = scope.portals1;
   },
 function save() {
-return {TPA : teleport };
-  }
-);
+return {TPA : portals1 };
+});
 
 
 
@@ -986,7 +1450,7 @@ wildwood.setFogColor(.53, .81, .98);
 wildwood.setGenerator(Dimensions.newGenerator({
 layers: [
 {
-minY: 0, maxY: 75,
+minY: 0, maxY: 80,
 yConversion: [[0, -.5], [.25, -.25], [.5, 0], [.75, -.25], [1, -.5 ]],
 material: {base: BlockID.twilightStone, surface: {id:BlockID.wildwoodDirt, data: 0, width:4}, cover: BlockID.wildwoodGrass},
 noise: {octaves: {count: 4, scale: 40, weight_factor: 3, weight: 1.28}}
@@ -1051,12 +1515,13 @@ if (to == wildwood.id) {
  for (var i in players) { 
 var player = players[i]; 
 var CP = Entity.getPosition(player); 
-CP = GenerationUtils.findSurface(CP.x, 78, CP.z); 
+CP = GenerationUtils.findSurface(CP.x, 91, CP.z); 
  
  Updatable.addUpdatable({ 
  age: 0, 
  update: function () { 
- Entity.setPosition(player, CP.x, CP.y + 2, CP.z); 
+ Entity.setPosition(player, CP.x, CP.y + 5, CP.z); 
+ portalGenerationHelper2.generatePortal({x: CP.x, y: CP.y, z: CP.z});
  this.remove = this.age++ > 5; 
  } 
  }); 
@@ -1097,6 +1562,129 @@ return {TPA : teleport };
 
 
 
+// file: dimensions/apalachia.js
+
+IMPORT("PortalUtils");
+let portals = 0;
+
+
+var apalachia = new Dimensions.CustomDimension("apalachia", 1993); // (-_-)
+apalachia.setSkyColor(.33, .42, .54)
+apalachia.setFogColor(.33, .42, .54);
+
+
+apalachia.setGenerator(Dimensions.newGenerator({
+layers: [
+{
+minY: 0, maxY: 80,
+yConversion: [[0, -.6], [0.1, -.52], [0.5, -.25], [0.7, -.25], [.85, -.24], [1, -.6]],
+material: {base: BlockID.twilightStone, surface: {id:BlockID.apalachiaDirt, data: 0, width:4}, cover: BlockID.apalachiaGrass},
+noise: {octaves: {count: 4, scale: 40, weight_factor: 3, weight: 1.28}}
+}
+]
+}));
+
+PortalUtils.newPortalBlock("apalachiaPortal", ["apalachiaPortal", 0], {type: "v-plane", frameId: BlockID.wildwoodBlock}, true);
+
+TileEntity.registerPrototype(BlockID.apalachiaPortal, {
+tick: function(){
+    Particles.addParticle(20, this.x+Math.random(), this.y+Math.random(), this.z+Math.random(), 0, 0, 0, 0);
+}
+});
+
+var shapeapalachia = new PortalShape();
+shapeapalachia.setPortalId(BlockID.apalachiaPortal);
+shapeapalachia.setFrameIds(BlockID.wildwoodBlock);
+shapeapalachia.setMinSize(2, 3);
+
+    
+Callback.addCallback("DestroyBlock", function(pos, block) { 
+    if (block.id == BlockID.wildwoodBlock || block.id == BlockID.apalachiaPortal) {
+        DimensionHelper.eliminateIncorrectPlacedPortals(pos, BlockID.apalachiaPortal, [BlockID.wildwoodBlock]);
+    }
+}); 
+Callback.addCallback("ItemUse", function(coords, item, block){ 
+if(Player.getCarriedItem().id == ItemID.twilightClock) 
+var rect = shapeapalachia.findPortal(coords.relative.x, coords.relative.y, coords.relative.z); 
+ if (rect) { 
+for(i = 0;i<=3;i++){
+World.addTileEntity(coords.x, coords.y+i, coords.z);
+}
+for(i = 0;i<=3;i++){
+World.addTileEntity(coords.x+1, coords.y+i, coords.z);
+}
+for(i = 0;i<=3;i++){
+World.addTileEntity(coords.x-1, coords.y+i, coords.z);
+}
+for(i = 0;i<=3;i++){
+World.addTileEntity(coords.x, coords.y+i, coords.z+i);
+}
+for(i = 0;i<=3;i++){
+World.addTileEntity(coords.x, coords.y+i, coords.z-i);
+}
+shapeapalachia.buildPortal(rect, false); 
+ }
+});
+Callback.addCallback("tick", function() {
+var crdsP = Player.getPosition();
+if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.apalachiaPortal){
+    Dimensions.transfer(Player.get(), apalachia.id);
+}
+if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == BlockID.apalachiaPortal){
+    Dimensions.transfer(Player.get(), 0);
+}});
+
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) { 
+
+if (to == apalachia.id) { 
+ var players = Network.getConnectedPlayers(); 
+ for (var i in players) { 
+var player = players[i]; 
+var CP = Entity.getPosition(player); 
+CP = GenerationUtils.findSurface(CP.x, 150, CP.z);
+ Updatable.addUpdatable({ 
+ age: 0, 
+ update: function () { 
+   if (portals == 0) {
+ portalGenerationHelper3.generatePortal({x: CP.x, y: 90, z: CP.z});
+ portals =+ 1;
+};
+Entity.setPosition(player, CP.x+1, 93, CP.z+2); 
+ this.remove = this.age++ > 5; 
+ } 
+ }); 
+ } 
+ } 
+});
+
+Callback.addCallback('CustomDimensionTransfer', function (entity, from, to) {
+if (to == 0 && from == apalachia.id) { 
+var players = Network.getConnectedPlayers();
+ for (var i in players) {
+ var player = players[i];
+ var CP = Entity.getPosition(player);
+ CP = GenerationUtils.findSurface(CP.x, 255, CP.z);
+ Updatable.addUpdatable({
+ age: 0,
+ update: function () {
+Entity.setPosition(player, CP.x, CP.y+4, CP.z-2); 
+ this.remove = this.age++ > 5;
+ }
+});
+}
+}});
+
+Saver.addSavesScope("portals",
+function read(scope) {
+TPA = scope.portals;
+  },
+function save() {
+return {TPA : portals };
+});
+
+
+
+
 // file: items/armors/realmite.js
 
 IDRegistry.genItemID("realHelmet");
@@ -1104,7 +1692,7 @@ IDRegistry.genItemID("realChestplate");
 IDRegistry.genItemID("realLeggings");
 IDRegistry.genItemID("realBoots");
 
-Item.createArmorItem("realHelmet", "Realmite Helmet", {
+Item.createArmorItem("realHelmet", "Realmite helmet", {
     name: "realmitehelm"
 }, {
     type: "helmet",
@@ -1112,7 +1700,7 @@ Item.createArmorItem("realHelmet", "Realmite Helmet", {
     durability: 2000,
     texture: "armor/real_1.png"
 });
-Item.createArmorItem("realChestplate", "Realmite Chestplate", {
+Item.createArmorItem("realChestplate", "Realmite chestplate", {
     name: "realmitebody"
 }, {
     type: "chestplate",
@@ -1120,7 +1708,7 @@ Item.createArmorItem("realChestplate", "Realmite Chestplate", {
     durability: 2000,
     texture: "armor/real_1.png"
 });
-Item.createArmorItem("realLeggings", "Realmite Leggings", {
+Item.createArmorItem("realLeggings", "Realmite leggings", {
     name: "realmitelegs"
 }, {
     type: "leggings",
@@ -1128,7 +1716,7 @@ Item.createArmorItem("realLeggings", "Realmite Leggings", {
     durability: 2000,
     texture: "armor/real_2.png"
 });
-Item.createArmorItem("realBoots", "Realmite Boots", {
+Item.createArmorItem("realBoots", "Realmite boots", {
     name: "realmiteboots"
 }, {
     type: "boots",
@@ -1173,6 +1761,16 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.ingotReal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.realHelmet && Player.getArmorSlot(1).id == ItemID.realChestplate && Player.getArmorSlot(2).id == ItemID.realLeggings && Player.getArmorSlot(3).id == ItemID.realBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 50)
+      }
+    }
+  )}
+});
 
 
 
@@ -1184,7 +1782,7 @@ IDRegistry.genItemID("arlChestplate");
 IDRegistry.genItemID("arlLeggings");
 IDRegistry.genItemID("arlBoots");
 
-Item.createArmorItem("arlHelmet", "Arlemite Helmet", {
+Item.createArmorItem("arlHelmet", "Arlemite helmet", {
     name: "arlemitehelmet"
 }, {
     type: "helmet",
@@ -1192,7 +1790,7 @@ Item.createArmorItem("arlHelmet", "Arlemite Helmet", {
     durability: 2000,
     texture: "armor/arlemite_1.png"
 });
-Item.createArmorItem("arlChestplate", "Arlemite Chestplate", {
+Item.createArmorItem("arlChestplate", "Arlemite chestplate", {
     name: "arlemitebody"
 }, {
     type: "chestplate",
@@ -1200,7 +1798,7 @@ Item.createArmorItem("arlChestplate", "Arlemite Chestplate", {
     durability: 2000,
     texture: "armor/arlemite_1.png"
 });
-Item.createArmorItem("arlLeggings", "Arlemite Leggings", {
+Item.createArmorItem("arlLeggings", "Arlemite leggings", {
     name: "arlemitelegs"
 }, {
     type: "leggings",
@@ -1208,7 +1806,7 @@ Item.createArmorItem("arlLeggings", "Arlemite Leggings", {
     durability: 2000,
     texture: "armor/arlemite_2.png"
 });
-Item.createArmorItem("arlBoots", "Arlemite Boots", {
+Item.createArmorItem("arlBoots", "Arlemite boots", {
     name: "arlemiteboots"
 }, {
     type: "boots",
@@ -1253,6 +1851,16 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.ingotArl, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.arlHelmet && Player.getArmorSlot(1).id == ItemID.arlChestplate && Player.getArmorSlot(2).id == ItemID.arlLeggings && Player.getArmorSlot(3).id == ItemID.arlBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, Math.floor((damageValue / 100) *  40));
+      }
+    }
+  )}
+});
 
 
 
@@ -1264,36 +1872,36 @@ IDRegistry.genItemID("rupChestplate");
 IDRegistry.genItemID("rupLeggings");
 IDRegistry.genItemID("rupBoots");
 
-Item.createArmorItem("rupHelmet", "Rupee Helmet", {
+Item.createArmorItem("rupHelmet", "Rupee helmet", {
     name: "rupeehelmet"
 }, {
     type: "helmet",
     armor: 3,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
-Item.createArmorItem("rupChestplate", "Rupee Chestplate", {
+Item.createArmorItem("rupChestplate", "Rupee chestplate", {
     name: "rupeebody"
 }, {
     type: "chestplate",
     armor: 8,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
-Item.createArmorItem("rupLeggings", "Rupee Leggings", {
+Item.createArmorItem("rupLeggings", "Rupee leggings", {
     name: "rupeelegs"
 }, {
     type: "leggings",
     armor: 5,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_2.png"
 });
-Item.createArmorItem("rupBoots", "Rupee Boots", {
+Item.createArmorItem("rupBoots", "Rupee boots", {
     name: "rupeeboots"
 }, {
     type: "boots",
     armor: 2,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
 Recipes.addShaped({
@@ -1333,6 +1941,22 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.ingotRup, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.rupHelmet && Player.getArmorSlot(1).id == ItemID.rupChestplate && Player.getArmorSlot(2).id == ItemID.rupLeggings && Player.getArmorSlot(3).id == ItemID.rupBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 45)
+      }
+      if (victim == Player.get()){
+        if (damageType == 2){
+          Game.prevent();
+          Entity.damageEntity(victim, (damageValue / 100) * 15)
+        }
+      }
+    }
+  )}
+});
 
 
 
@@ -1344,7 +1968,7 @@ IDRegistry.genItemID("divChestplate");
 IDRegistry.genItemID("divLeggings");
 IDRegistry.genItemID("divBoots");
 
-Item.createArmorItem("divHelmet", "Divine Helmet", {
+Item.createArmorItem("divHelmet", "Divine helmet", {
     name: "divinehelmet"
 }, {
     type: "helmet",
@@ -1352,7 +1976,7 @@ Item.createArmorItem("divHelmet", "Divine Helmet", {
     durability: 10000000,
     texture: "armor/divine_1.png"
 });
-Item.createArmorItem("divChestplate", "Divine Chestplate", {
+Item.createArmorItem("divChestplate", "Divine chestplate", {
     name: "divinechestplate"
 }, {
     type: "chestplate",
@@ -1360,7 +1984,7 @@ Item.createArmorItem("divChestplate", "Divine Chestplate", {
     durability: 10000000,
     texture: "armor/divine_1.png"
 });
-Item.createArmorItem("divLeggings", "Divine Leggings", {
+Item.createArmorItem("divLeggings", "Divine leggings", {
     name: "divineleggings"
 }, {
     type: "leggings",
@@ -1368,7 +1992,7 @@ Item.createArmorItem("divLeggings", "Divine Leggings", {
     durability: 10000000,
     texture: "armor/divine_2.png"
 });
-Item.createArmorItem("divBoots", "Divine Boots", {
+Item.createArmorItem("divBoots", "Divine boots", {
     name: "divineboots"
 }, {
     type: "boots",
@@ -1416,10 +2040,16 @@ Recipes.addShaped({
 ], ['x', ItemID.divinestone, 0]);
 Callback.addCallback("tick", function() {
     if (Player.getArmorSlot(0).id == ItemID.divHelmet && Player.getArmorSlot(1).id == ItemID.divChestplate && Player.getArmorSlot(2).id == ItemID.divLeggings && Player.getArmorSlot(3).id == ItemID.divBoots) {
-        Entity.addEffect(Player.get(), 5, 1, 20,false, false);
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 25)
+       }
+      }),
+        Entity.addEffect(Player.get(), 5, 2, 20,false, false);
         Entity.addEffect(Player.get(), 8, 1, 20, false, false);
     }
-})
+});
 
 
 
@@ -1431,7 +2061,7 @@ IDRegistry.genItemID("bedrChestplate");
 IDRegistry.genItemID("bedrLeggings");
 IDRegistry.genItemID("bedrBoots");
 
-Item.createArmorItem("bedrHelmet", "Шлем из коренной породы", {
+Item.createArmorItem("bedrHelmet", "Bedrock helmet", {
     name: "bedrockhelm"
 }, {
     type: "helmet",
@@ -1439,14 +2069,14 @@ Item.createArmorItem("bedrHelmet", "Шлем из коренной породы"
     durability: 10000000,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrChestplate", "Кираса из коренной породы", {
+Item.createArmorItem("bedrChestplate", "Bedrock chestplate", {
     name: "bedrockch"
 }, {
     type: "chestplate",
     armor: 8,
     texture: "armor/bedrock_1.png"
 });
-Item.createArmorItem("bedrLeggings", "Поножи из коренной породы", {
+Item.createArmorItem("bedrLeggings", "Bedrocl leggings", {
     name: "bedrockleg"
 }, {
     type: "leggings",
@@ -1454,7 +2084,7 @@ Item.createArmorItem("bedrLeggings", "Поножи из коренной пор�
     durability: 10000000,
     texture: "armor/bedrock_2.png"
 });
-Item.createArmorItem("bedrBoots", "Ботинки из коренной породы", {
+Item.createArmorItem("bedrBoots", "Bedrock boots", {
     name: "bedrockboots"
 }, {
     type: "boots",
@@ -1499,6 +2129,16 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', 7, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.bedrHelmet && Player.getArmorSlot(1).id == ItemID.bedrChestplate && Player.getArmorSlot(2).id == ItemID.bedrLeggings && Player.getArmorSlot(3).id == ItemID.bedrBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+          if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 25)
+      }
+    }
+  )}
+});
 
 
 
@@ -1506,7 +2146,7 @@ Recipes.addShaped({
 // file: items/armors/nether.js
 
 IDRegistry.genItemID("netherIngot")
-Item.createItem("netherIngot", "Слиток адского камня", {
+Item.createItem("netherIngot", "Nether ingot", {
     name: "netherIngot"
 });
 Recipes.addShaped({
@@ -1519,7 +2159,7 @@ IDRegistry.genItemID("netherChestplate");
 IDRegistry.genItemID("netherLeggings");
 IDRegistry.genItemID("netherBoots");
 
-Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
+Item.createArmorItem("netherHelmet", "Nether helmet", {
     name: "netheriteHelmet"
 }, {
     type: "helmet",
@@ -1527,7 +2167,7 @@ Item.createArmorItem("netherHelmet", "Незеритовый шлем", {
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("netherChestplate", "Незеритовая кираса", {
+Item.createArmorItem("netherChestplate", "Nether chestplate", {
     name: "netheriteChestplate"
 }, {
     type: "chestplate",
@@ -1535,7 +2175,7 @@ Item.createArmorItem("netherChestplate", "Незеритовая кираса", 
     durability: 5000,
     texture: "armor/netherite_1.png"
 });
-Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
+Item.createArmorItem("netherLeggings", "Nether leggings", {
     name: "netheriteLeggins"
 }, {
     type: "leggings",
@@ -1543,7 +2183,7 @@ Item.createArmorItem("netherLeggings", "Незеритовые поножи", {
     durability: 5000,
     texture: "armor/netherite_2.png"
 });
-Item.createArmorItem("netherBoots", "Незеритовые ботинки", {
+Item.createArmorItem("netherBoots", "Nether boots", {
     name: "netheriteBoots"
 }, {
     type: "boots",
@@ -1589,6 +2229,18 @@ Recipes.addShaped({
     "x x",
     "a a"
 ], ['a', ItemID.netheriteChunk, 0, 'x', ItemID.shadowingot,0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.netherHelmet && Player.getArmorSlot(1).id == ItemID.netherChestplate && Player.getArmorSlot(2).id == ItemID.netherLeggings && Player.getArmorSlot(3).id == ItemID.netherBoots) {
+        Entity.addEffect(Player.get(), 12, 10, 20,false, false);
+        Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 50)
+        }
+       }
+     )
+    }
+});
 
 
 
@@ -1600,7 +2252,7 @@ IDRegistry.genItemID("corptChest");
 IDRegistry.genItemID("corptLegs");
 IDRegistry.genItemID("corptBoots");
 
-Item.createArmorItem("corptHelm", "Поврежденный шлем", {
+Item.createArmorItem("corptHelm", "Corrupted helmet", {
     name: "corruptedHelmet"
 }, {
     type: "helmet",
@@ -1608,7 +2260,7 @@ Item.createArmorItem("corptHelm", "Поврежденный шлем", {
     durability: 6000,
     texture: "armor/corrupted_1.png"
 });
-Item.createArmorItem("corptChest", "Поврежденная кираса", {
+Item.createArmorItem("corptChest", "Corrupted chestplate", {
     name: "corruptedChestplate"
 }, {
     type: "chestplate",
@@ -1616,7 +2268,7 @@ Item.createArmorItem("corptChest", "Поврежденная кираса", {
     durability: 6000,
     texture: "armor/corrupted_1.png"
 });
-Item.createArmorItem("corptLegs", "Поврежденные поножи", {
+Item.createArmorItem("corptLegs", "Corrupted chestplate", {
     name: "corruptedLeggings"
 }, {
     type: "leggings",
@@ -1624,7 +2276,7 @@ Item.createArmorItem("corptLegs", "Поврежденные поножи", {
     durability: 6000,
     texture: "armor/corrupted_2.png"
 });
-Item.createArmorItem("corptBoots", "Поврежденные ботинки", {
+Item.createArmorItem("corptBoots", "Corrupted boots", {
     name: "corruptedBoots"
 }, {
     type: "boots",
@@ -1666,6 +2318,16 @@ Recipes.addShaped({
     "a a",
     "a a"
 ], ['a', ItemID.corruptStone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.corptHelmet && Player.getArmorSlot(1).id == ItemID.corptChestplate && Player.getArmorSlot(2).id == ItemID.corptLeggings && Player.getArmorSlot(3).id == ItemID.corptBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+      }
+    }
+  )}
+});
 
 
 
@@ -1677,7 +2339,7 @@ IDRegistry.genItemID("shadowChestplate");
 IDRegistry.genItemID("shadowLeggings");
 IDRegistry.genItemID("shadowBoots");
 
-Item.createArmorItem("shadowHelmet", "Shadow Helmet", {
+Item.createArmorItem("shadowHelmet", "Shadow helmet", {
     name: "shadowhelmet"
 }, {
     type: "helmet",
@@ -1685,7 +2347,7 @@ Item.createArmorItem("shadowHelmet", "Shadow Helmet", {
     durability: 10000000,
     texture: "armor/shadow_1.png"
 });
-Item.createArmorItem("shadowChestplate", "Shadow Chestplate", {
+Item.createArmorItem("shadowChestplate", "Shadow chestplate", {
     name: "shadowbody"
 }, {
     type: "chestplate",
@@ -1693,7 +2355,7 @@ Item.createArmorItem("shadowChestplate", "Shadow Chestplate", {
     durability: 10000000,
     texture: "armor/shadow_1.png"
 });
-Item.createArmorItem("shadowLeggings", "Shadow Leggings", {
+Item.createArmorItem("shadowLeggings", "Shadow leggings", {
     name: "shadowlegs"
 }, {
     type: "leggings",
@@ -1701,7 +2363,7 @@ Item.createArmorItem("shadowLeggings", "Shadow Leggings", {
     durability: 10000000,
     texture: "armor/shadow_2.png"
 });
-Item.createArmorItem("shadowBoots", "Shadow Boots", {
+Item.createArmorItem("shadowBoots", "Shadow boots", {
     name: "shadowboots"
 }, {
     type: "boots",
@@ -1747,6 +2409,17 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.shadowstone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.shadowHelmet && Player.getArmorSlot(1).id == ItemID.shadowChestplate && Player.getArmorSlot(2).id == ItemID.shadowLeggings && Player.getArmorSlot(3).id == ItemID.shadowBoots) {
+      Entity.addEffect(Player.get(), 1, 2, 20, false, false),
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+      }
+    }
+  )}
+});
 
 
 
@@ -1758,7 +2431,7 @@ IDRegistry.genItemID("krChestplate");
 IDRegistry.genItemID("krLeggings");
 IDRegistry.genItemID("krBoots");
 
-Item.createArmorItem("krHelmet", "Kraken Helmet", {
+Item.createArmorItem("krHelmet", "Kraken helmet", {
     name: "krakenhelmet"
 }, {
     type: "helmet",
@@ -1766,7 +2439,7 @@ Item.createArmorItem("krHelmet", "Kraken Helmet", {
     durability: 5000,
     texture: "armor/kraken_1.png"
 });
-Item.createArmorItem("krChestplate", "Kraken Chestplate", {
+Item.createArmorItem("krChestplate", "Kraken chestplate", {
     name: "krakenbody"
 }, {
     type: "chestplate",
@@ -1774,7 +2447,7 @@ Item.createArmorItem("krChestplate", "Kraken Chestplate", {
     durability: 5000,
     texture: "armor/kraken_1.png"
 });
-Item.createArmorItem("krLeggings", "Kraken Leggings", {
+Item.createArmorItem("krLeggings", "Kraken leggings", {
     name: "krakenlegs"
 }, {
     type: "leggings",
@@ -1782,7 +2455,7 @@ Item.createArmorItem("krLeggings", "Kraken Leggings", {
     durability: 5000,
     texture: "armor/kraken_2.png"
 });
-Item.createArmorItem("krBoots", "Kraken Boots", {
+Item.createArmorItem("krBoots", "Kraken boots", {
     name: "krakenboots"
 }, {
     type: "boots",
@@ -1827,6 +2500,18 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.krscale, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.krHelmet && Player.getArmorSlot(1).id == ItemID.krChestplate && Player.getArmorSlot(2).id == ItemID.krLeggings && Player.getArmorSlot(3).id == ItemID.krBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 70)
+      }
+    }
+  ),
+        Entity.addEffect(Player.get(), 13, 5, 20,false, false);
+    }
+})
 
 
 
@@ -1837,38 +2522,148 @@ IDRegistry.genItemID("quandv");
 IDRegistry.genItemID("quandw");
 IDRegistry.genItemID("quandx");
 IDRegistry.genItemID("quandy");
-Item.createArmorItem("quandv", " Халитовый Шлем", {
+Item.createArmorItem("quandv", "Halite helmet", {
     name: "quandvhelm"
 }, {
     type: "helmet",
     armor: 20,
-    durability: 5100,
+    durability: 10000000,
     texture: "armor/quanda_11.png"
 });
-Item.createArmorItem("quandw", "Халитовый нагрудник", {
+Item.createArmorItem("quandw", "Halite chestplate", {
     name: "quandwchest"
 }, {
     type: "chestplate",
     armor: 20,
-    durability: 5500,
+    durability: 10000000,
     texture: "armor/quanda_11.png"
 });
-Item.createArmorItem("quandx", "Халитовые штаны", {
+Item.createArmorItem("quandx", "Halite leggings", {
     name: "quandxlegs"
 }, {
     type: "leggings",
     armor: 20,
-    durability: 5500,
+    durability: 10000000,
     texture: "armor/quanda_12.png"
 });
-Item.createArmorItem("quandy", "Халитовые ботинки ", {
+Item.createArmorItem("quandy", "Halite boots", {
     name: "quandyboots"
 }, {
     type: "boots",
     armor: 20,
-    durability: 5200,
+    durability: 10000000,
     texture: "armor/quanda_11.png"
 });
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandv && Player.getArmorSlot(1).id == ItemID.quandw && Player.getArmorSlot(2).id == ItemID.quandx && Player.getArmorSlot(3).id == ItemID.quandy) {
+        Entity.addEffect(Player.get(), 5, 8, 20,false, false);
+    }
+});
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandv && Player.getArmorSlot(1).id == ItemID.quandw && Player.getArmorSlot(2).id == ItemID.quandx && Player.getArmorSlot(3).id == ItemID.quandy) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()){
+          Game.prevent();
+          Entity.damageEntity(victim, Math.floor((damageValue / 200) *  17));
+        if (attacker == Player.get()){
+          Game.prevent();
+          Entity.damageEntity(victim, damageValue + 24)
+        }
+      }
+    }
+  )}
+});
+
+
+
+
+// file: items/armors/angel.js
+
+IDRegistry.genItemID("angel1");
+IDRegistry.genItemID("angel2");
+IDRegistry.genItemID("angel3");
+IDRegistry.genItemID("angel4");
+Item.createArmorItem("angel1", "Angel helmet", {
+    name: "angelicHelmet"
+}, {
+    type: "helmet",
+    armor: 3,
+    durability: 10000000,
+    texture: "armor/angelic_1.png"
+});
+Item.createArmorItem("angel2", "Angel chestplate", {
+    name: "angelicChestplate"
+}, {
+    type: "chestplate",
+    armor: 3,
+    durability: 10000000,
+    texture: "armor/angelic_1.png"
+});
+Item.createArmorItem("angel3", "Angel leggins", {
+    name: "angelicLeggings"
+}, {
+    type: "leggings",
+    armor: 3,
+    durability: 10000000,
+    texture: "armor/angelic_2.png"
+});
+Item.createArmorItem("angel4", "Angel boots", {
+    name: "angelicBoots"
+}, {
+    type: "boots",
+    armor: 3,
+    durability: 10000000,
+    texture: "armor/angelic_1.png"
+});
+
+Recipes.addShaped({
+    id: ItemID.angel1,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x"
+], ['x', ItemID.angel, 0]);
+
+Recipes.addShaped({
+    id: ItemID.angel2,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "xxx",
+    "xxx"
+], ['x', ItemID.angel, 0]);
+
+Recipes.addShaped({
+    id: ItemID.angel3,
+    count: 1,
+    data: 0
+}, [
+    "xxx",
+    "x x",
+    "x x"
+], ['x', ItemID.angel, 0]);
+
+Recipes.addShaped({
+    id: ItemID.angel4,
+    count: 1,
+    data: 0
+}, [
+    "x x",
+    "x x"
+], ['x', ItemID.angel, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
+      Player.setFlyingEnabled(true);
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 70)
+     }
+    }
+  )}
+})
 
 
 
@@ -1879,7 +2674,7 @@ IDRegistry.genItemID("quanda");
 IDRegistry.genItemID("quandb");
 IDRegistry.genItemID("quandc");
 IDRegistry.genItemID("quandd");
-Item.createArmorItem("quanda", "Дравитовый шлем", {
+Item.createArmorItem("quanda", "Eden helmet", {
     name: "quandahelm"
 }, {
     type: "helmet",
@@ -1887,7 +2682,7 @@ Item.createArmorItem("quanda", "Дравитовый шлем", {
     durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandb", "Дравитовая кираса", {
+Item.createArmorItem("quandb", "Eden chestplate", {
     name: "quandbchest"
 }, {
     type: "chestplate",
@@ -1895,7 +2690,7 @@ Item.createArmorItem("quandb", "Дравитовая кираса", {
     durability: 10000000,
     texture: "armor/quanda_1.png"
 });
-Item.createArmorItem("quandc", "Дравитовые поножи", {
+Item.createArmorItem("quandc", "Eden leggings", {
     name: "quandclegs"
 }, {
     type: "leggings",
@@ -1903,7 +2698,7 @@ Item.createArmorItem("quandc", "Дравитовые поножи", {
     durability: 10000000,
     texture: "armor/quanda_2.png"
 });
-Item.createArmorItem("quandd", "Дравитовые ботинки", {
+Item.createArmorItem("quandd", "Eden boots", {
     name: "quanddboots"
 }, {
     type: "boots",
@@ -1955,8 +2750,14 @@ Recipes.addShaped({
 Callback.addCallback("tick", function() {
     if (Player.getArmorSlot(0).id == ItemID.quanda && Player.getArmorSlot(1).id == ItemID.quandb && Player.getArmorSlot(2).id == ItemID.quandc && Player.getArmorSlot(3).id == ItemID.quandd) {
         Entity.addEffect(Player.get(), 5, 10, 2, false, false);
+        Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+        }
+       }
+      )
     }
-    
 })
 
 
@@ -1968,7 +2769,7 @@ IDRegistry.genItemID("quande");
 IDRegistry.genItemID("quandf");
 IDRegistry.genItemID("quandg");
 IDRegistry.genItemID("quandh");
-Item.createArmorItem("quande", "Азуритовый шлем", {
+Item.createArmorItem("quande", "Wildwood helmet", {
     name: "quandehelm"
 }, {
     type: "helmet",
@@ -1976,7 +2777,7 @@ Item.createArmorItem("quande", "Азуритовый шлем", {
     durability: 10000000,
     texture: "armor/quanda_3.png"
 });
-Item.createArmorItem("quandf", "Азуритовая кираса", {
+Item.createArmorItem("quandf", "Wildwood chestplate", {
     name: "quandfchest"
 }, {
     type: "chestplate",
@@ -1984,7 +2785,7 @@ Item.createArmorItem("quandf", "Азуритовая кираса", {
     durability: 10000000,
     texture: "armor/quanda_3.png"
 });
-Item.createArmorItem("quandg", "Азуритовые поножи", {
+Item.createArmorItem("quandg", "Wildwood leggings", {
     name: "quandglegs"
 }, {
     type: "leggings",
@@ -1992,7 +2793,7 @@ Item.createArmorItem("quandg", "Азуритовые поножи", {
     durability: 10000000,
     texture: "armor/quanda_4.png"
 });
-Item.createArmorItem("quandh", "Азуритовые ботинки", {
+Item.createArmorItem("quandh", "Wildwood boots", {
     name: "quandhboots"
 }, {
     type: "boots",
@@ -2045,7 +2846,15 @@ Callback.addCallback("tick", function() {
       var crdsP = Player.getPosition();
       if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == 8 || 9) {
         Entity.addEffect(Player.get(), 10, 10, 20,false, false);
-    }}
+     }
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 35)
+            }
+         }
+      )
+    }
 });
 
 
@@ -2057,36 +2866,36 @@ IDRegistry.genItemID("quandj");
 IDRegistry.genItemID("quandk");
 IDRegistry.genItemID("quandl");
 IDRegistry.genItemID("quandm");
-Item.createArmorItem("quandj", "Увитовый шлем", {
+Item.createArmorItem("quandj", "Apalachia helmet", {
     name: "quandjhelm"
 }, {
     type: "helmet",
     armor: 9,
-    durability: 3500,
+    durability: 10000000,
     texture: "armor/quanda_5.png"
 });
-Item.createArmorItem("quandk", "Увитовая кираса", {
+Item.createArmorItem("quandk", "Apalachia chestplate", {
     name: "quandkchest"
 }, {
     type: "chestplate",
     armor: 9,
-    durability: 3700,
+    durability: 10000000,
     texture: "armor/quanda_5.png"
 });
-Item.createArmorItem("quandl", "Увитовые поножи", {
+Item.createArmorItem("quandl", "Apalachia leggings", {
     name: "quandllegs"
 }, {
     type: "leggings",
     armor: 9,
-    durability: 3700,
+    durability: 10000000,
     texture: "armor/quanda_6.png"
 });
-Item.createArmorItem("quandm", "Увитовые ботинки", {
+Item.createArmorItem("quandm", "Apalachia boots", {
     name: "quandmboots"
 }, {
     type: "boots",
     armor: 9,
-    durability: 3500,
+    durability: 10000000,
     texture: "armor/quanda_5.png"
 });
 
@@ -2130,6 +2939,16 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.apakristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandj && Player.getArmorSlot(1).id == ItemID.quandk && Player.getArmorSlot(2).id == ItemID.quandl && Player.getArmorSlot(3).id == ItemID.quandm) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 28)
+      }
+    }
+  )}
+});
 
 
 
@@ -2140,36 +2959,36 @@ IDRegistry.genItemID("quandr");
 IDRegistry.genItemID("quands");
 IDRegistry.genItemID("quandt");
 IDRegistry.genItemID("quandu");
-Item.createArmorItem("quandr", "Авгитовый шлем", {
+Item.createArmorItem("quandr", "Mortum helmet", {
     name: "quandrhelm"
 }, {
     type: "helmet",
     armor: 12,
-    durability: 4500,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
-Item.createArmorItem("quands", "Авгитовая кираса", {
+Item.createArmorItem("quands", "Mortum chestplate", {
     name: "quandschest"
 }, {
     type: "chestplate",
     armor: 12,
-    durability: 5000,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
-Item.createArmorItem("quandt", "Авгитовые поножи", {
+Item.createArmorItem("quandt", "Mortum leggings", {
     name: "quandtlegs"
 }, {
     type: "leggings",
     armor: 12,
-    durability: 5000,
+    durability: 10000000,
     texture: "armor/quanda_10.png"
 });
-Item.createArmorItem("quandu", "Авгитовые ботинки", {
+Item.createArmorItem("quandu", "Mortum boots", {
     name: "quanduboots"
 }, {
     type: "boots",
     armor: 12,
-    durability: 4500,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
 Recipes.addShaped({
@@ -2212,6 +3031,16 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.morkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandr && Player.getArmorSlot(1).id == ItemID.quands && Player.getArmorSlot(2).id == ItemID.quandt && Player.getArmorSlot(3).id == ItemID.quandu) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 20)
+      }
+    }
+  )}
+});
 
 
 
@@ -2222,7 +3051,7 @@ IDRegistry.genItemID("quandn");
 IDRegistry.genItemID("quando");
 IDRegistry.genItemID("quandp");
 IDRegistry.genItemID("quandq");
-Item.createArmorItem("quandn", "Мифриловый", {
+Item.createArmorItem("quandn", "Skythern helmet", {
     name: "quandnhelm"
 }, {
     type: "helmet",
@@ -2230,7 +3059,7 @@ Item.createArmorItem("quandn", "Мифриловый", {
     durability: 4000,
     texture: "armor/quanda_7.png"
 });
-Item.createArmorItem("quando", "Мифриловая кираса", {
+Item.createArmorItem("quando", "Skythern chestplate", {
     name: "quandochest"
 }, {
     type: "chestplate",
@@ -2238,7 +3067,7 @@ Item.createArmorItem("quando", "Мифриловая кираса", {
     durability: 4200,
     texture: "armor/quanda_7.png"
 });
-Item.createArmorItem("quandp", "Мифриловые поножи", {
+Item.createArmorItem("quandp", "Skythern leggings", {
     name: "quandplegs"
 }, {
     type: "leggings",
@@ -2246,7 +3075,7 @@ Item.createArmorItem("quandp", "Мифриловые поножи", {
     durability: 4000,
     texture: "armor/quanda_8.png"
 });
-Item.createArmorItem("quandq", "Мифриловые ботинки", {
+Item.createArmorItem("quandq", "Skythern boots", {
     name: "quandqboots"
 }, {
     type: "boots",
@@ -2294,13 +3123,29 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.ternkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandn && Player.getArmorSlot(1).id == ItemID.quando && Player.getArmorSlot(2).id == ItemID.quandp && Player.getArmorSlot(3).id == ItemID.quandq) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 25)
+      }
+      if (victim == Player.get()){
+        if (damageType == 5){
+          Game.prevent()
+        }
+      }
+         Entity.addEffect(Player.get(), 8, 4, 20, false, false);
+    }
+  )}
+})
 
 
 
 
 // file: items/armors/group.js
 
-Item.addCreativeGroup("helmets", Translation.translate("Шлемы"), [
+Item.addCreativeGroup("helmets", Translation.translate("Helmets"), [
 	ItemID.arlHelmet,
 	ItemID.quanda,
 	ItemID.quande,
@@ -2318,7 +3163,7 @@ Item.addCreativeGroup("helmets", Translation.translate("Шлемы"), [
 	ItemID.krHelmet,
 	ItemID.angel1
 ]);
-Item.addCreativeGroup("chestplates", Translation.translate("Нагрудники"), [
+Item.addCreativeGroup("chestplates", Translation.translate("Chestplates"), [
 	ItemID.arlChestplate,
 	ItemID.quandb,
 	ItemID.quandf,
@@ -2336,7 +3181,7 @@ Item.addCreativeGroup("chestplates", Translation.translate("Нагрудники
 	ItemID.krChestplate,
 	ItemID.angel2
 ]);
-Item.addCreativeGroup("leggings", Translation.translate("Поножи"), [
+Item.addCreativeGroup("leggings", Translation.translate("Leggings"), [
 	ItemID.arlLeggings,
 	ItemID.quandc,
 	ItemID.quandg,
@@ -2354,7 +3199,7 @@ Item.addCreativeGroup("leggings", Translation.translate("Поножи"), [
 	ItemID.krLeggings,
 	ItemID.angel3
 ]);
-Item.addCreativeGroup("boots", Translation.translate("Ботинки"), [
+Item.addCreativeGroup("boots", Translation.translate("Boots"), [
 	ItemID.arlBoots,
 	ItemID.quandd,
 	ItemID.quandh,
@@ -2392,37 +3237,37 @@ IDRegistry.genItemID("arlPickaxe");
 IDRegistry.genItemID("arlAxe");
 IDRegistry.genItemID("arlHoe");
 IDRegistry.genItemID("arlShickaxe");
-Item.createItem("arlSword", "Арлемитовый меч", {
+Item.createItem("arlSword", "Arlemite sword", {
     name: "arlemitesw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlShovel", "Арлемитовая лопата", {
+Item.createItem("arlShovel", "Arlemite shovel", {
     name: "arlemitesh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlPickaxe", "Арлемитовая кирка", {
+Item.createItem("arlPickaxe", "Arlemite pickaxe", {
     name: "arlemitepick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlAxe", "Арлемитовый топор", {
+Item.createItem("arlAxe", "Arlemite axe", {
     name: "arlemiteaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlHoe", "Арлемитовый топоо", {
+Item.createItem("arlHoe", "Arlemite hoe", {
     name: "arlemitehoe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("arlShickaxe", "Арлемитовый мультиинструмент", {
+Item.createItem("arlShickaxe", "Arlemite shickaxe", {
     name: "arlemiteshickaxe",
     meta: 0
 }, {
@@ -2536,37 +3381,37 @@ IDRegistry.genItemID("rupPickaxe");
 IDRegistry.genItemID("rupAxe");
 IDRegistry.genItemID("rupHoe");
 IDRegistry.genItemID("rupShickaxe");
-Item.createItem("rupSword", "Рупиевый меч", {
+Item.createItem("rupSword", "Rupee sword", {
     name: "rupeesword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupShovel", "Рупиевая лопата", {
+Item.createItem("rupShovel", "Rupee shovel", {
     name: "rupeeshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupPickaxe", "Рупиевая кирка", {
+Item.createItem("rupPickaxe", "Rupee pickaxe", {
     name: "rupeepickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupAxe", "Рупиевый топор", {
+Item.createItem("rupAxe", "Rupee axe", {
     name: "rupeeaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupHoe", "Rupee Hoe", {
+Item.createItem("rupHoe", "Rupee hoe", {
     name: "rupeehoe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("rupShickaxe", "Рупиевый мультиинструмент", {
+Item.createItem("rupShickaxe", "Rupee shickaxe", {
     name: "rupeeshickaxe",
     meta: 0
 }, {
@@ -2671,37 +3516,44 @@ IDRegistry.genItemID("realShovel");
 IDRegistry.genItemID("realPickaxe");
 IDRegistry.genItemID("realAxe");
 IDRegistry.genItemID("realHoe");
-Item.createItem("realSword", "Реалмитовый меч", {
+Item.createItem("realSword", "Realmite sword", {
     name: "realmitesw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realShovel", "Реалмитовая лопата", {
+Item.createItem("realShovel", "Realmite shovel", {
     name: "realmitesh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realPickaxe", "Реалмитовая кирка", {
+Item.createItem("realPickaxe", "Realmite pickaxe", {
     name: "realmitepick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realAxe", "Реалмитовый топор", {
+Item.createItem("realAxe", "Realmite axe", {
     name: "realmiteaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("realHoe", "Реалмитовая мотыга", {
+Item.createItem("realHoe", "Realmite hoe", {
     name: "realmitehoe",
     meta: 0
 }, {
     stack: 1
 });
 
+ToolAPI.addToolMaterial("real", {
+    durability: 4000,
+    level: 4,
+    efficiency: 12,
+    damage: 2,
+    enchantability: 13
+});
 ToolAPI.addToolMaterial("real", {
     durability: 4000,
     level: 4,
@@ -2783,31 +3635,31 @@ IDRegistry.genItemID("divineShovel");
 IDRegistry.genItemID("divinePickaxe");
 IDRegistry.genItemID("divineAxe");
 IDRegistry.genItemID("divineShickaxe");
-Item.createItem("divineSword", "Божественный меч", {
+Item.createItem("divineSword", "Divine sword", {
     name: "divinesword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineShovel", "Божественная лопата", {
+Item.createItem("divineShovel", "Divine shovel", {
     name: "divineshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divinePickaxe", "Божественная кирка", {
+Item.createItem("divinePickaxe", "Divine pickaxe", {
     name: "divinepickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineAxe", "Божественный топор", {
+Item.createItem("divineAxe", "Divine axe", {
     name: "divineaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("divineShickaxe", "Божественный мультиинструмент", {
+Item.createItem("divineShickaxe", "Divine shickaxe", {
     name: "divineshickaxe",
     meta: 0
 }, {
@@ -2901,31 +3753,31 @@ IDRegistry.genItemID("bedrShovel");
 IDRegistry.genItemID("bedrPickaxe");
 IDRegistry.genItemID("bedrAxe");
 IDRegistry.genItemID("bedrMaul");
-Item.createItem("bedrSword", "Bedrock Sword", {
+Item.createItem("bedrSword", "Bedrock sword", {
     name: "bedrocksw",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrShovel", "Bedrock Shovel", {
+Item.createItem("bedrShovel", "Bedrock shovel", {
     name: "bedrocksh",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrPickaxe", "Bedrock Pickaxe", {
+Item.createItem("bedrPickaxe", "Bedrock pickaxe", {
     name: "bedrockpick",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrAxe", "Bedrock Axe", {
+Item.createItem("bedrAxe", "Bedrock axe", {
     name: "bedrockaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("bedrMaul", "Bedrock Maul", {
+Item.createItem("bedrMaul", "Bedrock maul", {
     name: "bedrockmaul"
 }, {
     stack: 1
@@ -3026,31 +3878,31 @@ IDRegistry.genItemID("corruptedPickaxe");
 IDRegistry.genItemID("corruptedAxe");
 IDRegistry.genItemID("corruptedShovel");
 IDRegistry.genItemID("corruptedMaul");
-Item.createItem("corruptedSword", "Приносящий смерть", {
+Item.createItem("corruptedSword", "Death bringer", {
     name: "deathBringer",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedPickaxe", "Поврежденная кирка", {
+Item.createItem("corruptedPickaxe", "Corrupted pickaxe", {
     name: "corruptedPickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedAxe", "Поврежденный топор", {
+Item.createItem("corruptedAxe", "Corrupted axe", {
     name: "corruptedAxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedShovel", "Поврежденная лопата", {
+Item.createItem("corruptedShovel", "Corrupted shovel", {
     name: "corruptedShovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("corruptedMaul", "Поврежденная кувалда", {
+Item.createItem("corruptedMaul", "Corrupted maul", {
     name: "corruptedMaul",
     meta: 0
 }, {
@@ -3061,14 +3913,28 @@ ToolAPI.addToolMaterial("crpt", {
     durability: 6000,
     level: 4,
     efficiency: 16,
-    damage: 25,
+    damage: 2,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.corruptedSword, "crpt", ToolType.sword);
+ToolAPI.addToolMaterial("crptsw", {
+    durability: 6000,
+    level: 4,
+    efficiency: 16,
+    damage: 12,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("crptma", {
+  durability: 6000,
+  level: 4,
+  efficiency: 16,
+  damage: 13,
+  enchantability: 13
+});
+ToolAPI.setTool(ItemID.corruptedSword, "crptsw", ToolType.sword);
 ToolAPI.setTool(ItemID.corruptedPickaxe, "crpt", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.corruptedAxe, "crpt", ToolType.axe);
 ToolAPI.setTool(ItemID.corruptedShovel, "crpt", ToolType.shovel);
-ToolAPI.setTool(ItemID.corruptedMaul, "crpt", ToolType.maul);
+ToolAPI.setTool(ItemID.corruptedMaul, "crptma", ToolType.maul);
 Recipes.addShaped({
     id: ItemID.corruptedSword,
     count: 1,
@@ -3124,25 +3990,25 @@ IDRegistry.genItemID("edemsword");
 IDRegistry.genItemID("edempickaxe");
 IDRegistry.genItemID("edemshovel");
 IDRegistry.genItemID("edemaxe");
-Item.createItem("edemsword", "Дравитовый клинок", {
+Item.createItem("edemsword", "Eden sword", {
     name: "edemsword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemshovel", "Дравитовая лопата", {
+Item.createItem("edemshovel", "Eden shovel", {
     name: "edemshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edempickaxe", "Дравитовая кирка", {
+Item.createItem("edempickaxe", "Eden pickaxe", {
     name: "edempickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("edemaxe", "Дравитовый топор", {
+Item.createItem("edemaxe", "Eden axe", {
     name: "edemaxe",
     meta: 0
 }, {
@@ -3153,10 +4019,17 @@ ToolAPI.addToolMaterial("edem", {
     durability: 2000,
     level: 4,
     efficiency: 24,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("edemsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 24,
     damage: 24,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
+ToolAPI.setTool(ItemID.edemsword, "edemsw", ToolType.sword);
 ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
 ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);
@@ -3212,25 +4085,25 @@ IDRegistry.genItemID("azurisword");
 IDRegistry.genItemID("azuripickaxe");
 IDRegistry.genItemID("azurishovel");
 IDRegistry.genItemID("azuriaxe");
-Item.createItem("azurisword", "Азуритовый клинок", {
+Item.createItem("azurisword", "Wildwood sword", {
     name: "azurisword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azurishovel", "Азуритовая лопата", {
+Item.createItem("azurishovel", "Wildwood shovel", {
     name: "azurishovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azuripickaxe", "Азуритовая кирка", {
+Item.createItem("azuripickaxe", "Wildwood pickaxe", {
     name: "azuripickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("azuriaxe", "Азуритовый топор", {
+Item.createItem("azuriaxe", "Wildwood axe", {
     name: "azuriaxe",
     meta: 0
 }, {
@@ -3241,10 +4114,17 @@ ToolAPI.addToolMaterial("azuri", {
     durability: 2000,
     level: 4,
     efficiency: 28,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("azurisw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 28,
     damage: 26,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.azurisword, "azuri", ToolType.sword);
+ToolAPI.setTool(ItemID.azurisword, "azurisw", ToolType.sword);
 ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
 ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);
@@ -3299,25 +4179,25 @@ IDRegistry.genItemID("apalazisword");
 IDRegistry.genItemID("apalazipickaxe");
 IDRegistry.genItemID("apalazishovel");
 IDRegistry.genItemID("apalaziaxe");
-Item.createItem("apalazisword", "Увитовый клинок", {
+Item.createItem("apalazisword", "Apalachia sword", {
     name: "apalazisword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("apalazishovel", "Увитовая лопата", {
+Item.createItem("apalazishovel", "Apalachia shovel", {
     name: "apalazishovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("apalazipickaxe", "Увитовая кирка", {
+Item.createItem("apalazipickaxe", "Apalachia pickaxe", {
     name: "apalazipickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("apalaziaxe", "Увитовый топор", {
+Item.createItem("apalaziaxe", "Apalachia axe", {
     name: "apalaziaxe",
     meta: 0
 }, {
@@ -3328,10 +4208,17 @@ ToolAPI.addToolMaterial("apalazi", {
     durability: 2000,
     level: 4,
     efficiency: 30,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("apalazisw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 30,
     damage: 29,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
+ToolAPI.setTool(ItemID.apalazisword, "apalazisw", ToolType.sword);
 ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
 ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);
@@ -3387,25 +4274,25 @@ IDRegistry.genItemID("ternsword");
 IDRegistry.genItemID("ternpickaxe");
 IDRegistry.genItemID("ternshovel");
 IDRegistry.genItemID("ternaxe");
-Item.createItem("ternsword", "Мифриловый клинок", {
+Item.createItem("ternsword", "Skythern sword", {
     name: "ternsword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("ternshovel", "Мифриловая лопата", {
+Item.createItem("ternshovel", "Skythern shovel", {
     name: "ternshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("ternpickaxe", "Мифриловая лопата", {
+Item.createItem("ternpickaxe", "Skythern pickaxe", {
     name: "ternpickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("ternaxe", "Мифриловый топор", {
+Item.createItem("ternaxe", "Skythern axe", {
     name: "ternaxe",
     meta: 0
 }, {
@@ -3416,10 +4303,17 @@ ToolAPI.addToolMaterial("tern", {
     durability: 2000,
     level: 4,
     efficiency: 44,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("ternsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 44,
     damage: 31,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
+ToolAPI.setTool(ItemID.ternsword, "ternsw", ToolType.sword);
 ToolAPI.setTool(ItemID.ternshovel, "tern", ToolType.shovel);
 ToolAPI.setTool(ItemID.ternpickaxe, "tern", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.ternaxe, "tern", ToolType.axe);
@@ -3475,25 +4369,25 @@ IDRegistry.genItemID("morsword");
 IDRegistry.genItemID("morpickaxe");
 IDRegistry.genItemID("morshovel");
 IDRegistry.genItemID("moraxe");
-Item.createItem("morsword", "Авгитовый клинок", {
+Item.createItem("morsword", "Mortum sword", {
     name: "morsword",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("morshovel", "Авгитовая лопата", {
+Item.createItem("morshovel", "Mortum shovel", {
     name: "morshovel",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("morpickaxe", "Авгитовая кирка", {
+Item.createItem("morpickaxe", "Mortum pickaxe", {
     name: "morpickaxe",
     meta: 0
 }, {
     stack: 1
 });
-Item.createItem("moraxe", "Авгитовый топор", {
+Item.createItem("moraxe", "Mortum axe", {
     name: "moraxe",
     meta: 0
 }, {
@@ -3504,10 +4398,17 @@ ToolAPI.addToolMaterial("mor", {
     durability: 2000,
     level: 4,
     efficiency: 55,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("morsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 55,
     damage: 33,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
+ToolAPI.setTool(ItemID.morsword, "morsw", ToolType.sword);
 ToolAPI.setTool(ItemID.morshovel, "mor", ToolType.shovel);
 ToolAPI.setTool(ItemID.morpickaxe, "mor", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.moraxe, "mor", ToolType.axe);
@@ -3560,7 +4461,7 @@ Recipes.addShaped({
 
 // file: items/tools/group.js
 
-Item.addCreativeGroup("swords", Translation.translate("Мечи"), [
+Item.addCreativeGroup("swords", Translation.translate("Swords"), [
 	ItemID.edemsword,
 	ItemID.arlSword,
 	ItemID.realSword,
@@ -3575,7 +4476,7 @@ Item.addCreativeGroup("swords", Translation.translate("Мечи"), [
 	ItemID.halsword,
 	ItemID.azurisword
 ]);
-Item.addCreativeGroup("pickaxes", Translation.translate("Кирки"), [
+Item.addCreativeGroup("pickaxes", Translation.translate("Pickaxes"), [
 	ItemID.edempickaxe,
 	ItemID.arlPickaxe,
 	ItemID.bedrPickaxe,
@@ -3589,7 +4490,7 @@ Item.addCreativeGroup("pickaxes", Translation.translate("Кирки"), [
 	ItemID.morpickaxe,
 	ItemID.azuripickaxe
 ]);
-Item.addCreativeGroup("axes", Translation.translate("Топоры"), [
+Item.addCreativeGroup("axes", Translation.translate("Axes"), [
 	ItemID.edemaxe,
 	ItemID.arlAxe,
 	ItemID.bedrAxe,
@@ -3603,7 +4504,7 @@ Item.addCreativeGroup("axes", Translation.translate("Топоры"), [
 	ItemID.moraxe,
 	ItemID.azuriaxe
 ]);
-Item.addCreativeGroup("shovels", Translation.translate("Лопаты"), [
+Item.addCreativeGroup("shovels", Translation.translate("Shovels"), [
 	ItemID.edemshovel,
 	ItemID.arlShovel,
 	ItemID.bedrShovel,
@@ -3617,16 +4518,16 @@ Item.addCreativeGroup("shovels", Translation.translate("Лопаты"), [
 	ItemID.morshovel,
 	ItemID.azurishovel
 ]);
-Item.addCreativeGroup("mauls", Translation.translate("Кувалды"), [
+Item.addCreativeGroup("mauls", Translation.translate("Mauls"), [
 	ItemID.bedrMaul,
 	ItemID.corruptedMaul
 ]);
-Item.addCreativeGroup("shickaxes", Translation.translate("Мультиинструменты"), [
+Item.addCreativeGroup("shickaxes", Translation.translate("Shickaxes"), [
 	ItemID.rupShickaxe,
 	ItemID.arlShickaxe,
 	ItemID.divineShickaxe
 ]);
-Item.addCreativeGroup("hoes", Translation.translate("Мотыги"), [
+Item.addCreativeGroup("hoes", Translation.translate("Hoes"), [
 	ItemID.rupHoe,
 	ItemID.realHoe,
 	ItemID.arlHoe
@@ -3648,7 +4549,7 @@ let SuperBow = new Bow()
 
 
 SuperBowAnimator.Create({
-	name: 'Азуритовый лук',
+	name: 'Wildwood bow',
 	defaultTexture: 'wildwoodBow',
 	defaultTextureData: 0,
 	animtations: {
@@ -3662,7 +4563,7 @@ SuperBowAnimator.Create({
 
 SuperArrow.Create({
 	namedID: "wildwoodArrow",
-	name: "Азуритовая стрела",
+	name: "Wildwood arrow",
 	texture: "wildwoodArrow",
 	data: 0,
 	skin: "entity/wildwoodArrow",
@@ -3703,7 +4604,7 @@ let SuperBow2 = new Bow()
 
 
 SuperBowAnimator2.Create({
-	name: 'Увитовый лук',
+	name: 'Apalachia bow',
 	defaultTexture: 'uviteBow',
 	defaultTextureData: 0,
 	animtations: {
@@ -3717,7 +4618,7 @@ SuperBowAnimator2.Create({
 
 SuperArrow2.Create({
 	namedID: "uviteArrow",
-	name: "Увитовая стрела",
+	name: "Apalachia arrow",
 	texture: "uviteArrow",
 	data: 0,
 	skin: "entity/wildwoodArrow",
@@ -3750,7 +4651,6 @@ SuperBow2.Create({
 IMPORT("DivineHelper");
 IMPORT("ToolLib");
 IMPORT("ENV");
-IMPORT("PortalUtils");
 
 /*
 Callback.addCallback('EntityDeath', function(entity, attacker, damageType) {
@@ -3813,16 +4713,16 @@ IDRegistry.genItemID("corruptShard");
 IDRegistry.genItemID("corruptStone");
 IDRegistry.genItemID("twilightClock");
 IDRegistry.genItemID("misteriousClock");
-Item.createItem("ingotReal", "Реалмитовый слиток", {
+Item.createItem("ingotReal", "Realmite ingot", {
     name: "realmiteingot"
 });
-Item.createItem("bloodgem", "Камень крови", {
+Item.createItem("bloodgem", "Blood gem", {
     name: "bloodgem"
 });
-Item.createItem("netheriteIngot", "Незеритовый слиток", {
+Item.createItem("netheriteIngot", "Netherite ingot", {
     name: "netheriteIngot"
 });
-Item.createItem("netheriteChunk", "Незеритовый кусок", {
+Item.createItem("netheriteChunk", "Netherite chunk", {
     name: "netheriteChunk"
 });
 Recipes.addShaped({
@@ -3831,40 +4731,40 @@ Recipes.addShaped({
 		"bbb",
 		" b "
 	], ['b', ItemID.netheriteIngot, 0]);
-Item.createItem("ingotArl", "Арлемитовый слиток", {
+Item.createItem("ingotArl", "Arlemite ingot", {
     name: "arlemiteingot"
 });
-Item.createItem("ingotRup", "Рупиевый слиток", {
+Item.createItem("ingotRup", "Rupee ingot", {
     name: "rupeeingot"
 });
-Item.createItem("crabclaw", "Коготь краба", {
+Item.createItem("crabclaw", "Crab claw", {
     name: "crabclaw"
 });
-Item.createItem("cyclopeye", "Око циклопа", {
+Item.createItem("cyclopeye", "Cyclop eye", {
     name: "cyclopseye"
 });
-Item.createItem("smesh", "Божественный осколок", {
+Item.createItem("smesh", "Divine shard", {
     name: "divineShard"
 });
-Item.createItem("divinestone", "Divine Stone", {
+Item.createItem("divinestone", "Divine stone", {
     name: "divinestone"
 });
-Item.createItem("krscale", "Чешуя кракена", {
+Item.createItem("krscale", "Kraken scale", {
     name: "krakenscale"
 });
-Item.createItem("krskin", "Кожа кракена", {
+Item.createItem("krskin", "Kraken skin", {
     name: "krakenskin"
 });
 Item.createItem("terrastone", "Terra Stone", {
     name: "terranStone"
 });
-Item.createItem("shadowingot", "Теневой слиток", {
+Item.createItem("shadowingot", "Shadow ingot", {
     name: "shadowing"
 });
-Item.createItem("shadowstone", "Теневой камень", {
+Item.createItem("shadowstone", "Shadow stone", {
     name: "shadowstone"
 });
-Item.createItem("shadowstick", "Shadow Stick", {
+Item.createItem("shadowstick", "Shadow stick", {
     name: "shadowstick"
 });
 Item.createItem("iceStone", "Ice Stone", {
@@ -3879,13 +4779,13 @@ Item.createItem("moltenStone", "Molten Stone", {
 Item.createItem("moltenShard", "Molten Shard", {
     name: "moltenShard"
 });
-Item.createItem("corruptShard", "Поврежденный осколок", {
+Item.createItem("corruptShard", "Corrupted shard", {
     name: "corruptedShard"
 });
-Item.createItem("corruptStone", "Повреждённый камень", {
+Item.createItem("corruptStone", "Corrupted stone", {
     name: "corruptedStone"
 });
-Item.createItem("twilightClock", "Сумеречные Часы", {
+Item.createItem("twilightClock", "Twilight clock", {
     name: "twilightClock"
 }, {
     stack: 1
@@ -3896,7 +4796,7 @@ Recipes.addShaped({
         "bbb",
         "bbb"
     ], ['b', 347, 0]);
-Item.createItem("misteriousClock", "Мистические часы", {
+Item.createItem("misteriousClock", "Mysterious clock", {
     name: "mysteriousClock"
 }, {
     stack: 1
@@ -3909,7 +4809,8 @@ Recipes.addShaped({
     ], ['b',ItemID.corruptStone, 0, 'a', 347, 0, 'c', ItemID.netherIngot, 0]);
 Item.registerUseFunction("misteriousClock", function(coords, item, block, player){
   let b = BlockSource.getDefaultForActor(player);
-  let mob = b.spawnEntity(coords.x, coords.y, coords.z, "Divine:ancient_entity")
+  let mob = b.spawnEntity(coords.x, coords.y, coords.z, "divine:ancient_entity")
+  Player.decreaseCarriedItem();
 });
 
 Recipes.addShaped({
@@ -3930,7 +4831,7 @@ Recipes.addShaped({
 
 
 IDRegistry.genItemID("halsword");
-Item.createItem("halsword", "Халитовый клинок", {
+Item.createItem("halsword", "Halite sword", {
     name: "halsword",
     meta: 0
 }, {
@@ -3950,77 +4851,77 @@ ToolAPI.setTool(ItemID.halsword, "hal", ToolType.sword);
 
 
 IDRegistry.genItemID("edemfrag");
-Item.createItem("edemfrag", "Дравитовый Фрагмент", {
+Item.createItem("edemfrag", "Eden fragments", {
     name: "edemfrag"
 });
 
 IDRegistry.genItemID("edemkusok");
-Item.createItem("edemkusok", "Дравитовый Самоцвет", {
+Item.createItem("edemkusok", "Eden gem", {
     name: "edemkusok"
 });
 
 IDRegistry.genItemID("edemkristal");
-Item.createItem("edemkristal", "Дравитовый Кусок", {
+Item.createItem("edemkristal", "Eden chunk", {
     name: "edemkristal"
 });
 
 IDRegistry.genItemID("lesfrag");
-Item.createItem("lesfrag", "Азуритовый Фрагмент", {
+Item.createItem("lesfrag", "Wildwood fragments", {
     name: "lesfrag"
 });
 
 IDRegistry.genItemID("leskusok");
-Item.createItem("leskusok", "Азуритовый Самоцвет", {
+Item.createItem("leskusok", "Wildwood gem", {
     name: "leskusok"
 });
 
 IDRegistry.genItemID("leskristal");
-Item.createItem("leskristal", "Азуритовый кусок", {
+Item.createItem("leskristal", "Wildwood chunk", {
     name: "leskristal"
 });
 
 IDRegistry.genItemID("apafrag");
-Item.createItem("apafrag", "Увитовый Фрагмент", {
+Item.createItem("apafrag", "Apalachia fragments", {
     name: "apafrag"
 });
 
 IDRegistry.genItemID("apakusok");
-Item.createItem("apakusok", "Увитовый Самоцвет", {
+Item.createItem("apakusok", "Apalachia gem", {
     name: "apakusok"
 });
 
 IDRegistry.genItemID("apakristal");
-Item.createItem("apakristal", "Увитовый Кусок", {
+Item.createItem("apakristal", "Apalachia chunk", {
     name: "apakristal"
 });
 
 IDRegistry.genItemID("ternfrag");
-Item.createItem("ternfrag", "Мифриловый Фрагмент", {
+Item.createItem("ternfrag", "Skythern fragments", {
     name: "ternfrag"
 });
 
 IDRegistry.genItemID("ternkusok");
-Item.createItem("ternkusok", "Мифриловый Самоцвет", {
+Item.createItem("ternkusok", "Skythern gem", {
     name: "ternkusok"
 });
 
 IDRegistry.genItemID("ternkristal");
-Item.createItem("ternkristal", "Мифриловый кусок", {
+Item.createItem("ternkristal", "Skytherm chunk", {
     name: "ternkristal"
 });
 
 IDRegistry.genItemID("morfrag");
-Item.createItem("morfrag", "Фрагмент Мортума", {
+Item.createItem("morfrag", "Mortum fragments", {
     name: "morfrag"
 });
 
 IDRegistry.genItemID("morkusok");
-Item.createItem("morkusok", "Осколок Мортума", {
+Item.createItem("morkusok", "Mortum gem", {
     name: "morkusok"
 });
 
 IDRegistry.genItemID("morkristal");
-Item.createItem("morkristal", "Кристалл Мортума", {
+Item.createItem("morkristal", "Mortum chunk", {
     name: "morkristal"
 });
 
@@ -4272,192 +5173,6 @@ Recipes.addShaped({
     "xxx"
 ], ['x', ItemID.corruptShard, 0]);
 
-var portalGenerationHelper1 = {
-    p: function(x, y, z, id){
-        World.setBlock(x, y, z, id, 0);
-    },
-    random:function(){if(Math.floor(Math.random() * (150 - 0 + 1)) <= 70){return true}else if((Math.floor(Math.random() * (150 - 0 + 1))) >= 68){return false}},
-    radiuse:function(coords, code, i){
-        for(var x = coords.x - i; x < coords.x + i; x++){
-            for(var y = coords.y - i; y < coords.y + i; y++){
-                for(var z = coords.z- i; z < coords.z + i; z++){
-                    code();
-                }
-            }
-        }
-    },    
-    generatePortal:function(crds, block){
-        var block = {
-            frame: BlockID.divineStone,
-            portal: BlockID.edenPortal
-        }
-        if(this.random()){
-            var a = [];            
-            this.p(crds.x, crds.y, crds.z, block.frame);
-            this.p(crds.x+1, crds.y, crds.z, block.frame);
-            this.p(crds.x-1, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
-            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
-            
-            this.p(crds.x, crds.y+1, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
-            this.p(crds.x, crds.y+2, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
-            this.p(crds.x, crds.y+3, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+3, crds.z, block.portal);                
-            this.p(crds.x, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x, crds.y, crds.z+2,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+2,
-                block.frame);
-            }if(this.random()){
-            var a = [];            
-            this.p(crds.x, crds.y, crds.z, block.frame);
-            this.p(crds.x+1, crds.y, crds.z, block.frame);
-            this.p(crds.x-1, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
-            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
-            
-            this.p(crds.x, crds.y+1, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
-            this.p(crds.x, crds.y+2, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
-            this.p(crds.x, crds.y+3, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+3, crds.z, block.portal);           
-            this.p(crds.x, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x, crds.y, crds.z+2,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+2,
-                block.frame);               
-            this.p(crds.x + 2, crds.y, crds.z + 2,
-                  block.frame);
-            this.p(crds.x - 1, crds.y, crds.z + 2,
-                  block.frame);
-            this.p(crds.x - 1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x + 2, crds.y, crds.z+1,
-                block.frame);
-            }
-      }
-}
-
-var portalGenerationHelper2 = {
-    p: function(x, y, z, id){
-        World.setBlock(x, y, z, id, 0);
-    },
-    random:function(){if(Math.floor(Math.random() * (150 - 0 + 1)) <= 70){return true}else if((Math.floor(Math.random() * (150 - 0 + 1))) >= 68){return false}},
-    radiuse:function(coords, code, i){
-        for(var x = coords.x - i; x < coords.x + i; x++){
-            for(var y = coords.y - i; y < coords.y + i; y++){
-                for(var z = coords.z- i; z < coords.z + i; z++){
-                    code();
-                }
-            }
-        }
-    },    
-    generatePortal:function(crds, block){
-        var block = {
-            frame: BlockID.edenBlock,
-            portal: BlockID.wildwoodPortal
-        }
-        if(this.random()){
-            var a = [];            
-            this.p(crds.x, crds.y, crds.z, block.frame);
-            this.p(crds.x+1, crds.y, crds.z, block.frame);
-            this.p(crds.x-1, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
-            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
-            
-            this.p(crds.x, crds.y+1, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
-            this.p(crds.x, crds.y+2, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
-            this.p(crds.x, crds.y+3, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
-            this.p(crds.x, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x, crds.y, crds.z+2,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+2,
-                block.frame);
-            }if(this.random()){
-            var a = [];            
-            this.p(crds.x, crds.y, crds.z, block.frame);
-            this.p(crds.x+1, crds.y, crds.z, block.frame);
-            this.p(crds.x-1, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+1, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+2, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+3, crds.z, block.frame);
-            this.p(crds.x+2, crds.y+4, crds.z, block.frame);
-            this.p(crds.x+1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+4, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+3, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+2, crds.z, block.frame);
-            this.p(crds.x-1, crds.y+1, crds.z, block.frame);
-            
-            this.p(crds.x, crds.y+1, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+1, crds.z, block.portal);
-            this.p(crds.x, crds.y+2, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+2, crds.z, block.portal);
-            this.p(crds.x, crds.y+3, crds.z, block.portal);
-            this.p(crds.x+1, crds.y+3, crds.z, block.portal);               
-            this.p(crds.x, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x, crds.y, crds.z+2,
-                block.frame);
-            this.p(crds.x+1, crds.y, crds.z+2,
- 
-                block.frame);               
-            this.p(crds.x + 2, crds.y, crds.z + 2,
-                  block.frame);
-            this.p(crds.x - 1, crds.y, crds.z + 2,
-                  block.frame);
-            this.p(crds.x - 1, crds.y, crds.z+1,
-                block.frame);
-            this.p(crds.x + 2, crds.y, crds.z+1,
-                block.frame);
-            }
-      }
-}
 
 
 
@@ -4468,30 +5183,31 @@ IMPORT("Structures")
 
 edentree = new Structure("edenTree");
 wildwoodtree = new Structure("wildwoodTree");
+apalachiatree = new Structure("apalachiaTree");
+
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) {
 if (dimensionId == Aether.id) {
+   for (i = 0; i < randomInt(5, 15); i++ ) {
  let regi = BlockSource.getCurrentWorldGenRegion();
   var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
  coords = GenerationUtils.findSurface(coords.x, 160, coords.z);
- if (coords.y < 52) return;
-if (random.nextFloat() < .85) {
-  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.edenGrass)
-edentree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
+if (Math.random() < .75) {
+  if (regi.getBlockID(coords.x, coords.y, coords.z) == BlockID.edenGrass) {
+edentree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi);     }
+     }
     }
-}
+  }
 });
 function randomInt(min, max){
   return Math.floor(Math.random() * (max - min+1))+min;
-};
-
+}
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) { 
 if(dimensionId == Aether.id) {
+  for(i=0; i<randomInt(40,55); i++) {
  var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
- coords = GenerationUtils.findSurface(coords.x, 140, coords.z);
+ coords = GenerationUtils.findSurface(coords.x, 255, coords.z);
   let regi = BlockSource.getCurrentWorldGenRegion();
- if(coords.y < 48) return;
-  for(var i = 0; i < randomInt(40, 55); i++) { 
-         if(Math.random() < .95){
+         if(Math.random() < .85){
           if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.edenGrass) {
        regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.edenBrush, 0);    
                }  
@@ -4502,30 +5218,26 @@ if(dimensionId == Aether.id) {
 
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) {
 if (dimensionId == wildwood.id) {
+   for (i = 0; i < randomInt(5, 19); i++ ) {
  let regi = BlockSource.getCurrentWorldGenRegion();
   var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
- coords = GenerationUtils.findSurface(coords.x, 75, coords.z);
- for (i = 0; i < 60; i++) {
- if (coords.y < 10) return;
-if (random.nextFloat() < .95) {
+ coords = GenerationUtils.findSurface(coords.x, 160, coords.z);
+if (random.nextFloat() < .8) {
   if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.wildwoodGrass)
-wildwoodtree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi); 
+wildwoodtree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi);     }
     }
   }
-}
 });
-
+function randomInt(min, max){
+  return Math.floor(Math.random() * (max - min+1))+min;
+}
 Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) { 
 if(dimensionId == wildwood.id) { 
+  for(i = 0; i < randomInt(40, 55);i++){
  var coords = GenerationUtils.randomCoords(chunkX, chunkZ); 
  coords = GenerationUtils.findSurface(coords.x, 75, coords.z); 
- let regi = BlockSource.getCurrentWorldGenRegion(); 
- if(coords.y < 48) return; 
- function randomInt(min, max){ 
-return Math.floor(Math.random() * (max - min + 1)) + min; 
-}
- for(var i = 0; i < randomInt(90, 100); i++) { 
- if(Math.random() < .9){ 
+ let regi = BlockSource.getCurrentWorldGenRegion();
+ if(random.nextFloat() < .9){ 
  if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.wildwoodGrass) { 
  regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.wildwoodTallgrassBottom, 0);
  regi.setBlock(coords.x, coords.y + 2, coords.z,
@@ -4534,6 +5246,36 @@ return Math.floor(Math.random() * (max - min + 1)) + min;
  } 
  } 
 } 
+});
+
+Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) {
+if (dimensionId == apalachia.id) {
+   for (i = 0; i < randomInt(5, 15); i++ ) {
+ let regi = BlockSource.getCurrentWorldGenRegion();
+  var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
+ coords = GenerationUtils.findSurface(coords.x, 160, coords.z);
+if (Math.random() < .75) {
+  if (World.getBlockID(coords.x, coords.y, coords.z) == BlockID.apalachiaGrass)
+apalachiatree.build(coords.x, coords.y + 1, coords.z, Structure.ROTATE_Y, random, regi);     }
+    }
+  }
+});
+function randomInt(min, max){
+  return Math.floor(Math.random() * (max - min+1))+min;
+}
+Callback.addCallback("GenerateCustomDimensionChunk", function(chunkX, chunkZ, random, dimensionId) { 
+if(dimensionId == apalachia.id) {
+  for(i=0; i<randomInt(40,55); i++) {
+ var coords = GenerationUtils.randomCoords(chunkX, chunkZ);
+ coords = GenerationUtils.findSurface(coords.x, 255, coords.z);
+  let regi = BlockSource.getCurrentWorldGenRegion();
+         if(Math.random() < .85){
+          if(regi.getBlockId(coords.x,coords.y,coords.z) == BlockID.apalachiaGrass) {
+       regi.setBlock(coords.x, coords.y + 1, coords.z, BlockID.apalachiaTallgrass, 0);    
+               }  
+          }  
+     }  
+}
 });
 
 

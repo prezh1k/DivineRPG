@@ -40,6 +40,13 @@ ToolAPI.addToolMaterial("real", {
     durability: 4000,
     level: 4,
     efficiency: 12,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("real", {
+    durability: 4000,
+    level: 4,
+    efficiency: 12,
     damage: 6,
     enchantability: 13
 });

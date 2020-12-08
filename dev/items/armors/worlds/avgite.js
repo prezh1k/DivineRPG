@@ -7,7 +7,7 @@ Item.createArmorItem("quandr", "Mortum helmet", {
 }, {
     type: "helmet",
     armor: 12,
-    durability: 4500,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
 Item.createArmorItem("quands", "Mortum chestplate", {
@@ -15,7 +15,7 @@ Item.createArmorItem("quands", "Mortum chestplate", {
 }, {
     type: "chestplate",
     armor: 12,
-    durability: 5000,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
 Item.createArmorItem("quandt", "Mortum leggings", {
@@ -23,7 +23,7 @@ Item.createArmorItem("quandt", "Mortum leggings", {
 }, {
     type: "leggings",
     armor: 12,
-    durability: 5000,
+    durability: 10000000,
     texture: "armor/quanda_10.png"
 });
 Item.createArmorItem("quandu", "Mortum boots", {
@@ -31,7 +31,7 @@ Item.createArmorItem("quandu", "Mortum boots", {
 }, {
     type: "boots",
     armor: 12,
-    durability: 4500,
+    durability: 10000000,
     texture: "armor/quanda_9.png"
 });
 Recipes.addShaped({
@@ -74,3 +74,13 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.morkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandr && Player.getArmorSlot(1).id == ItemID.quands && Player.getArmorSlot(2).id == ItemID.quandt && Player.getArmorSlot(3).id == ItemID.quandu) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 20)
+      }
+    }
+  )}
+});

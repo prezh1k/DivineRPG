@@ -1,40 +1,41 @@
 Item.addCreativeGroup("blocks", Translation.translate("Блоки"), [
-  Block.realmiteBlock,
-  Block.edenBlock,
-  Block.arlemiteBlock,
-  Block.rupeeBlock,
+  BlockID.realmiteBlock,
+  BlockID.edenBlock,
+  BlockID.arlemiteBlock,
+  BlockID.rupeeBlock,
 ]);
  
 Item.addCreativeGroup("lamps", Translation.translate("Лампы"), [
-  Block.arlemiteLamp,
-  Block.rupeeLamp,
-  Block.goldLamp,
-  Block.lapisLamp,
-  Block.redsLamp,
-  Block.realLamp,
-  Block.endLamp,
-  Block.blazeLamp,
-  Block.lavaLamp,
-  Block.diamondLamp,
-  Block.krakLamp
+  BlockID.arlemiteLamp,
+  BlockID.rupeeLamp,
+  BlockID.goldLamp,
+  BlockID.lapisLamp,
+  BlockID.redsLamp,
+  BlockID.realLamp,
+  BlockID.endLamp,
+  BlockID.blazeLamp,
+  BlockID.lavaLamp,
+  BlockID.diamondLamp,
+  BlockID.krakLamp
 ]);
 
 Item.addCreativeGroup("bricks", Translation.translate("Кирпичи"), [
-  Block.ironBrick,
-  Block.goldBrick,
-  Block.lapisBrick,
-  Block.lavaBrick,
-  Block.diamBrick,
-  Block.realBrick,
-  Block.arleBrick
+  BlockID.ironBrick,
+  BlockID.goldBrick,
+  BlockID.lapisBrick,
+  BlockID.lavaBrick,
+  BlockID.diamBrick,
+  BlockID.realBrick,
+  BlockID.arleBrick
 ]);
 
 Item.addCreativeGroup("ores", Translation.translate("Руды"), [
-  Block.edenOre,
-  Block.netheriteOre,
-  Block.bloodgemOre,
-  Block.wildwoodOre,
-  Block.arlemiteOre,
-  Block.realmiteOre,
-  Block.rupeeOre,
+  BlockID.edenOre,
+  BlockID.netheriteOre,
+  BlockID.bloodgemOre,
+  BlockID.wildwoodOre,
+  BlockID.arlemiteOre,
+  BlockID.realmiteOre,
+  BlockID.rupeeOre,
+  BlockID.apalachiaOre
 ]);

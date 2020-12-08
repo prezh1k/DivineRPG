@@ -2,8 +2,10 @@ blocks/blocks.js
 blocks/ores.js
 blocks/group.js
 
+dimensions/PortalGeneration.js
 dimensions/eden.js
 dimensions/wildwood.js
+dimensions/apalachia.js
 
 items/armors/realmite.js
 items/armors/arlemite.js
@@ -15,6 +17,7 @@ items/armors/corrupted.js
 items/armors/shadow.js
 items/armors/kraken.js
 items/armors/halite.js
+items/armors/angel.js
 items/armors/worlds/edem.js
 items/armors/worlds/azurite.js
 items/armors/worlds/uvite.js

@@ -31,10 +31,17 @@ ToolAPI.addToolMaterial("edem", {
     durability: 2000,
     level: 4,
     efficiency: 24,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("edemsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 24,
     damage: 24,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.edemsword, "edem", ToolType.sword);
+ToolAPI.setTool(ItemID.edemsword, "edemsw", ToolType.sword);
 ToolAPI.setTool(ItemID.edemshovel, "edem", ToolType.shovel);
 ToolAPI.setTool(ItemID.edempickaxe, "edem", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.edemaxe, "edem", ToolType.axe);

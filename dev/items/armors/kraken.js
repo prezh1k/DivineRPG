@@ -72,3 +72,15 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.krscale, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.krHelmet && Player.getArmorSlot(1).id == ItemID.krChestplate && Player.getArmorSlot(2).id == ItemID.krLeggings && Player.getArmorSlot(3).id == ItemID.krBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 70)
+      }
+    }
+  ),
+        Entity.addEffect(Player.get(), 13, 5, 20,false, false);
+    }
+})

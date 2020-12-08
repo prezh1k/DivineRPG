@@ -78,6 +78,12 @@ Recipes.addShaped({
 Callback.addCallback("tick", function() {
     if (Player.getArmorSlot(0).id == ItemID.quanda && Player.getArmorSlot(1).id == ItemID.quandb && Player.getArmorSlot(2).id == ItemID.quandc && Player.getArmorSlot(3).id == ItemID.quandd) {
         Entity.addEffect(Player.get(), 5, 10, 2, false, false);
+        Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+        }
+       }
+      )
     }
-    
 })

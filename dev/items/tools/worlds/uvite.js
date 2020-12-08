@@ -31,10 +31,17 @@ ToolAPI.addToolMaterial("apalazi", {
     durability: 2000,
     level: 4,
     efficiency: 30,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("apalazisw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 30,
     damage: 29,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.apalazisword, "apalazi", ToolType.sword);
+ToolAPI.setTool(ItemID.apalazisword, "apalazisw", ToolType.sword);
 ToolAPI.setTool(ItemID.apalazishovel, "apalazi", ToolType.shovel);
 ToolAPI.setTool(ItemID.apalazipickaxe, "apalazi", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.apalaziaxe, "apalazi", ToolType.axe);

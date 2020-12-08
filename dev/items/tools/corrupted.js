@@ -45,14 +45,28 @@ ToolAPI.addToolMaterial("crpt", {
     durability: 6000,
     level: 4,
     efficiency: 16,
-    damage: 25,
+    damage: 2,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.corruptedSword, "crpt", ToolType.sword);
+ToolAPI.addToolMaterial("crptsw", {
+    durability: 6000,
+    level: 4,
+    efficiency: 16,
+    damage: 12,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("crptma", {
+  durability: 6000,
+  level: 4,
+  efficiency: 16,
+  damage: 13,
+  enchantability: 13
+});
+ToolAPI.setTool(ItemID.corruptedSword, "crptsw", ToolType.sword);
 ToolAPI.setTool(ItemID.corruptedPickaxe, "crpt", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.corruptedAxe, "crpt", ToolType.axe);
 ToolAPI.setTool(ItemID.corruptedShovel, "crpt", ToolType.shovel);
-ToolAPI.setTool(ItemID.corruptedMaul, "crpt", ToolType.maul);
+ToolAPI.setTool(ItemID.corruptedMaul, "crptma", ToolType.maul);
 Recipes.addShaped({
     id: ItemID.corruptedSword,
     count: 1,

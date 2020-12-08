@@ -79,5 +79,13 @@ Callback.addCallback("tick", function() {
       var crdsP = Player.getPosition();
       if (World.getBlock(crdsP.x, crdsP.y, crdsP.z).id == 8 || 9) {
         Entity.addEffect(Player.get(), 10, 10, 20,false, false);
-    }}
+     }
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 35)
+            }
+         }
+      )
+    }
 });

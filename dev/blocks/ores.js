@@ -77,6 +77,25 @@ Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, ran
     }
 }});
 
+IDRegistry.genBlockID("apalachiaOre");
+Block.createBlock("apalachiaOre", [
+	{name: "Apalachia ore", texture: [["apalachiaOre", 0]], inCreative: true}]);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaOre, "stone", 3);
+Block.registerDropFunction("apalachiaOre",
+  function(coords, blockID, blockData, level, enchant) {
+    return (BlockID.apalachiaOre, 1, 0)
+  });
+Block.setDestroyTime(BlockID.apalachiaOre, 6);
+Block.setDestroyLevel(BlockID.apalachiaOre, 3);
+Callback.addCallback("GenerateCustomDimensionChunk",function(chunkX, chunkZ, random, dimensionid){
+
+    if(dimensionid == apalachia.id){
+
+    for (var i=0; i<10; i++) {
+        var c = GenerationUtils.randomCoords(chunkX,chunkZ, 0, 96);
+        GenerationUtils.generateOreCustom(c.x, c.y, c.z, BlockID.apalachiaOre, 0, 8, true, [BlockID.twilightStone]);
+    }
+}});
 
 IDRegistry.genBlockID("arlemiteOre");
 Block.createBlock("arlemiteOre", [
@@ -133,6 +152,8 @@ function (){
   Recipes.addFurnace(BlockID.bloodgemOre, ItemID.bloodgem);
   Recipes.addFurnace(BlockID.edenOre, ItemID.edemfrag);
   Recipes.addFurnace(BlockID.wildwoodOre, ItemID.lesfrag);
+  Recipes.addFurnace(BlockID.apalachiaOre,
+    ItemID.apafrag)
   Recipes.addFurnace(BlockID.netheriteOre, ItemID.netheriteIngot);
   Recipes.addFurnace(BlockID.rupeeOre, ItemID.ingotRup);
   Recipes.addFurnace(BlockID.arlemiteOre, ItemID.ingotArl);

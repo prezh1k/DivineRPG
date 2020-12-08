@@ -82,3 +82,15 @@ Recipes.addShaped({
     "x x",
     "a a"
 ], ['a', ItemID.netheriteChunk, 0, 'x', ItemID.shadowingot,0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.netherHelmet && Player.getArmorSlot(1).id == ItemID.netherChestplate && Player.getArmorSlot(2).id == ItemID.netherLeggings && Player.getArmorSlot(3).id == ItemID.netherBoots) {
+        Entity.addEffect(Player.get(), 12, 10, 20,false, false);
+        Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 50)
+        }
+       }
+     )
+    }
+});

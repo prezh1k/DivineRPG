@@ -73,3 +73,14 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.shadowstone, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.shadowHelmet && Player.getArmorSlot(1).id == ItemID.shadowChestplate && Player.getArmorSlot(2).id == ItemID.shadowLeggings && Player.getArmorSlot(3).id == ItemID.shadowBoots) {
+      Entity.addEffect(Player.get(), 1, 2, 20, false, false),
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 40)
+      }
+    }
+  )}
+});

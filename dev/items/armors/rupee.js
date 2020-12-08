@@ -8,7 +8,7 @@ Item.createArmorItem("rupHelmet", "Rupee helmet", {
 }, {
     type: "helmet",
     armor: 3,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
 Item.createArmorItem("rupChestplate", "Rupee chestplate", {
@@ -16,7 +16,7 @@ Item.createArmorItem("rupChestplate", "Rupee chestplate", {
 }, {
     type: "chestplate",
     armor: 8,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
 Item.createArmorItem("rupLeggings", "Rupee leggings", {
@@ -24,7 +24,7 @@ Item.createArmorItem("rupLeggings", "Rupee leggings", {
 }, {
     type: "leggings",
     armor: 5,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_2.png"
 });
 Item.createArmorItem("rupBoots", "Rupee boots", {
@@ -32,7 +32,7 @@ Item.createArmorItem("rupBoots", "Rupee boots", {
 }, {
     type: "boots",
     armor: 2,
-    durability: 3000,
+    durability: 10000000,
     texture: "armor/rupee_1.png"
 });
 Recipes.addShaped({
@@ -72,3 +72,19 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.ingotRup, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.rupHelmet && Player.getArmorSlot(1).id == ItemID.rupChestplate && Player.getArmorSlot(2).id == ItemID.rupLeggings && Player.getArmorSlot(3).id == ItemID.rupBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 45)
+      }
+      if (victim == Player.get()){
+        if (damageType == 2){
+          Game.prevent();
+          Entity.damageEntity(victim, (damageValue / 100) * 15)
+        }
+      }
+    }
+  )}
+});

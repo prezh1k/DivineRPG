@@ -72,3 +72,13 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.ingotReal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.realHelmet && Player.getArmorSlot(1).id == ItemID.realChestplate && Player.getArmorSlot(2).id == ItemID.realLeggings && Player.getArmorSlot(3).id == ItemID.realBoots) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 50)
+      }
+    }
+  )}
+});

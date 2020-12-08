@@ -74,3 +74,19 @@ Recipes.addShaped({
     "a a",
     "  "
 ], ['a', ItemID.ternkristal, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.quandn && Player.getArmorSlot(1).id == ItemID.quando && Player.getArmorSlot(2).id == ItemID.quandp && Player.getArmorSlot(3).id == ItemID.quandq) {
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 25)
+      }
+      if (victim == Player.get()){
+        if (damageType == 5){
+          Game.prevent()
+        }
+      }
+         Entity.addEffect(Player.get(), 8, 4, 20, false, false);
+    }
+  )}
+})

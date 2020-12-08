@@ -31,10 +31,17 @@ ToolAPI.addToolMaterial("mor", {
     durability: 2000,
     level: 4,
     efficiency: 55,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("morsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 55,
     damage: 33,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.morsword, "mor", ToolType.sword);
+ToolAPI.setTool(ItemID.morsword, "morsw", ToolType.sword);
 ToolAPI.setTool(ItemID.morshovel, "mor", ToolType.shovel);
 ToolAPI.setTool(ItemID.morpickaxe, "mor", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.moraxe, "mor", ToolType.axe);

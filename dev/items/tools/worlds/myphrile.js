@@ -31,10 +31,17 @@ ToolAPI.addToolMaterial("tern", {
     durability: 2000,
     level: 4,
     efficiency: 44,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("ternsw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 44,
     damage: 31,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.ternsword, "tern", ToolType.sword);
+ToolAPI.setTool(ItemID.ternsword, "ternsw", ToolType.sword);
 ToolAPI.setTool(ItemID.ternshovel, "tern", ToolType.shovel);
 ToolAPI.setTool(ItemID.ternpickaxe, "tern", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.ternaxe, "tern", ToolType.axe);

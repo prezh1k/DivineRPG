@@ -31,10 +31,17 @@ ToolAPI.addToolMaterial("azuri", {
     durability: 2000,
     level: 4,
     efficiency: 28,
+    damage: 2,
+    enchantability: 13
+});
+ToolAPI.addToolMaterial("azurisw", {
+    durability: 2000,
+    level: 4,
+    efficiency: 28,
     damage: 26,
     enchantability: 13
 });
-ToolAPI.setTool(ItemID.azurisword, "azuri", ToolType.sword);
+ToolAPI.setTool(ItemID.azurisword, "azurisw", ToolType.sword);
 ToolAPI.setTool(ItemID.azurishovel, "azuri", ToolType.shovel);
 ToolAPI.setTool(ItemID.azuripickaxe, "azuri", ToolType.pickaxe);
 ToolAPI.setTool(ItemID.azuriaxe, "azuri", ToolType.axe);

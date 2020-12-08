@@ -1,15 +1,3 @@
-Callback.addCallback("tick", function() {
-    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
-        UIbuttons.enableButton("fly_on_button");
-    }
-})
-
-Callback.addCallback("tick", function() {
-    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
-        UIbuttons.enableButton("button_fly");
-    }
-});
-//registerArmor
 IDRegistry.genItemID("angel1");
 IDRegistry.genItemID("angel2");
 IDRegistry.genItemID("angel3");
@@ -84,3 +72,14 @@ Recipes.addShaped({
     "x x",
     "x x"
 ], ['x', ItemID.angel, 0]);
+Callback.addCallback("tick", function() {
+    if (Player.getArmorSlot(0).id == ItemID.angel1 && Player.getArmorSlot(1).id == ItemID.angel2 && Player.getArmorSlot(2).id == ItemID.angel3 && Player.getArmorSlot(3).id == ItemID.angel4) {
+      Player.setFlyingEnabled(true);
+      Callback.addCallback('EntityHurt', function (attacker, victim, damageValue, damageType, someBool1, someBool2) {
+        if (victim == Player.get()) {
+            Game.prevent();
+            Entity.damageEntity(victim, (damageValue / 100) * 70)
+     }
+    }
+  )}
+})

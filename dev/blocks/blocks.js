@@ -81,12 +81,23 @@ IDRegistry.genBlockID("edenBlock");
 Block.createBlock("edenBlock", [
 	{name: "Eden block", texture: [["edenBlock", 0]], inCreative: true}
 ], BLOCK_Type_ORE);
-ToolAPI.registerBlockMaterial(BlockID.arlemiteBlock, "stone", 3);
+ToolAPI.registerBlockMaterial(BlockID.edenBlock, "stone", 3);
 Recipes.addShaped({id: BlockID.edenBlock, count: 1, data: 0}, [
 		"bbb",
 		"bbb",
 		"bbb"
 	], ['b', ItemID.edemfrag, 0]);
+
+IDRegistry.genBlockID("wildwoodBlock");
+Block.createBlock("wildwoodBlock", [
+	{name: "Wildwood block", texture: [["wildwoodBlock", 0]], inCreative: true}
+], BLOCK_Type_ORE);
+ToolAPI.registerBlockMaterial(BlockID.wildwoodBlock, "stone", 3);
+Recipes.addShaped({id: BlockID.wildwoodBlock, count: 1, data: 0}, [
+		"bbb",
+		"bbb",
+		"bbb"
+	], ['b', ItemID.lesfrag, 0]);
 
 IDRegistry.genBlockID("arlemiteBlock");
 Block.createBlock("arlemiteBlock", [
@@ -358,7 +369,7 @@ Block.registerDropFunction("edenLeaves", function(coords, blockID, blockData, le
 		return [[blockID, 1, 2]];
 	}
 	if(Math.random() < .1){
-		return [[ItemID.edenSapling, 1, 0]]
+		return [[BlockID.edenSapling, 1, 0]]
 	}
 	return [];
 });
@@ -486,7 +497,7 @@ Block.registerDropFunction("wildwoodLeaves", function(coords, blockID, blockData
 		return [[blockID, 1, 2]];
 	}
 	if(Math.random() < .1){
-		return [[ItemID.wildwoodSapling, 1, 0]]
+		return [[BlockID.wildwoodSapling, 1, 0]]
 	}
 	return [];
 });
@@ -638,3 +649,153 @@ Callback.addCallback("DestroyBlock", function(coords, block, player){
 	}
 });
 
+IDRegistry.genBlockID("apalachiaDirt");
+Block.createBlock("apalachiaDirt", [
+    {name: "Apalachia dirt", texture:
+        [["apalachiaDirt", 0]], inCreative:
+        true}], "opaque");
+Block.setDestroyTime(BlockID.apalachiaDirt, 0.5);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaDirt, "dirt", 0, true);
+
+IDRegistry.genBlockID("apalachiaGrass");
+Block.createBlockWithRotation("apalachiaGrass", [
+	{name: "Apalachia grass", texture: [["apalachiaGrass", 0], ["apalachiaGrass", 1], ["apalachiaGrass", 0], ["apalachiaGrass", 0], ["apalachiaGrass", 0], ["apalachiaGrass", 0]], inCreative: true}
+], "opaque");
+ToolAPI.registerBlockMaterial(BlockID.apalachiaGrass, "dirt", 0, true);
+Block.setDestroyTime(BlockID.apalachiaGrass, 0.5);
+Block.registerDropFunction("apalachiaGrass", function(){
+return [[BlockID.apalachiaDirt, 1, 0]];});
+
+IDRegistry.genBlockID("apalachiaLog");
+Block.createBlockWithRotation("apalachiaLog", [
+	{name: "Apalachia log", texture: [["apalachiaLog", 1], ["apalachiaLog", 1], ["apalachiaLog", 0], ["apalachiaLog", 0], ["apalachiaLog", 0], ["apalachiaLog", 0]], inCreative: true}], BLOCK_TYPE_LOG,"opaque");
+IDRegistry.genBlockID("apalachiaLeaves");
+Block.createBlock("apalachiaLeaves", [
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: false},
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: false},
+	{name: "Apalachia leaves", texture: [["apalachiaLeaves", 0]], inCreative: true}
+], {
+	base: 18,
+	destroytime: 0.2,
+	explosionres: 1,
+	renderallfaces: true, 
+	renderlayer: 1,
+	lightopacity: 1,
+	translucency: 0.5
+});
+Block.registerDropFunction("apalachiaLeaves", function(coords, blockID, blockData, level, enchant){
+	if(level > 0 || Player.getCarriedItem().id == 359){
+		return [[blockID, 1, 2]];
+	}
+	if(Math.random() < .1){
+		return [[BlockID.apalachiaSapling, 1, 0]]
+	}
+	return [];
+});
+ToolAPI.registerBlockMaterial(BlockID.apalachiaLeaves, "plant");
+function checkLeaves(x, y, z, explored){
+	let blockID = World.getBlockID(x, y, z);
+	if(blockID == BlockID.apalachiaLog){
+		return true;
+	}
+	if(blockID == BlockID.apalachiaLeaves){
+		explored[x+':'+y+':'+z] = true;
+	}
+	return false;
+}
+
+function checkLeavesFor6Sides(x, y, z, explored){
+	return checkLeaves(x-1, y, z, explored) ||
+	checkLeaves(x+1, y, z, explored) ||
+	checkLeaves(x, y, z-1, explored) ||
+	checkLeaves(x, y, z+1, explored) ||
+	checkLeaves(x, y-1, z, explored) ||
+	checkLeaves(x, y+1, z, explored);
+}
+
+function updateLeaves(x, y, z){
+	for(let xx = x - 1; xx <= x + 1; xx++){
+		for(let yy = y - 1; yy <= y + 1; yy++){
+			for(let zz = z - 1; zz <= z + 1; zz++){
+				let block = World.getBlock(xx, yy, zz);
+				if(block.id == BlockID.apalachiaLeaves && block.data == 0){
+					World.setBlock(xx, yy, zz, BlockID.apalachiaLeaves, 1);
+				}
+			}
+		}
+	}
+};
+
+Callback.addCallback("DestroyBlock", function(coords, block, player){
+	updateLeaves(coords.x, coords.y, coords.z);
+});
+
+
+IDRegistry.genBlockID("apalachiaTallgrass");
+Block.createBlock("apalachiaTallgrass", [
+    {name: "Apalachia tall grass", texture:
+        [["apalachiaTallgrass", 0]], inCreative:
+        true}], BLOCK_TYPE_BRUSH);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaTallgrass, "plant");
+TileRenderer.setPlantModel(BlockID.apalachiaTallgrass, 0, "apalachiaTallgrass", 0);
+IDRegistry.genBlockID("apalachiaPlanks");
+Block.createBlock("apalachiaPlanks", [
+    {name: "Apalachia planks", texture:
+        [["apalachiaPlanks", 0]], inCreative: 
+        true}], BLOCK_TYPE_WOOD);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaPlanks, "wood");
+Recipes.addShapeless(
+  {id: BlockID.apalachiaPlanks, count: 4, data: 0},[
+    {id: BlockID.apalachiaLog, data: 0}
+]);
+
+IDRegistry.genItemID("apalachiaSapling");
+Item.createItem("apalachiaSapling", "Apalachia sapling", {
+    name: "apalachiaSapling"
+}, {
+    isTech: true,
+    stack: 64
+});
+IDRegistry.genBlockID("apalachiaSapling");
+Block.createBlock("apalachiaSapling", [
+    {name: "Apalachia sapling", texture:
+        [["apalachiaSapling", 0]], inCreative:
+        true}], BLOCK_TYPE_SAPLING);
+ToolAPI.registerBlockMaterial(BlockID.apalachiaSapling, "plant");
+Block.registerDropFunction("apalachiaLeaves", function(coords, blockID, blockData, level, enchant){
+	if(level > 0 || Player.getCarriedItem().id == 359){
+		return [[blockID, 1, 2]];
+	}
+	if(Math.random() < .1){
+		return [[ItemID.apalachiaSapling, 1, 0]]
+	}
+	return [];
+});
+TileRenderer.setPlantModel(BlockID.apalachiaSapling, 0, "apalachiaSapling", 0);
+Item.registerUseFunction("apalachiaSapling", function(coords, item, block){
+	var place = coords.relative;
+	var tile1 = World.getBlock(place.x, place.y, place.z);
+	var tile2 = World.getBlock(place.x, place.y - 1, place.z);
+	
+	if (World.canTileBeReplaced(tile1.id, tile1.data) && DIRT_TILES[tile2.id]) {
+		World.setBlock(place.x, place.y, place.z, BlockID.apalachiaSapling);
+		Player.setCarriedItem(item.id, item.count - 1, item.data);
+		World.playSound(place.x, place.y, place.z, "dig.grass", 1, 0.8)
+	}
+});
+Block.registerDropFunction("apalachiaSapling", function(){
+    return [[BlockID.apalachiaSapling, 1, 0]];
+});
+Block.setRandomTickCallback(BlockID.apalachiaSapling, function(x, y, z){
+	if(!DIRT_TILES[World.getBlockID(x, y-1, z)]){
+		World.destroyBlock(x, y, z, true);
+	}
+	else if(Math.random() < 0.25 && World.getLightLevel(x, y, z) >= 4){
+		apalachiatree.build(coords.x, coords.y, coords.z, Structure.ROTATE_Y, random, regi);
+	}
+});
+Callback.addCallback("DestroyBlock", function(coords, block, player){
+	if(World.getBlockID(coords.x, coords.y + 1, coords.z) == BlockID.apalachiaSapling){
+		World.destroyBlock(coords.x, coords.y + 1, coords.z, true);
+	}
+});
